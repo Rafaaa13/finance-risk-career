@@ -1,0 +1,35 @@
+add({id:'ccbfintech',cat:'fintech',n:'建信金融科技',s:{st:4,wl:3,gr:3,pa:3,fi:4,en:3},
+why:'官方公告写明30人、条件具体（本科即可、知名企业实习优先），是银行金科中少有的完整样本。',
+hc:['2027届科技类专项人才30人（上海、北京、厦门、广州、武汉、成都、深圳）','E1'],pay:['未披露','ND'],
+req:{deg:'本科及以上',eng:'CET-4或同等英语成绩',int:'知名企业实习经历优先；IT科研、项目开发、竞赛经历优先',maj:'计算机、软件工程、数理统计等理工专业为主'},
+time:'公告2026-09-04',
+pos:[{n:'科技类专项人才',w:'系统研发与金融科技支撑；职责细节以官方岗位页为准。',deg:'本科及以上',int:'知名企业实习优先',hc:'30人'}],
+gap:['职责细节'],src:[['建信金科2027公告','https://job2.ccb.com/cn/job/announcement.html?annoId=20260903100124717047&isImpAnno=1&planType=XY']]});
+add({id:'dxm',cat:'fintech',n:'度小满',s:{st:2,wl:2,gr:4,pa:4,fi:4,en:3},
+why:'与百度系经历衔接；岗位含风险决策与商业分析，对应金融风控；互联网周期风险高。',
+hc:['人数未披露','ND'],pay:['未披露','ND'],
+req:{deg:'未统一披露',eng:'未核实',int:'未核实',maj:'未核实'},time:'招聘对象：2026年9月至2027年8月毕业',
+pos:[{n:'风险决策 / 商业分析',w:'信贷与风险策略、商业分析。',deg:'未核实',int:'未核实',hc:'未披露'},
+{n:'算法 / 开发 / 安全 / 产品经理 / 运营',w:'技术与产品序列。',deg:'未核实',int:'未核实',hc:'未披露'}],
+gap:['逐岗职责'],src:[['度小满2027校招','https://campus.duxiaoman.com/051736']]});
+add({id:'webank',cat:'fintech',n:'微众银行',s:{st:3,wl:2,gr:4,pa:4,fi:4,en:3},
+why:'AI金融培训生项目为期两年轮岗；面向2027届，最多投两个岗位。',
+hc:['人数未披露','ND'],pay:['未披露','ND'],req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'未核实'},
+time:'面向2027届毕业生',
+pos:[{n:'AI金融培训生项目',w:'入职后进行为期两年的轮岗培养。',deg:'未核实',int:'未核实',hc:'未披露'}],
+gap:['逐岗要求'],src:[['微众银行2027校招','https://campus.webank.com/campus-recruitment/webankhr/20060?locale=zh-CN']]});
+add({id:'tencent',cat:'fintech',n:'腾讯（FiT）',s:{st:2,wl:2,gr:4,pa:5,fi:3,en:2},
+why:'FiT专项公告未核实；仅有集团年报数字，不能拆分FiT。',
+hc:['未核实','ND'],pay:['集团2025：员工115,849人、员工成本约1,307亿元（集团口径，不含FiT拆分，不换算）','E1'],
+req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'未核实'},time:'未核实',pos:[],gap:['FiT专项公告'],
+src:[['腾讯校招','https://join.qq.com/'],['腾讯2025年报资料','https://static.www.tencent.com/uploads/2026/03/18/f78591955e05a6db4e31e128bdaefefa.pdf']]});
+add({id:'ant',cat:'fintech',n:'蚂蚁集团',s:{st:2,wl:2,gr:4,pa:5,fi:3,en:2},
+why:'有校招入口；2027专项公告、人数与要求均未核实，不上市无员工薪酬披露。',
+hc:['未核实','ND'],pay:['未上市，未披露','ND'],req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'未核实'},time:'未核实',pos:[],gap:['全部'],
+src:[['蚂蚁校招','https://talent.antgroup.com/campus/home']]});
+add({id:'ceecfc',cat:'sefin',n:'中国能源建设集团财务公司',s:{st:4,wl:4,gr:2,pa:3,fi:3,en:2},
+why:'公告写明“金融专业、硕士及以上、招1人”；岗位极少，能力要求为办公软件与英语听说读写。',
+hc:['2027届：金融专业岗1人','E1'],pay:['未披露','ND'],
+req:{deg:'硕士研究生及以上',eng:'英语听说读写',int:'未提实习要求',maj:'金融专业'},time:'公告2026-09-07',
+pos:[{n:'金融专业岗（1人）',w:'集团财务公司业务岗位，职责以公告附件为准。',deg:'硕士及以上',int:'未提',hc:'1人'}],
+gap:['职责细节'],src:[['能建财务公司2027公告','http://www.fc.ceec.net.cn/art/2026/9/7/art_16366_2524928.html']]});

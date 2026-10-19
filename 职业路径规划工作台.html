@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>金融与泛体制职业路径规划工作台</title>
+<title>金融与泛体制职业路径规划工作台（公司与岗位版）</title>
 <style>
 :root{--ink:#10232d;--ink2:#183743;--paper:#eef2ee;--white:#fbfcf9;--line:#d3ded9;--muted:#6d7f82;--teal:#167f84;--mint:#79c9b1;--amber:#c9873d;--red:#bc5b4e;--blue:#5473a6;--shadow:0 18px 45px rgba(16,35,45,.13)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--paper);font-family:Inter,"PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.55}button,input,select{font:inherit}button{cursor:pointer}:focus-visible{outline:3px solid #79c9b1;outline-offset:3px}
@@ -11,19 +11,52 @@
 @media(max-width:1050px){.stage{padding:0 25px 60px}.hero{grid-template-columns:1fr}.hero-stats{padding:20px 0 0}.grid2{grid-template-columns:1fr}.career-map{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:760px){.shell{display:block}.rail{position:static;height:auto;padding:16px}.brand{padding-bottom:14px}.brand h1{font-size:20px;margin:8px 0 5px}.nav{display:flex;overflow:auto;padding:14px 0 3px}.nav button{white-space:nowrap;font-size:10px;padding:8px 10px}.nav .n{display:none}.rail-note{display:none}.stage{padding:0 14px 45px}.top{height:60px}.top-actions .btn:first-child{display:none}.hero{margin-top:18px;border-radius:17px;padding:27px 23px}.hero h2{font-size:37px}.signals{grid-template-columns:repeat(2,1fr)}.signal{padding:12px 13px}.signal strong{font-size:17px}.head{display:block}.head .btn{margin-top:12px}.grid3{grid-template-columns:1fr}.filters{grid-template-columns:1fr 1fr}.career-map{grid-template-columns:1fr}.kv{grid-template-columns:100px 1fr}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.ev{display:inline-block;font:700 9px ui-monospace,monospace;padding:2px 5px;border-radius:4px;letter-spacing:.04em;vertical-align:1px}
+.ev.E1{background:#e1f2ea;color:#1f6a52}.ev.E2{background:#e5ecf6;color:#506990}.ev.E3{background:#f6ead8;color:#986328}.ev.ND{background:#eceeed;color:#73807f}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0}
+.chipb{border:1px solid var(--line);background:var(--white);color:#47636a;border-radius:99px;padding:6px 11px;font-size:11px;font-weight:650}
+.chipb i{font-style:normal;font-size:9px;color:var(--muted);margin-left:5px}
+.chipb:hover,.chipb.on{border-color:var(--teal);background:#e8f7f3;color:#1c686b}
+.bar.mini{height:5px;margin:5px 0 0;min-width:70px}
+.table td.wrap,.table th.wrap{white-space:normal;min-width:130px;max-width:260px;line-height:1.45}
+.table table.wide{min-width:1180px}
+.detailrow{background:#f6faf8;white-space:normal!important}
+.goal{display:grid;gap:7px;margin:0;padding:0;list-style:none}
+.goal li{font-size:12px;color:#4e656b;padding-left:14px;position:relative}
+.goal li:before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:14px}
+.stepc{background:var(--white);padding:15px}
+.stepc p{font-size:11px;color:#536a6f;margin:8px 0}
+.stephead{font-size:12px;color:var(--ink)}
+.src{margin:7px 0;font-size:12px}.src a,.table a{color:var(--teal);word-break:break-all}
+.empty{padding:34px;text-align:center;color:var(--muted);font-size:12px}
+.pos h4{font-size:14px}
+.toast{position:fixed;right:22px;bottom:20px;background:var(--ink);color:#e8ffff;padding:10px 14px;border-radius:9px;font-size:12px;opacity:0;transform:translateY(8px);pointer-events:none;transition:.2s;z-index:9}
+.toast.show{opacity:1;transform:none}
+.signals{margin-top:24px}
+@media(max-width:1050px){.steps{grid-template-columns:1fr}}
+@media(max-width:760px){.signals{margin-top:16px}.table table.wide{min-width:980px}}
+.field .check input,.check input{width:auto;flex:none}
+.field .check{font-size:11px;margin-top:6px}
+.table table.mid{min-width:980px}
+.table td .btn{margin:2px 0}
+
 </style>
 </head>
 <body>
 <div class="shell">
-<aside class="rail"><div class="brand"><div class="mark"><i></i><span>career atlas / 2026</span></div><h1>职业路径<br>规划工作台</h1><p>把“我能去哪”拆成岗位族、门槛、证据和下一步。</p></div><nav class="nav"><button data-view="overview" class="active"><span class="n">01</span>总览</button><button data-view="roles"><span class="n">02</span>岗位地图</button><button data-view="compare"><span class="n">03</span>对比篮子</button><button data-view="paths"><span class="n">04</span>路径走廊</button><button data-view="timeline"><span class="n">05</span>秋招时间线</button><button data-view="sources"><span class="n">06</span>证据与口径</button></nav><div class="rail-note"><b><span style="color:var(--mint)">●</span> 证据状态</b>HC 不公开时显示缺口；薪资、WLB、难度是职业判断，不伪装成精确统计。</div></aside>
-<main class="stage"><header class="top"><div class="crumb"><b id="crumb">总览</b>　/　金融与泛体制岗位族谱</div><div class="top-actions"><button class="btn" id="reset">重置筛选</button><button class="btn dark" id="export">导出我的筛选</button></div></header>
-<section class="hero"><div class="hero-copy"><div class="eyebrow">career allocation / role portfolio</div><h2>别先选公司，<br><span>先选职业走廊。</span></h2><p>覆盖金融机构、金融基础设施、监管/政策金融、央国企、事业单位、金融科技和综合管理。用两个目标函数，把稳定与成长拆开看。</p><div class="hero-actions"><button class="btn teal" data-jump="roles">开始筛岗位</button><button class="btn" data-jump="paths">看职业走廊</button></div></div><div class="hero-stats"><div class="small">当前视图：稳健优先</div><div class="hero-number" id="heroScore">3.8<small>/5</small></div><div class="progress"><i id="heroBar"></i></div><p id="heroNote">优先显示核心控制职能、金融基础设施和可迁移风险技能。</p></div></section>
-<section class="signals"><div class="signal"><label>覆盖岗位族</label><strong class="teal" id="roleCount">24</strong></div><div class="signal"><label>推荐层岗位</label><strong class="blue" id="recommendCount">0</strong></div><div class="signal"><label>HC 可核验行</label><strong class="amber" id="hcCount">0</strong></div><div class="signal"><label>已加入对比</label><strong id="compareCount">0 / 4</strong></div></section>
-<div id="views"><section class="view active" id="view-overview"></section><section class="view" id="view-roles"></section><section class="view" id="view-compare"></section><section class="view" id="view-paths"></section><section class="view" id="view-timeline"></section><section class="view" id="view-sources"></section></div><div class="foot">岗位事实和招聘状态会变化；工作台中的“难度、WLB、薪资和稳定性”用于比较，不是承诺。数据不调用外部 API，所有筛选在本地完成。</div></main></div>
+<aside class="rail"><div class="brand"><div class="mark"><i></i><span>career atlas / 2026-10</span></div><h1>职业路径<br>规划工作台</h1><p>公司排名、具体岗位、证据口径，一处看完。</p></div>
+<nav class="nav"><button data-view="overview" class="active"><span class="n">01</span>总览</button><button data-view="companies"><span class="n">02</span>公司与岗位</button><button data-view="compare"><span class="n">03</span>对比</button><button data-view="paths"><span class="n">04</span>职业走廊</button><button data-view="timeline"><span class="n">05</span>时间线</button><button data-view="roles"><span class="n">06</span>岗位族谱</button><button data-view="sources"><span class="n">07</span>证据与口径</button></nav>
+<div class="rail-note"><b><span style="color:var(--mint)">●</span> 证据状态</b>每个数字都标 E1/E2/E3/ND；未公开就写未公开，不估算。</div></aside>
+<main class="stage"><header class="top"><div class="crumb"><b id="crumb">总览</b>　/　金融与泛体制岗位</div><div class="top-actions"><button class="btn" id="reset">重置筛选</button><button class="btn dark" id="export">导出我的状态</button></div></header>
+<section class="signals"><div class="signal"><label>详细记录机构</label><strong class="teal" id="sCo">0</strong></div><div class="signal"><label>官方披露 HC 的机构</label><strong class="blue" id="sHc">0</strong></div><div class="signal"><label>可复算年报薪酬的机构</label><strong class="amber" id="sPay">0</strong></div><div class="signal"><label>已加入对比</label><strong id="sCmp">0 / 4</strong></div></section>
+<div id="views"><section class="view active" id="view-overview"></section><section class="view" id="view-companies"></section><section class="view" id="view-detail"></section><section class="view" id="view-compare"></section><section class="view" id="view-paths"></section><section class="view" id="view-timeline"></section><section class="view" id="view-roles"></section><section class="view" id="view-sources"></section></div>
+<div class="foot">岗位事实和招聘状态会变化；难度、节奏、薪酬上限等为判断。所有计算在本地完成，不调用外部 API。</div></main></div>
+<div class="toast" id="toast" role="status"></div>
 <script>
 (()=>{
 'use strict';
-const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const money=(n)=>Number(n||0).toLocaleString('zh-CN');
 const roles=[
 {id:'reg',family:'金融监管·国考',group:'泛体制',title:'监管/检查/政策研究',employers:'人民银行、金融监管总局、证监会、外汇局',work:'机构监管、现场/非现场检查、政策研究、宏观审慎、支付结算与行政监管。',degree:'硕士常见；经济金融、法律、会计、统计等',skill:'宏观金融、政策写作、数据分析、申论/行测',hc:'机构职位表可核验',hcLevel:'L2',hcProof:'E1：每年国考职位表及拟录用公示',cycle:'国考 10月报名；11月笔试；次年面试',difficulty:5,stable:5,cycleRisk:5,wlb:4,growth:3,pay:2,transfer:2.5,brand:5,fit:3.9,score:3.7,stance:'推荐·薪资让渡',tier:'推荐',facts:'官方事实与职业推断混合：具体职位要求须以当年职位表为准。',path:['监管','政策研究'],sources:['https://www.pbc.gov.cn/renshisi/144501/144513/5836227/index.html','https://www.nfra.gov.cn/','https://www.csrc.gov.cn/']},
 {id:'policy',family:'政策性银行',group:'泛体制',title:'信贷评审/风险/国际业务/资金',employers:'国家开发银行、中国进出口银行、中国农业发展银行',work:'中长期项目贷款、政策性金融、主权与国际业务、信贷评审、风险与资金管理。',degree:'硕士常见；经济金融、财会、法律、外语、数理',skill:'财务分析、信用风险、政策理解、英语/小语种',hc:'以当年公告为准',hcLevel:'L3',hcProof:'E1：官网校招公告；总行计划通常少于分行',cycle:'9—10月公告；10—12月笔面试',difficulty:5,stable:4.5,cycleRisk:4.5,wlb:4,growth:3.5,pay:4,transfer:3.5,brand:4.5,fit:3.4,tier:'推荐',facts:'总行和国际业务岗位竞争通常较高；HC 不统一公开。',path:['政策金融','风险'],sources:['https://www.cdb.com.cn/','https://www.eximbank.gov.cn/','https://www.adbc.com.cn/']},
@@ -49,53 +82,830 @@ const roles=[
 {id:'centralenterprise',family:'央企综合管理',group:'泛体制',title:'集团管培/战略/投资/财务/风控',employers:'能源、通信、制造、交通、建筑、粮食等央企集团',work:'集团职能、产业投资、战略规划、财务、风控和轮岗后定岗。',degree:'硕士常见；党员/学生干部和专业匹配加分',skill:'写作、财务、投资、项目管理、协调和数据',hc:'国聘和集团官网公告；集团 HC 可见度差异大',hcLevel:'L1',hcProof:'E1：国聘/集团官网；分子公司需逐个核验',cycle:'9—11月秋招；春招补录',difficulty:4,stable:4.5,cycleRisk:4,wlb:3.5,growth:3,pay:3,transfer:2.5,brand:4,fit:2.8,tier:'可选',facts:'总部管培和一线生产/营销序列不可混为同一职业路径。',path:['央企总部','资本运营'],sources:['https://www.iguopin.com/','http://www.sasac.gov.cn/']},
 {id:'foreign',family:'外资金融机构',group:'金融机构',title:'银行/资管/风控/研究/运营',employers:'汇丰、渣打、星展、高盛、摩根大通、贝莱德等',work:'跨境银行、市场、资管、风险、运营和数据。',degree:'英语/法语与跨境背景有优势；硕士常见',skill:'英语、金融市场、风险、数据、跨文化沟通',hc:'官网职位透明度较高，但中国区 HC 通常少',hcLevel:'L5',hcProof:'E1：官方职位页；整体机会量不等于校招 HC',cycle:'全年滚动；秋招/暑期实习',difficulty:4.5,stable:3.5,cycleRisk:3,wlb:3,pay:4,growth:3.5,transfer:4,brand:4,fit:3.4,tier:'可选',facts:'语言和跨境背景是优势；国内岗位数量和团队稳定性需逐岗判断。',path:['跨境金融','风险'],sources:['https://www.hsbc.com/careers','https://www.blackrock.com/corporate/careers']}
 ];
-const sources=[
-['中国人民银行所属单位招聘','金融科技、清算、金融信息和所属单位公告','https://www.pbc.gov.cn/renshisi/144501/144513/5836227/index.html','E1'],
-['中国银行2027校园招聘','总行信息科技、金融市场、风险合规等方向','https://www.bankofchina.com/big5/aboutboc/bi4/202609/t20260903_25689311.html','E1'],
-['建设银行2027校园招聘','总部风险管理、金融科技和子公司方向','https://job2.ccb.com/cn/job/announcement.html?annoId=20260903145558718023&planType=XY','E1'],
-['兴业银行总行2027招聘','FinTech、风险管理、资金营运中心和数据方向','https://www.xyyh.com.cn/cn/aboutCIB/about/jobs/2026/20260922_1.html','E1'],
-['证监会/广州期货交易所招聘','金融数理、建模、数据和风险管理','https://www.csrc.gov.cn/csrc/c100082/c7656582/content.shtml','E1'],
-['华能资本2027招聘','金融科技岗和风险管理岗','https://zhaopin.chng.com.cn/ManagementTraineeRecruit?aId=2000140','E1'],
-['监管总局市场风险办法','市场风险识别、计量、监测、控制和报告','https://www.nfra.gov.cn/cn/view/pages/ItemDetail.html?docId=1214421&generaltype=0&itemId=915','E1'],
-['证监会中长期资金方案','保险、社保、养老、年金、公募等长期资金','https://www.csrc.gov.cn/csrc/c100028/c7535174/content.shtml','E1'],
-['金融Models Numerical Methods','金融工程训练主题参考，非岗位数据源','https://github.com/cantaro86/Financial-Models-Numerical-Methods','R']
+
+/* 数据口径：b = 证据等级。E1 官方原文/年报/公告；E2 权威媒体或官方转载；E3 高校或第三方转载、搜索摘要；ND 未公开或本次未核实。
+   评分 s（1–5 整数，均为“判断”非统计）：st 稳定 wl 工作节奏 gr 成长 pa 薪酬上限 fi 与用户目标适配 en 进入容易度（5=相对容易）。 */
+const CATS=[
+{id:'bigbank',n:'国有大行总行',d:'招聘规模最大；总行专业岗与分行营销序列是两条路，投递时要选对序列。'},
+{id:'jointbank',n:'股份行与头部城商行',d:'年报人均成本多高于国有大行，但口径不同不能直接比；稳定与节奏依条线而定。'},
+{id:'wealth',n:'银行理财子',d:'名额少，研究/交易类竞争强；多数官方独立公告尚未公开。'},
+{id:'policybank',n:'政策性银行',d:'准体制，外语与硕士门槛较高；总行名额少。'},
+{id:'infra',n:'金融基础设施与交易所',d:'稳定性高、名额少；务必确认合同主体与编制属性。'},
+{id:'regulator',n:'金融监管（国考）',d:'公务员序列，稳定性最高；有一次性的身份与单向门代价。'},
+{id:'broker',n:'券商',d:'年报薪酬可核；前台受周期影响大，总部中后台相对防守。'},
+{id:'fund',n:'公募基金',d:'名额以个位数到十余人为常态；研究岗实习门槛高。'},
+{id:'futures',n:'期货公司',d:'衍生品与产业客户方向；注意夜盘与分支机构岗位占比。'},
+{id:'insurance',n:'保险与保险资管',d:'负债端长期资金；年报口径需区分代理人与员工。'},
+{id:'centralcap',n:'央企金融平台与国资运营',d:'名额极少，公告零散；多数需到集团官网逐条核对。'},
+{id:'fintech',n:'金融科技与银行金科',d:'技术与风控岗为主；互联网公司周期更强，银行金科更稳。'},
+{id:'sefin',n:'央企财务公司',d:'岗位少、专业对口；属产业集团内金融部门。'}
 ];
-const paths=[
-{id:'risk',title:'风险走廊',desc:'从银行总行风险出发，可横向迁移到金融基础设施、政策金融、保险资管与理财子。',nodes:['银行总行风险','金融基础设施','政策性银行风险','保险资管风险'],best:'最适合：稳定优先 + MQF/CUHK FinTech + Python/SQL能力'},
-{id:'fixed',title:'固收走廊',desc:'从银行资金/市场风险进入券商固收、公募固收、理财子和保险资管，越靠近负债端通常越稳。',nodes:['银行资金/市场风险','券商固收','公募固收','理财子/保险资管'],best:'最适合：金融市场兴趣 + 利率/久期/DV01训练'},
-{id:'data',title:'数据与AI走廊',desc:'把百度/滴滴的数据与AI产品经历迁移到风险科技、金融数据治理、监管科技和金融系统产品。',nodes:['大厂数据/AI','风险科技','金融数据治理','监管科技/基础设施'],best:'最适合：保留AI产品优势，同时回到金融主线'},
-{id:'policy',title:'政策与组织走廊',desc:'国考监管、财政/发改、选调和事业单位路径，稳定性最高，但市场化薪资和转移空间更受约束。',nodes:['国考金融监管','政策研究/综合管理','事业单位','选调/组织管理'],best:'最适合：稳定优先且资格条件成立；注意单向门'}
+const CO=[];
+const add=o=>{o.pos=o.pos||[];o.gap=o.gap||[];o.src=o.src||[];CO.push(o)};
+const EV={E1:'官方一手',E2:'权威转载',E3:'第三方转载',ND:'未公开/未核实'};
+const ENG='CET-6≥425，或TOEIC≥715、TOEFL-iBT≥85、IELTS≥6.5；英语专业专八≥60';
+
+add({id:'ccb',cat:'bigbank',n:'中国建设银行',s:{st:4,wl:3,gr:3,pa:3,fi:5,en:2},
+why:'总部有风险管理轮岗与金融科技跟岗，官方披露总行人数，条件清晰；总行硕士门槛，竞争集中。',
+hc:['2027届：总行本部100人＋信用卡中心10人（合计110）；直属机构与分行全国总数未披露','E1'],
+pay:['2025年报：支付给职工的现金1,284.59亿元÷年末集团员工378,344人≈33.95万元/人（现金流口径，非校招起薪）','E1'],
+req:{deg:'总部硕士及以上；直属机构本科及以上',eng:ENG,int:'公告未提实习要求',maj:'计算机、电子信息、数理统计、理工、经济金融、管理会计、法律、外语、新闻等'},
+time:'公告2026-09-04；报名截至2026-10-08 24:00；线下笔试计划2026年10月底',
+pos:[
+{n:'总行本部管培（北京，100人）',w:'培养期间在对公、对私、风险管理等条线轮岗；计算机/电子信息类有机会到建信金科或分行科技部跟岗。',deg:'硕士及以上',int:'未要求',hc:'100人'},
+{n:'信用卡中心（上海，10人）',w:'信用卡业务管理与运营相关岗位，具体职责以招聘系统为准。',deg:'硕士及以上',int:'未要求',hc:'10人'}],
+gap:['直属机构、境内分行全国合计人数；2026届全国招聘总人数；官方WLB数据'],
+src:[['建行总部2027校招公告','https://job2.ccb.com/cn/job/announcement.html?annoId=20260903145558718023&planType=XY'],['建行年报入口','https://jp2.ccb.com/chn/home/investor/annual_report/nbzl/index.shtml']]});
+add({id:'boc',cat:'bigbank',n:'中国银行',s:{st:4,wl:3,gr:3,pa:3,fi:5,en:2},
+why:'总行管培设“风险合规、金融市场”方向，叠加跨境/小语种通道，与金融+法语背景最贴合；总行竞争高。',
+hc:['2027公告未披露总人数；2026届约13,280人（媒体口径），拟接收公示第一批7,959人（官网公示）','E3'],
+pay:['2025年报：支付给职工的现金1,198.25亿元÷年末员工313,746人≈38.19万元/人（现金流口径）','E1'],
+req:{deg:'总行管培本科及以上（2026批附件）；以2027条件PDF为准',eng:'总行相关岗位通常CET-6≥425或同等（2026批附件，2027 PDF未完整读取）',int:'公告未提实习要求',maj:'风险合规：法学、理学、工学、经济学、管理学等（2026批附件）'},
+time:'公告2026-09-03；报名截至2026-10-09 24:00；统一笔试初定10月中下旬；每人最多5个志愿',
+pos:[
+{n:'总行管培生：风险合规方向',w:'总行相关业务和管理人才储备，一般实践锻炼1年，先境内机构/条线，再到境外机构。',deg:'本科及以上',int:'未要求',hc:'未披露'},
+{n:'总行管培生：金融市场方向',w:'同上；金融市场条线轮岗与储备。',deg:'本科及以上',int:'未要求',hc:'未披露'},
+{n:'总行管培生：信息科技/全球化等方向',w:'全球化方向管培完成实践后需外派境外机构工作1–2年。',deg:'本科及以上',int:'未要求',hc:'未披露'},
+{n:'上海总部管培',w:'跨境金融机构业务、人民币交易、跨境清算等方向人才储备，上海。',deg:'本科及以上',int:'未要求',hc:'未披露'},
+{n:'小语种专项计划',w:'含德语、法语、西班牙语、葡萄牙语等，用于全球化经营；语种资格要求以条件PDF为准。',deg:'本科及以上',int:'未要求',hc:'未披露'},
+{n:'总行直属：数字资产运营中心数据分析等',w:'集团数据运营、数据分析与前沿技术应用，北京。',deg:'本科及以上',int:'未要求',hc:'未披露'}],
+gap:['2027条件PDF完整条款；各方向人数；官方WLB数据'],
+src:[['中行2027全球校园招聘公告','https://www.bankofchina.com/big5/aboutboc/bi4/202609/t20260903_25689311.html'],['中行年报页','https://www.boc.cn/investor/ir3/202603/t20260330_25657526.html']]});
+
+add({id:'icbc',cat:'bigbank',n:'中国工商银行',s:{st:4,wl:3,gr:3,pa:3,fi:4,en:2},
+why:'规模最大、招聘量大；本次未能读取2027总行公告，细节证据不足，排名按公开规模与既有实习经历判断。',
+hc:['2026届校招约20,351人（工行官网启事标题；本次未复核正文）；2027届全国人数未核实','E3'],
+pay:['2025年报：支付给职工的现金1,481.03亿元÷年末员工409,758人≈36.14万元/人（现金流口径）','E1'],
+req:{deg:'未核实（2027）',eng:'未核实',int:'暑期实习“星令营”2025年约5,000人（可持续发展报告）',maj:'未核实'},
+time:'2027公告未核实',
+pos:[{n:'总行管培/专业岗（以官方系统为准）',w:'本次未取得2027岗位正文，不展示推测职责。',deg:'未核实',int:'星令营暑期实习可作为路径',hc:'未核实'}],
+gap:['2027公告、总行拆分、岗位条件、2026届官方正文'],
+src:[['工行招聘平台','https://job.icbc.com.cn'],['工行年报页','https://www.icbc-ltd.com/page/1211087084107182080.html'],['工行2025ESG（实习规模）','https://v.icbc.com.cn/userfiles/resources/icbcltd/download/2026/ESG2025ch.pdf']]});
+add({id:'psbc',cat:'bigbank',n:'中国邮政储蓄银行',s:{st:4,wl:3,gr:2,pa:2,fi:3,en:3},
+why:'员工基数大、年报口径含劳务派遣；总行专业岗证据不足，更偏零售与县域。',
+hc:['2027全国/总行人数未核实；四川省分行公告存在','ND'],
+pay:['2025年报：支付给职工的现金621.81亿元÷人员196,779人≈31.60万元/人；分母含劳务派遣14,432人，口径偏低','E1'],
+req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'未核实'},time:'未核实',
+pos:[],gap:['全国2027公告、总行岗位、条件'],
+src:[['邮储2025年报PDF','https://www.psbc.com/cn/gyyc/tzzgx/cwxx/cwbg/cwxxagbg/202603/P020260327786964695291.pdf']]});
+add({id:'abc',cat:'bigbank',n:'中国农业银行',s:{st:4,wl:3,gr:3,pa:3,fi:3,en:3},
+why:'分行与县域岗位占比高，总行专业岗证据缺；仅能给出入口，不下判断性结论。',
+hc:['全国2027人数未核实','ND'],pay:['2025年报薪酬未核实','ND'],
+req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'未核实'},time:'未核实',
+pos:[],gap:['全国公告、总行岗位、年报薪酬；研究中读到河北分行约1030人，但未保存链接，不作为证据'],
+src:[['农行招聘','https://career.abchina.com.cn/build/index.html']]});
+add({id:'bocom',cat:'bigbank',n:'交通银行',s:{st:4,wl:3,gr:3,pa:3,fi:4,en:3},
+why:'总行应届生项目含风险合规方向，另设金融科技岗；证据来自高校转载页，需到官网复核。',
+hc:['苏州分行40人（高校转载页）；总行人数未核实','E3'],pay:['2025年报薪酬未核实','ND'],
+req:{deg:'苏州分行金融科技硕士及以上；其余未核实',eng:'未核实',int:'未核实',maj:'金融科技含开发应用/数字金融；法律合规'},
+time:'毕业时间2026.1–2027.7；网申截至2026-10-18；总行项目与金融科技职位各可申请1个',
+pos:[
+{n:'总行应届生项目（风险合规方向）',w:'前台业务/风险合规/综合管理三类方向之一，具体职责以官方系统为准。',deg:'未核实',int:'未核实',hc:'未核实'},
+{n:'金融科技岗位',w:'IT系统管理、软件开发工程师、安全技术、数据安全等。',deg:'未核实',int:'未核实',hc:'未核实'}],
+gap:['官网原文复核；总行人数；年报薪酬'],
+src:[['交行2027启动（高校转载）','https://career.nankai.edu.cn/correcruit/content/id/119027.html'],['交行苏州分行（高校转载）','https://career.nankai.edu.cn/correcruit/content/id/119028.html']]});
+
+add({id:'cmb',cat:'jointbank',n:'招商银行',s:{st:4,wl:3,gr:4,pa:4,fi:4,en:2},
+why:'总行管培含投行与金融市场、政策研究，另有数字金融训练营这一AI/数据入口；品牌强、竞争高。',
+hc:['2027公告未披露总人数、截止日；训练营面向2027届及以后','ND'],
+pay:['2025年报：员工费用686.89亿元÷集团员工121,585人≈56.49万元/人（费用口径，与国有大行现金流口径不可直接比较）','E2'],
+req:{deg:'本科及以上',eng:'本科CET-4≥425；研究生CET-6≥425',int:'未核实',maj:'见官网岗位表'},
+time:'公告原标2026-08-28；武汉分行数字金融定向培养生简历截至2026-10-10 23:59',
+pos:[
+{n:'总行管培生',w:'公司金融、零售金融、投行与金融市场、政策研究等方向培养。',deg:'本科及以上',int:'未核实',hc:'未披露'},
+{n:'研发类：智能科学/系统/智能运维',w:'银行系统与智能运维研发。',deg:'本科及以上',int:'未核实',hc:'未披露'},
+{n:'数字金融训练营（AI工程师/AI数据科学家/AI产品经理）',w:'面向2027届及以后本科及以上，优秀者可获总行实习与数字金融提前批机会；本季线上竞赛页面显示已结束。',deg:'本科及以上',int:'即为实习通道',hc:'未披露'}],
+gap:['总行HC、截止日、实习要求；官方WLB'],
+src:[['招行2027校招公告','https://cmb-recruitment-mobile.paas.cmbchina.com/announceDetail/school?noticeId=C0089317-18EE-48D2-867F-B62104AE4139'],['招行2025年报（转载）','https://stockmc.xueqiu.com/202603/600036_20260328_F53J.pdf'],['招行数字金融训练营','https://career.cmbchina.com/fintech/competitionZone']]});
+add({id:'cib',cat:'jointbank',n:'兴业银行',s:{st:4,wl:3,gr:4,pa:4,fi:5,en:2},
+why:'总行岗位表同时覆盖FinTech管培、AI科技专项、资金营运中心投资交易，且面向硕士，与用户硕士路径贴合。',
+hc:['总行附件列出10个岗位方向，无分岗人数','ND'],
+pay:['2025年报：职工薪酬费用389.09亿元÷员工68,963人≈56.42万元/人（费用口径）','E1'],
+req:{deg:'硕士及以上',eng:'CET-6≥425，或TOEIC≥715、TOEFL≥85、IELTS≥6.5；英语专业专八',int:'未要求',maj:'经济、金融、管理、法律、产业、计算机、数理等，详见岗位附件'},
+time:'公告日2026-09-20/22；报名至2026-10-25；流程：网申→简历初选→笔试→面试→体检→录用；境内院校须2027-08-31前取得学位',
+pos:[
+{n:'总行管培生（综合/产业金融与绿色金融/FinTech/国际业务）',w:'为战略、政策、产品、风险管理、数字化建设、跨境金融储备人才；2年培养期，多岗位轮岗后匹配岗位。',deg:'硕士及以上',int:'未要求',hc:'附件未列'},
+{n:'科技专项人才（人工智能/运维）',w:'AI技术研发应用，或机房、网络、云、数据库、系统运维；录用后直接定岗总行科技部门。',deg:'硕士及以上',int:'未要求',hc:'附件未列'},
+{n:'资金营运中心管培生（投资交易/FinTech）',w:'投资交易、做市、策略交易、交易销售、产品设计、需求分析、数据分析。',deg:'硕士及以上',int:'未要求',hc:'附件未列'},
+{n:'科技研发中心研发岗',w:'软件需求分析、系统设计、代码开发、智能体能力建设、研发运维。',deg:'硕士及以上',int:'未要求',hc:'附件未列'}],
+gap:['分岗人数；官方WLB'],
+src:[['兴业总行2027校招公告','https://www.xyyh.com.cn/cn/aboutCIB/about/jobs/2026/20260922_1.html'],['岗位附件xlsx','https://download.cib.com.cn/netbank/download/cn/20260922.xlsx'],['兴业2025年报','https://download.cib.com.cn/netbank/download/cn/announcements/20260326.pdf']]});
+add({id:'citicb',cat:'jointbank',n:'中信银行',s:{st:4,wl:3,gr:3,pa:4,fi:3,en:3},
+why:'年报成本口径人均较高，但总行方向与HC未公开，只能按公开信息中性排位。',
+hc:['总行方向与人数未公开','ND'],
+pay:['2025年报：员工成本402.36亿元÷员工67,674人≈59.46万元/人（费用口径）','E1'],
+req:{deg:'本科及以上',eng:'CET-4≥425',int:'未要求',maj:'经济、管理、法学、理工等'},
+time:'截止暂定2026-10-09',pos:[],gap:['总行岗位与人数；官方WLB'],
+src:[['中信银行校招公告','https://job.citicbank.com/static/gggs1_208.html'],['中信银行2025年报','https://static.cninfo.com.cn/finalpage/2026-03-21/1225022321.PDF']]});
+
+add({id:'hxb',cat:'jointbank',n:'华夏银行',s:{st:3,wl:3,gr:3,pa:3,fi:3,en:3},
+why:'总行管培与经办岗已公告，专业覆盖信息科技、数统、经金等，但HC、英语与实习要求未核实。',
+hc:['总行管培、经办；人数未核实','ND'],
+pay:['官方ESG披露员工薪酬116.51亿元、员工36,213人（ESG口径，非年报职工薪酬，不换算）','E1'],
+req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'信息科技、数统、经金、会计、产业、法律等'},
+time:'发布2026-09-17；网申截至2026-10-25',pos:[],gap:['人数、英语、实习、年报薪酬'],
+src:[['华夏银行校招公告','https://wecruit.hotjob.cn/SU645b1c2ebef57c0907ea0622/mc/news/detail?newsKey=1789464953292&suiteKey=645b0d18bef57c0907e9fbc8']]});
+add({id:'czb',cat:'jointbank',n:'浙商银行',s:{st:3,wl:3,gr:3,pa:3,fi:3,en:3},
+why:'“CZ星计划”总行岗位要求硕士及以上；信息有限。',
+hc:['人数未披露','ND'],pay:['年报员工薪酬未核实','ND'],
+req:{deg:'总行：硕士研究生及以上；首次就业、专业与岗位相关',eng:'未要求/未披露',int:'未要求',maj:'与岗位相关'},
+time:'发布2026-09-11；报名至2026-10-25',pos:[],gap:['人数、岗位清单'],
+src:[['浙商银行CZ星计划','https://zp.czbank.com.cn/zpweb/zpPostController/planDetailPage.mvc?planId=8a8340e9a033d10501a06502133f0014']]});
+add({id:'shbank',cat:'jointbank',n:'上海银行',s:{st:4,wl:3,gr:3,pa:3,fi:4,en:3},
+why:'总行含金融市场、金融科技方向，管培与金融市场要求研究生；信息来自高校转载。',
+hc:['人数未核实','ND'],pay:['年报薪酬未核实','ND'],
+req:{deg:'本科及以上；管培与金融市场类要求研究生',eng:'未核实',int:'未核实',maj:'科技类需计算机、软件、电子信息、数学统计等'},
+time:'截止2026-11-22（转载）',
+pos:[{n:'总行管培',w:'总行业务与管理培养。',deg:'研究生',int:'未核实',hc:'未核实'},{n:'金融市场',w:'金融市场条线岗位。',deg:'研究生',int:'未核实',hc:'未核实'},{n:'金融科技',w:'总行金融科技岗位。',deg:'本科及以上',int:'未核实',hc:'未核实'}],
+gap:['官网原文复核'],src:[['上海银行校招（高校转载）','https://job.hust.edu.cn/extxjh/911791425190996.do']]});
+add({id:'bob',cat:'jointbank',n:'北京银行',s:{st:4,wl:3,gr:3,pa:3,fi:3,en:3},
+why:'设科技英才与金融英才两个职位类别，门槛为本科；北京本地性强。',
+hc:['职位表2项；人数未披露','ND'],pay:['年报薪酬未核实','ND'],
+req:{deg:'本科',eng:'未披露',int:'未披露',maj:'科技：电子信息/计算机；金融：不限专业'},
+time:'发布2026-09-28；过期2026-10-15（转载）',pos:[],gap:['人数、英语、实习'],
+src:[['北京银行（高校转载）','https://career.cup.edu.cn/campus/view/id/460568']]});
+add({id:'njcb',cat:'jointbank',n:'南京银行',s:{st:4,wl:3,gr:3,pa:3,fi:3,en:3},
+why:'总行定向培训生与信息科技、数字银行；本科及以上。',
+hc:['人数未核实','ND'],pay:['年报薪酬未核实','ND'],
+req:{deg:'本科及以上',eng:'未核实',int:'未核实',maj:'未核实'},time:'2026-09-08至2026-10-11（转载）',pos:[],gap:['人数、英语、实习'],
+src:[['南京银行招聘','https://job.njcb.com.cn/#/index/notic/details?id=362&tableName=notic']]});
+add({id:'nbcb',cat:'jointbank',n:'宁波银行',s:{st:4,wl:2,gr:4,pa:3,fi:3,en:3},
+why:'总行金融科技定向生，岗位含研发、算法、运维、测试、产品；职位表专业不限。',
+hc:['人数未核实','ND'],pay:['年报薪酬未核实','ND'],
+req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'专业不限（职位表）'},time:'2026-08-18至2026-10-31（转载）',pos:[],gap:['人数、学历、实习'],
+src:[['宁波银行招聘','https://zhaopin.nbcb.com.cn/'],['宁波银行（高校转载）','https://career.cup.edu.cn/campus/view/id/460150']]});
+add({id:'jsb',cat:'jointbank',n:'江苏银行',s:{st:4,wl:3,gr:3,pa:3,fi:3,en:3},
+why:'官方转载提到总行金融科技培养生，要求研究生及以上；官网动态不可读。',
+hc:['人数未核实','ND'],pay:['年报薪酬未核实','ND'],
+req:{deg:'金融科技培养生：研究生及以上',eng:'未核实',int:'未核实',maj:'未核实'},time:'2026-09-10至2026-09-30',pos:[],gap:['官网原文'],
+src:[['江苏银行招聘','https://hr.jsbchina.cn/zp']]});
+
+add({id:'ccbwm',cat:'wealth',n:'建信理财',s:{st:4,wl:3,gr:3,pa:3,fi:4,en:2},
+why:'唯一披露了总部经办岗人数的理财子，硕士门槛；岗位偏经办，投研岗未单列。',
+hc:['总部经办岗10人（深圳）','E1'],pay:['未披露','ND'],
+req:{deg:'硕士及以上',eng:ENG,int:'未核实',maj:'未核实'},
+time:'公告2026-09-04；报名至2026-10-08 24:00',
+pos:[{n:'总部经办岗（深圳）',w:'理财子总部业务经办，具体职责以招聘系统为准。',deg:'硕士及以上',int:'未核实',hc:'10人'}],
+gap:['专业、实习、职责正文'],
+src:[['建信理财公告','https://job2.ccb.com/cn/job/mobilev3/notice_detail.html?annoId=20260902182641699801']]});
+add({id:'cmbwm',cat:'wealth',n:'招银理财',s:{st:4,wl:3,gr:4,pa:4,fi:4,en:1},
+why:'随招行集团公告招“研究交易类岗位”；名额与要求均未披露，竞争推断为高。',
+hc:['未披露','ND'],pay:['未披露','ND'],req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'未核实'},
+time:'集团公告原标2026-08-28',pos:[{n:'研究交易类岗位',w:'理财产品的研究与交易，具体职责未取得官方正文。',deg:'未核实',int:'未核实',hc:'未披露'}],
+gap:['独立公告、人数、要求'],src:[['招行校招公告','https://cmb-recruitment-mobile.paas.cmbchina.com/announceDetail/school?noticeId=C0089317-18EE-48D2-867F-B62104AE4139']]});
+add({id:'cibwm',cat:'wealth',n:'兴银理财',s:{st:4,wl:3,gr:4,pa:3,fi:4,en:2},
+why:'招聘门户显示硕士及以上，方向含研究与交易；人数与截止未核实。',
+hc:['未核实','ND'],pay:['未披露','ND'],req:{deg:'硕士及以上',eng:'未核实',int:'未核实',maj:'未核实'},
+time:'门户标2026-09-28；官网动态标2026-10-13',pos:[],gap:['人数、截止、岗位清单'],
+src:[['兴业招聘门户','https://job.cib.com.cn/portal/'],['兴银理财官网','https://www.cibwm.com.cn/']]});
+add({id:'bocwm',cat:'wealth',n:'中银理财',s:{st:4,wl:3,gr:3,pa:3,fi:3,en:2},
+why:'随中行统一公告列入“综合经营公司”，具体岗位需进招聘系统。',
+hc:['未核实','ND'],pay:['未披露','ND'],req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'未核实'},
+time:'公告2026-09-03；截止2026-10-09 24:00',pos:[],gap:['理财子岗位与人数'],
+src:[['中行统一公告','https://www.boc.cn/aboutboc/bi4/202609/t20260903_25689311.html']]});
+add({id:'cdb',cat:'policybank',n:'国家开发银行',s:{st:5,wl:4,gr:3,pa:4,fi:5,en:1},
+why:'总行含信息科技、财会审计、经济金融等方向，国际合作线可兑现外语优势；名额极少，竞争最高档。',
+hc:['2027总行人数未核实','ND'],pay:['年报薪酬未核实','ND'],
+req:{deg:'全行本科及以上；产业投融类硕士及以上',eng:'外语水平较好',int:'未核实',maj:'见招聘系统岗位页'},
+time:'2027校招已开，截止日未核实',
+pos:[{n:'总行·产业投融类',w:'产业与项目投融资相关岗位。',deg:'硕士及以上',int:'未核实',hc:'未核实'},
+{n:'总行·信息科技/财会审计/经济金融/法律/综合/外语',w:'总行职能与专业岗位，职责以官方岗位页为准。',deg:'本科及以上',int:'未核实',hc:'未核实'}],
+gap:['总行人数、截止、各岗要求'],src:[['国开行2027招聘','https://cdb2027.zhaopin.com/'],['总行岗位页','https://cdb2027.zhaopin.com/jobs/index.html?id=10126839']]});
+add({id:'adbc',cat:'policybank',n:'中国农业发展银行',s:{st:5,wl:4,gr:3,pa:3,fi:4,en:3},
+why:'分层级招聘：总行/省分行硕士，二级分行原则硕士，县支行本科；名额大于其余两家政策行但未披露。',
+hc:['人数以报名系统为准，未披露','ND'],pay:['年报薪酬未核实','ND'],
+req:{deg:'总行本部、省级分行本级：硕士及以上；二级分行原则硕士；县级支行本科及以上',eng:'CET-6≥426，或托福≥95、雅思≥6.5',int:'未核实',maj:'以报名系统为准'},
+time:'公告2026-09-15',pos:[],gap:['岗位清单、人数'],src:[['农发行2027公告','https://www.adbc.com.cn/n354735/n355043/c722284/content.html']]});
+add({id:'exim',cat:'policybank',n:'中国进出口银行',s:{st:5,wl:4,gr:3,pa:4,fi:4,en:2},
+why:'外语属性强；本次未找到2027官方公告，不下细节判断。',
+hc:['未核实','ND'],pay:['未核实','ND'],req:{deg:'未核实',eng:'外语要求偏高（行业共识，未核实）',int:'未核实',maj:'未核实'},
+time:'未核实',pos:[],gap:['2027公告'],src:[['进出口银行招聘系统','https://zhaopin.eximbank.gov.cn/']]});
+
+add({id:'ccdc',cat:'infra',n:'中央结算公司（中债登）',s:{st:5,wl:4,gr:3,pa:4,fi:5,en:1},
+why:'债券登记托管结算的核心基础设施，岗位与风险/数据/固收高度相关；2027有“新锐”轮岗培养；人数未公开，竞争极高。',
+hc:['2027校招人数未核实','ND'],pay:['未披露','ND'],
+req:{deg:'硕士及以上（重点院校）',eng:'未核实',int:'未核实',maj:'未核实'},
+time:'2027年度校招公告2026-09-22',
+pos:[{n:'新锐培养计划（轮岗）',w:'为期6个月的轮岗培养，之后定岗；具体岗位序列以公告附件为准。',deg:'硕士及以上',int:'未核实',hc:'未核实'}],
+gap:['人数、岗位序列、合同主体'],src:[['中债登2027校招公告','https://www.ccdc.com.cn/Media/Bulletin/202609/t20260922_855421611.html']]});
+add({id:'chinaclear',cat:'infra',n:'中国证券登记结算（中国结算）',s:{st:5,wl:4,gr:3,pa:4,fi:5,en:2},
+why:'唯一把岗位逐项写出人数的基础设施之一（2026届），技术与结算法律岗可直接对接风险与数据能力。',
+hc:['2026届总部校招逐岗相加14人（应用开发5、IT运维3、结算法律2，办公保障/人力/会计/采购各1）——计算值，公告未写合计；北京/上海/深圳分公司另有岗位','E1'],
+pay:['未披露','ND'],req:{deg:'校招多为硕士及以上；部分社招相关岗本科及以上',eng:'未核实',int:'未核实',maj:'计算机、法律、会计等'},
+time:'2026届公告；2027届未核实',
+pos:[{n:'应用系统开发岗（总部，5人）',w:'结算系统应用开发。',deg:'硕士及以上',int:'未核实',hc:'5人'},
+{n:'IT运维岗（总部，3人）',w:'系统运维与保障。',deg:'硕士及以上（以公告为准）',int:'未核实',hc:'3人'},
+{n:'结算法律岗（总部，2人）',w:'结算业务相关法律事务。',deg:'硕士及以上（以公告为准）',int:'未核实',hc:'2人'}],
+gap:['2027届公告'],src:[['中国结算2026公告','https://www.chinaclear.cn/zdjs/zgzh/202511/24b942b9ec7e40e0bdf42eb8730f239a.shtml']]});
+add({id:'shclear',cat:'infra',n:'上海清算所',s:{st:5,wl:4,gr:3,pa:4,fi:5,en:2},
+why:'业务岗覆盖市场研究、风险与多品种清算，直接对应风险走廊；名额10人，门槛硕士。',
+hc:['2026届校招2类岗位共10人：业务类8、技术类2；另招博士后3名','E1'],pay:['未披露','ND'],
+req:{deg:'硕士及以上',eng:'未核实',int:'未核实',maj:'金融、数理、计算机、信息安全等'},
+time:'2026届；2027届未核实',
+pos:[{n:'业务类（8人）',w:'市场研究、风险管理，以及债券/利率/外汇/信用/大宗商品清算业务。',deg:'硕士及以上',int:'未核实',hc:'8人'},
+{n:'技术类（2人）',w:'项目管理、网络与数据安全。',deg:'硕士及以上',int:'未核实',hc:'2人'}],
+gap:['2027届公告'],src:[['上海清算所','https://www.shclearing.com.cn/']]});
+add({id:'cfets',cat:'infra',n:'中国外汇交易中心',s:{st:5,wl:4,gr:3,pa:4,fi:5,en:2},
+why:'人行直属，研究/产品/监测与系统数据安全岗并行；2026届单家10人，岗位表可逐条核。',
+hc:['2026届单家需求10人：研究分析/产品研发/监测5，系统建设运维/网络安全/数字化/数据安全3，技术类（北京）1，纪检监察1','E1'],pay:['未披露','ND'],
+req:{deg:'研究分析等岗位硕士及以上；技术岗仅限硕士研究生',eng:'未核实',int:'未核实',maj:'金融、数理、计算机、信息安全'},
+time:'2026届公告（人行直属事业单位）；2027届未核实',
+pos:[{n:'研究分析/产品研发/监测（5人）',w:'银行间市场研究、产品研发与市场监测。',deg:'硕士及以上',int:'未核实',hc:'5人'},
+{n:'系统建设与运维/网络安全/数字化/数据安全（3人）',w:'交易系统建设运维与数据安全。',deg:'仅限硕士研究生',int:'未核实',hc:'3人'}],
+gap:['2027届公告；编制属性以公告为准'],src:[['人行事业单位2026公告','https://www.pbc.gov.cn/renshisi/144501/144513/5836227/5836237/5906682/index.html'],['岗位表xlsx','https://www.pbc.gov.cn/renshisi/144501/144513/5836227/5836237/5906682/2025111918511845168.xlsx']]});
+add({id:'cdic',cat:'infra',n:'存款保险基金管理公司',s:{st:5,wl:4,gr:3,pa:3,fi:4,en:2},
+why:'人行所属，风险监测预警与处置职能；招聘流程完整公开（可作为2027的参照）。',
+hc:['2026届校招4个岗位共8人：经济金融及统计2、法律2、财务会计2、综合管理2；均在北京','E1'],pay:['未披露','ND'],
+req:{deg:'经济金融及统计、法律、财务会计：硕士及以上；综合管理：本科及以上',eng:'未列统一分数线',int:'未要求',maj:'岗位表'},
+time:'2026届报名2025-12-31至2026-01-19（已结束）；2027届公告未出',
+pos:[{n:'经济金融及统计岗（2人）',w:'风险监测预警相关研究与统计；笔试：行测＋经济金融专业知识。',deg:'硕士及以上',int:'未要求',hc:'2人'},
+{n:'法律岗（2人）/财务会计岗（2人）/综合管理岗（2人）',w:'分别考行测＋法律/会计专业/申论；笔试线上，合格线60分；面试合格线75分；入围比5:1。',deg:'前两类硕士及以上；综合管理本科及以上',int:'未要求',hc:'各2人'}],
+gap:['2027届公告'],src:[['存保公司2026校招公告','https://www.pbc.gov.cn/renshisi/144501/144513/5836227/5836240/2025123115565649023/index.html']]});
+
+add({id:'cips',cat:'infra',n:'跨境银行间支付清算（CIPS）',s:{st:5,wl:4,gr:4,pa:4,fi:4,en:2},
+why:'人民币跨境支付基础设施，上海；岗位含标准建设、数据安全、新技术，语言与跨境背景加分。',
+hc:['2026届校招6岗共13人（市场3、业务5、技术2、综合1、财务1、人力1，上海）；最新社招9岗共12人','E1'],pay:['未披露','ND'],
+req:{deg:'校招均硕士及以上；社招运维/档案本科及以上',eng:'未核实',int:'未核实',maj:'金融、计算机、数据安全等'},
+time:'2026届校招截止2026-03-15（已结束）',
+pos:[{n:'市场岗（3人）/业务岗（5人）',w:'跨境清算市场拓展与业务运营。',deg:'硕士及以上',int:'未核实',hc:'3人/5人'},
+{n:'技术岗（2人）',w:'清算系统技术开发与运维。',deg:'硕士及以上',int:'未核实',hc:'2人'}],
+gap:['2027届公告'],src:[['跨境清算2026校招','https://www.pbc.gov.cn/renshisi/144501/144513/5836227/5836240/2026021217115382810/index.html'],['跨境清算最新社招','https://www.pbc.gov.cn/renshisi/144501/144513/5836227/5836240/2026052618092533989/index.html']]});
+add({id:'nucc',cat:'infra',n:'网联清算',s:{st:4,wl:3,gr:4,pa:4,fi:4,en:3},
+why:'支付清算基础设施；社招岗位含风险治理、风险分析、政策研究。',
+hc:['2026年社招6岗：数据仓库架构师、UI/UE、风险治理、风险分析、政策研究、跨境支付商务拓展；人数未核实','E1'],pay:['未披露','ND'],
+req:{deg:'前5类本科及以上；政策研究硕士及以上',eng:'未核实',int:'社招，通常看经验',maj:'未核实'},time:'滚动',pos:[],gap:['校招公告'],
+src:[['网联岗位接口','https://www.nucc.com/article/join.json']]});
+add({id:'cmbf',cat:'infra',n:'成方金融科技',s:{st:4,wl:3,gr:4,pa:3,fi:4,en:3},
+why:'央行金融科技平台，校招量相对大（2026届34人），技术岗为主。',
+hc:['2026届校招15个岗位共34人（北京、成都、上海、天津）；2026-04补充：取消上海前端岗、新增后端岗1人','E2'],pay:['未披露','ND'],
+req:{deg:'完整岗位表未展开',eng:'未核实',int:'未核实',maj:'计算机等'},time:'原报名截止2025-12-21',pos:[],gap:['岗位表学历、2027届'],
+src:[['成方金科校招补充公告','https://www.pbc.gov.cn/renshisi/144501/144513/5836227/5836240/2026041713490018478/index.html']]});
+add({id:'szse',cat:'infra',n:'深圳证券交易所',s:{st:5,wl:4,gr:3,pa:4,fi:4,en:2},
+why:'2026暑期实习面向2027届，岗位含金融工程，是少数官方暑期实习入口；名额未公开。',
+hc:['暑期实习人数未核实','ND'],pay:['未披露','ND'],
+req:{deg:'在读硕士或博士',eng:'未核实',int:'本身即实习',maj:'会计、法律、金融工程、翻译'},time:'2026暑期实习（已结束）；2027届需关注新公告',
+pos:[{n:'暑期实习：金融工程等',w:'面向2027届应届毕业生的暑期实习，方向含会计、法律、金融工程、翻译。',deg:'在读硕士/博士',int:'即实习',hc:'未核实'}],
+gap:['人数与转正机制'],src:[['深交所实习公告','https://www.szse.cn/aboutus/online/infonotice/t20260403_619832.html']]});
+add({id:'dce',cat:'infra',n:'大连商品交易所',s:{st:5,wl:4,gr:3,pa:4,fi:4,en:2},
+why:'2026招聘含金融数理与综合管理，面向2027届，硕士及以上。',
+hc:['人数未核实','ND'],pay:['未披露','ND'],req:{deg:'硕士及以上',eng:'未核实',int:'未核实',maj:'金融数理等'},time:'面向2027届',pos:[],gap:['人数'],
+src:[['大商所公告','http://www.dce.com.cn/dce/content/2026/dlspjys/19623424.html']]});
+add({id:'czce',cat:'infra',n:'郑州商品交易所',s:{st:5,wl:4,gr:3,pa:4,fi:4,en:2},
+why:'2026秋招设8类岗位，硕士及以上。',
+hc:['人数未核实','ND'],pay:['未披露','ND'],req:{deg:'全日制硕士及以上',eng:'未核实',int:'未核实',maj:'经济金融、法律、会计、金融工程、计算机、交通运输、工科、综合'},time:'2026秋招',pos:[],gap:['人数'],
+src:[['郑商所公告（证监会转载）','https://www.csrc.gov.cn/csrc/c100082/c7661974/content.shtml']]});
+add({id:'gfex',cat:'infra',n:'广州期货交易所',s:{st:5,wl:4,gr:4,pa:4,fi:5,en:2},
+why:'岗位含“金融类（数理方向）”，涉及金融建模、数据分析、风险管理，与风险走廊直接对口。',
+hc:['人数未核实','ND'],pay:['未披露','ND'],req:{deg:'校招硕士及以上；博士后另招',eng:'未核实',int:'未核实',maj:'数理金融：金融建模、数据分析、SQL/Python/R'},
+time:'公告2026-09-04；截至2026-10-14',
+pos:[{n:'金融类（数理方向）',w:'金融建模、数据分析、市场运行分析、风险管理；要求SQL/Python/R。',deg:'硕士及以上',int:'未核实',hc:'未核实'}],
+gap:['人数'],src:[['广期所秋季招聘（证监会）','https://www.csrc.gov.cn/csrc/c100082/c7656582/content.shtml']]});
+
+add({id:'pbc',cat:'regulator',n:'中国人民银行（国考）',s:{st:5,wl:4,gr:3,pa:2,fi:4,en:1},
+why:'稳定性最高；2026年计划数同比下降23.9%，研究生占拟录用六成；岗位大量在分支机构，总行名额极少。',
+hc:['2026年度计划招录2,780人（总行40、外汇局4、分支机构2,736），同比约-23.9%（2025年录用3,510）——《金融时报》转述；人行官网总数原文未找到','E2'],
+pay:['公务员薪酬不适用年报口径；部门决算人员经费不可换算为个人收入，未核实','ND'],
+req:{deg:'以国考职位表为准；拟录用中研究生约1,571人（占60%，第一批公示）',eng:'无统一分数线（职位表另列）',int:'不要求',maj:'金融、经济、统计、法律等，按职位表'},
+time:'2027年度国考公告2026-10发布，全国计划3.57万人；人行分项未核实',
+pos:[{n:'总行机关（约40人）',w:'货币政策、金融稳定、支付清算、反洗钱、国际金融等司局岗位，职责以职位表为准。',deg:'多为硕士',int:'不要求',hc:'约40人（2026年）'},
+{n:'分支机构（约2,736人）',w:'省市分行、中心支行金融监管与服务岗位；中西部县域支行常遇冷。',deg:'本科至硕士，随职位',int:'不要求',hc:'约2,736人（2026年）'}],
+gap:['2027年人行分项人数；官方一手总数原文'],
+src:[['国考2027（新华社转载）','https://legalinfo.moj.gov.cn/zhfxfzzx/fzzxyw/202610/t20261013_540645.html'],['2026国考人行/金监转述','https://finance.sina.com.cn/wm/2025-10-17/doc-infuehut6421384.shtml']]});
+add({id:'nfra',cat:'regulator',n:'国家金融监督管理总局（国考）',s:{st:5,wl:4,gr:3,pa:2,fi:4,en:1},
+why:'银行保险监管的核心序列；岗位多在派出机构，总局机关竞争最高。',
+hc:['2026年度计划约2,400–2,459人（两种媒体口径）；第一批拟录用公示2,132人（应届1,739人，生源669所高校，央财29人居首）','E3'],
+pay:['未核实','ND'],req:{deg:'以职位表为准',eng:'无统一分数线',int:'不要求',maj:'金融、经济、法律、会计、统计、计算机'},
+time:'2027年度国考分项人数未核实',
+pos:[{n:'银行/保险监管、法规、统计、信息科技等序列',w:'非现场监管与现场检查、风险监测，具体职责以职位表为准。',deg:'本科至硕士',int:'不要求',hc:'以职位表为准'}],
+gap:['官方一手总数；2027分项'],src:[['2026国考人行/金监转述','https://finance.sina.com.cn/wm/2025-10-17/doc-infuehut6421384.shtml'],['金融监管总局官网','https://www.nfra.gov.cn/']]});
+add({id:'csrc',cat:'regulator',n:'中国证监会（国考）',s:{st:5,wl:3,gr:4,pa:2,fi:4,en:1},
+why:'资本市场监管，被称“国考天花板”；官网人数明确，留学背景占一成，但名额极少。',
+hc:['2026年度计划招录347人（证监会官网）；拟录用281人（公示期2026-05-11至05-15），其中31人有留学背景（约11%）','E1'],
+pay:['未核实','ND'],req:{deg:'以职位表为准',eng:'无统一分数线',int:'不要求',maj:'经济、金融、法律、会计、计算机'},
+time:'2027年度分项人数未核实',
+pos:[{n:'机关及派出机构（证监局）岗位',w:'资本市场监管、稽查、统计与科技监管，具体以职位表为准。',deg:'硕士为主',int:'不要求',hc:'347人（2026年）'}],
+gap:['2027分项'],src:[['证监会2026年度招录公告','https://www.csrc.gov.cn/csrc/c100083/c7588473/content.shtml']]});
+
+const bpay=(N,Q,V)=>['2025年报：应付职工薪酬本年增加'+Q+'元÷年末员工'+N+'人≈'+V+'万元/人（含福利社保，非校招起薪；员工数口径可能含经纪人/派遣）','E1'];
+add({id:'citics',cat:'broker',n:'中信证券',s:{st:3,wl:2,gr:4,pa:5,fi:3,en:1},
+why:'年报人均薪酬位居样本最高档；岗位偏投行/研究前台，周期与强度风险大，与稳健目标匹配度一般。',
+hc:['2027届人数未披露','ND'],pay:bpay('26,823','22,779,987,952.73','84.93'),
+req:{deg:'总部多数硕士及以上',eng:'良好中英文工作能力',int:'相关实习优先',maj:'金融或理工，部分专业不限'},time:'2027届校招进行中（截止日未核实）',
+pos:[{n:'投资银行：客户开发、股债融资及并购执行',w:'客户开发、股权/债权融资及并购项目执行。',deg:'硕士及以上',int:'相关实习优先',hc:'未披露'},
+{n:'研究：行业公司研究',w:'行业与公司研究、报告撰写。',deg:'硕士及以上',int:'相关实习优先',hc:'未披露'},
+{n:'AI：模型微调与部署',w:'大模型微调、部署与应用。',deg:'硕士及以上',int:'未核实',hc:'未披露'}],
+gap:['人数、WLB官方数据'],src:[['中信证券校招','https://careers.citics.com/campus/headquarters'],['中信证券2025年报','https://static.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-03-27/600030_20260327_OTZ9.pdf']]});
+add({id:'cicc',cat:'broker',n:'中金公司',s:{st:3,wl:1,gr:5,pa:5,fi:3,en:1},
+why:'成长与薪酬上限高，但投行/交易条线强度大；总部硕士门槛，竞争极高。',
+hc:['2027届人数未披露','ND'],pay:bpay('14,218','11,656,942,640','81.99'),
+req:{deg:'多数岗位硕士及以上',eng:'良好中英文',int:'资管部分方向实习优先',maj:'金融、数理、计算机等'},time:'2027届进行中',
+pos:[{n:'投行：分析、尽调、项目支持',w:'项目分析、尽职调查与执行支持。',deg:'硕士及以上',int:'未核实',hc:'未披露'},
+{n:'固收：销售、交易、研究',w:'固定收益销售、交易与研究。',deg:'硕士及以上',int:'未核实',hc:'未披露'},
+{n:'科技：开发与运维',w:'业务系统开发运维。',deg:'硕士及以上',int:'未核实',hc:'未披露'}],
+gap:['人数、WLB'],src:[['中金校招','https://cicc.zhiye.com/campus/jobs'],['中金2025年报','https://static.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-03-31/601995_20260331_T4EA.pdf']]});
+add({id:'csc',cat:'broker',n:'中信建投',s:{st:3,wl:2,gr:3,pa:3,fi:3,en:3},
+why:'财富管培、业务助理对本科开放，进入相对容易；年报人均偏中低。',
+hc:['人数未披露','ND'],pay:bpay('12,618','7,044,220,225.54','55.83'),
+req:{deg:'本科及以上',eng:'未核实',int:'未核实',maj:'金融、经济、财会、法律优先'},time:'2027届进行中',
+pos:[{n:'财富管培',w:'客户开发、产品销售及投资者教育。',deg:'本科及以上',int:'未核实',hc:'未披露'},
+{n:'业务助理',w:'柜台审核、客户回访。',deg:'本科及以上',int:'未核实',hc:'未披露'}],
+gap:['人数'],src:[['中信建投校招','https://csc108.zhiye.com/campus/jobs'],['中信建投2025年报','https://static.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-03-27/601066_20260327_F7EP.pdf']]});
+add({id:'htsc',cat:'broker',n:'华泰证券',s:{st:3,wl:3,gr:4,pa:4,fi:5,en:2},
+why:'总部有“风险量化：定价、压力测试”与金融工程岗，直接对应风险/金工训练；相关实习优先。',
+hc:['人数未披露','ND'],pay:bpay('15,511','10,892,340,302.91','70.22'),
+req:{deg:'总部硕士及以上',eng:'投行要求熟练掌握一门外语（无统一分数线）',int:'相关实习优先',maj:'数理、计算机、金工等'},time:'2027届进行中',
+pos:[{n:'金融工程：基金量化、归因',w:'基金量化分析与业绩归因。',deg:'硕士及以上',int:'相关实习优先',hc:'未披露'},
+{n:'风险量化：定价、压力测试',w:'衍生品定价、压力测试与风险计量。',deg:'硕士及以上',int:'相关实习优先',hc:'未披露'},
+{n:'产品运营：AI投研中台',w:'AI投研中台产品运营。',deg:'硕士及以上',int:'未核实',hc:'未披露'}],
+gap:['人数'],src:[['华泰校招','https://wecruit.hotjob.cn/SU6419745cbef57c635fe10142/pb/school.html'],['华泰2025年报','https://www.hkexnews.hk/listedco/listconews/sehk/2026/0330/2026033002306_c.pdf']]});
+add({id:'gtht',cat:'broker',n:'国泰海通',s:{st:3,wl:3,gr:4,pa:4,fi:4,en:2},
+why:'AI产品、行研助理、股衍估值并存；合并后分母变化，年报人均不宜直接排名。',
+hc:['人数未披露','ND'],pay:bpay('26,228','17,953,956,141','68.45'),
+req:{deg:'硕士及以上',eng:'股衍岗要求英文读写',int:'股衍岗相关实习优先',maj:'AI、经管、金工数理'},time:'2027届进行中',
+pos:[{n:'AI产品：需求、PRD、智能体',w:'AI产品需求、PRD与智能体落地。',deg:'硕士及以上',int:'未核实',hc:'未披露'},
+{n:'行研助理',w:'研究、报告与路演支持。',deg:'硕士及以上',int:'未核实',hc:'未披露'},
+{n:'股衍：估值、指数策略',w:'权益衍生品估值与指数策略。',deg:'硕士及以上',int:'相关实习优先',hc:'未披露'}],
+gap:['人数；合并口径'],src:[['国泰海通校招','https://hr.gtht.com/recruitment/main/recruit2'],['国泰海通2025年报','https://static.cninfo.com.cn/finalpage/2026-03-28/1225047952.PDF']]});
+add({id:'cmschina',cat:'broker',n:'招商证券',s:{st:3,wl:2,gr:3,pa:3,fi:3,en:2},
+why:'研究助理要求行业实习；数据工程本科开放；年报人均偏低。',
+hc:['人数未披露','ND'],pay:bpay('12,792','7,118,258,713.70','55.65'),
+req:{deg:'研究/投行硕士及以上；数据工程本科及以上',eng:'研究岗中英文',int:'研究岗要求行业实习',maj:'金融、财会、法律或理工'},time:'2027届进行中',
+pos:[{n:'研究助理：宏观与行业研究',w:'研究与报告撰写。',deg:'硕士及以上',int:'要求行业实习',hc:'未披露'},
+{n:'数据工程：数仓、ETL',w:'数据仓库与ETL开发。',deg:'本科及以上',int:'未核实',hc:'未披露'}],
+gap:['人数'],src:[['招商证券校招','https://wecruit.hotjob.cn/SU629dbc0c0dcad452299bc0f7/pb/school.html'],['招商证券2025年报','https://static.cninfo.com.cn/finalpage/2026-03-27/1225049225.PDF']]});
+
+add({id:'gf',cat:'broker',n:'广发证券',s:{st:3,wl:2,gr:4,pa:4,fi:3,en:2},
+why:'人均薪酬处中上；投行、行研、量化、AI产品均要求硕士；人数写“若干”。',
+hc:['“若干”，未给数字','ND'],pay:bpay('13,640','10,552,471,184.98','77.36'),
+req:{deg:'硕士及以上',eng:'未核实',int:'相关实习优先',maj:'经管法或数理计算机'},time:'2027届进行中',
+pos:[{n:'投行承做',w:'项目承做。',deg:'硕士及以上',int:'相关实习优先',hc:'若干'},{n:'行业研究（估值）',w:'行业估值研究。',deg:'硕士及以上',int:'相关实习优先',hc:'若干'},
+{n:'量化回测 / AI产品需求',w:'量化策略回测；AI产品需求。',deg:'硕士及以上',int:'未核实',hc:'若干'}],
+gap:['具体人数'],src:[['广发证券校招','https://wecruit.hotjob.cn/SU652e4d276202cc264477df09/pb/school.html'],['广发证券2025年报','https://static.cninfo.com.cn/finalpage/2026-03-31/1225060422.PDF']]});
+add({id:'swhy',cat:'broker',n:'申万宏源',s:{st:3,wl:3,gr:4,pa:4,fi:4,en:2},
+why:'金工定价对冲、FICC量化、AI Agent并存；总部有约2周现场实习考察，是明确的“实习即面试”入口。',
+hc:['未披露','ND'],pay:bpay('11,423','7,897,860,028.24','69.14'),
+req:{deg:'总部通常硕士及以上',eng:'未核实',int:'总部约2周现场实习考察（分支无需）',maj:'数理、计算机、金融'},time:'2027届暑期提前批入口已开',
+pos:[{n:'金工：定价对冲',w:'衍生品定价与对冲。',deg:'硕士及以上',int:'约2周现场实习考察',hc:'未披露'},
+{n:'FICC量化 / AI Agent开发',w:'固收及外汇商品量化；AI Agent开发。',deg:'硕士及以上',int:'约2周现场实习考察',hc:'未披露'}],
+gap:['人数'],src:[['申万宏源校招','https://app.mokahr.com/campus-recruitment/swhysc-job/166086'],['申万宏源2025年报','https://static.cninfo.com.cn/finalpage/2026-03-28/1225045474.PDF']]});
+add({id:'chinastock',cat:'broker',n:'中国银河证券',s:{st:3,wl:3,gr:3,pa:3,fi:4,en:3},
+why:'少数公布分岗人数的券商：股权承做28人，其余研究/量化岗1–2人，可直观看到名额结构。',
+hc:['官方分岗：股权承做28人、FICC研究员2人、量化研究员1人、资产配置策略1人','E1'],pay:bpay('14,259','9,000,787,693.46','63.12'),
+req:{deg:'硕士及以上',eng:'未核实',int:'投行相关实习优先',maj:'金融财会法律或数理计算机'},time:'2027届进行中',
+pos:[{n:'股权承做（28人）',w:'尽职调查与申报。',deg:'硕士及以上',int:'投行实习优先',hc:'28人'},
+{n:'FICC研究员（2人）',w:'信用研究。',deg:'硕士及以上',int:'未核实',hc:'2人'},
+{n:'量化研究员（1人）/ 资产配置策略（1人）',w:'策略开发、组合回测与归因。',deg:'硕士及以上',int:'未核实',hc:'各1人'}],
+gap:['其余岗位人数'],src:[['中国银河校招','https://chinastock.zhiye.com/custom/campus'],['中国银河2025年报','https://static.cninfo.com.cn/finalpage/2026-03-31/1225051623.PDF']]});
+add({id:'guosen',cat:'broker',n:'国信证券',s:{st:3,wl:2,gr:3,pa:4,fi:3,en:2},
+why:'人均薪酬处中上；投行、研究、交易（量化/固收）多为硕士。',
+hc:['人数未披露','ND'],pay:bpay('11,085','8,237,366,732.90','74.31'),
+req:{deg:'多为硕士及以上；部分理财顾问本科',eng:'未核实',int:'相关实习优先',maj:'金融财会法律或理工'},time:'2027届进行中',
+pos:[{n:'投行：保荐并购、现场执行',w:'保荐、并购与项目现场执行。',deg:'硕士及以上',int:'相关实习优先',hc:'未披露'},
+{n:'交易员：量化/固收交易',w:'量化或固收交易。',deg:'硕士及以上',int:'相关实习优先',hc:'未披露'}],
+gap:['人数'],src:[['国信证券校招','https://guosen.zhiye.com/campus/jobs'],['国信证券2025年报','https://static.cninfo.com.cn/finalpage/2026-04-18/1225120973.PDF']]});
+add({id:'xyzq',cat:'broker',n:'兴业证券',s:{st:3,wl:3,gr:3,pa:3,fi:3,en:2},
+why:'行研助理、平台运营、量化研发；人数“若干”。',
+hc:['“若干”','ND'],pay:bpay('8,279','(4,847,005,117.72＋598,085,809.90)','65.77'),
+req:{deg:'硕士及以上',eng:'未核实',int:'相关实习优先',maj:'经管或数理计算机'},time:'2027届进行中',
+pos:[{n:'行研助理 / 平台运营 / 量化研发',w:'研究跟踪与报告；平台运营转化；因子回测上线。',deg:'硕士及以上',int:'相关实习优先',hc:'若干'}],
+gap:['人数'],src:[['兴业证券校招','https://wecruit.hotjob.cn/SU68fb2499b7da1347a9dd852c/pb/school.html'],['兴业证券2025年报','https://static.cninfo.com.cn/finalpage/2026-03-28/1225046462.PDF']]});
+add({id:'dfzq',cat:'broker',n:'东方证券',s:{st:3,wl:3,gr:3,pa:3,fi:3,en:2},
+why:'2027校招正文未核实，仅年报与日常量化实习确认。',
+hc:['未核实','ND'],pay:bpay('8,316','5,529,766,945.66','66.50'),
+req:{deg:'未核实',eng:'未核实',int:'日常量化实习已确认，不能替代暑期专项',maj:'未核实'},time:'未核实',pos:[],gap:['2027校招正文'],
+src:[['东方证券招聘','https://app.mokahr.com/campus_apply/dfzq/4928'],['东方证券2025年报','https://static.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-03-28/600958_20260328_UN8K.pdf']]});
+add({id:'ebscn',cat:'broker',n:'光大证券',s:{st:3,wl:3,gr:3,pa:2,fi:4,en:3},
+why:'含风控、科技、职能岗；流程写明“聘前实习”；年报人均为样本最低档。',
+hc:['人数未披露；网申截止已过期（原文9月6日）','ND'],pay:bpay('7,763','3,863,657,715.62','49.77'),
+req:{deg:'总部硕士及以上；营业部财富经理/运营本科',eng:'未核实',int:'流程含“聘前实习”',maj:'对应经管法或理工'},time:'公告2026-08-06；网申截止原文9月6日',
+pos:[{n:'风控 / 科技 / 职能（总部）',w:'总部风险管理、科技与职能。',deg:'硕士及以上',int:'聘前实习',hc:'未披露'},
+{n:'投行 / 研究 / 自营 / 销售',w:'前台业务序列。',deg:'硕士及以上',int:'聘前实习',hc:'未披露'}],
+gap:['人数'],src:[['光大证券2027校招','http://www.ebscn.com/a/20260806/23352838.html'],['光大证券2025年报','https://static.sse.com.cn/disclosure/listedinfo/announcement/c/new/2026-03-27/601788_20260327_Y5IU.pdf']]});
+
+add({id:'ccbfund',cat:'fund',n:'建信基金',s:{st:4,wl:3,gr:3,pa:3,fi:4,en:3},
+why:'公募中少有的“官方人数＋全部条件”均已核实的样本，本科即可报，含运营风控综合岗，进入门槛低于投研型公募。',
+hc:['2027届共20人（均在北京）：研究岗5、总部经办岗6、客户经理岗6、科技类专项3','E1'],
+pay:['未披露','ND'],
+req:{deg:'本科及以上（2027届；境外院校须教育部认证）',eng:ENG,int:'公告未提实习要求',maj:'研究：经济金融、理工；经办：经金管法财；客户经理：加营销；科技：计算机/AI/软件/数理统计，精通一门编程语言'},
+time:'公告2026-09-04；报名截至2026-10-08 24:00；笔试10月底；一面11月中旬；二面12月中旬；体检2027年1月起',
+pos:[{n:'研究岗（5人）',w:'对行业、上市公司、信用主体做基本面、信用评估、量化分析并出具研究报告，提出投资建议。',deg:'本科及以上',int:'未要求',hc:'5人'},
+{n:'总部经办岗（6人）',w:'基金运营、风险管理或综合管理，通过政策解读、数据分析、方案制定优化产品全生命周期运营。',deg:'本科及以上',int:'未要求',hc:'6人'},
+{n:'客户经理岗（6人）',w:'基金产品设计、营销拓展、客户关系维护，借助数据分析提升销售策略落地。',deg:'本科及以上',int:'未要求',hc:'6人'},
+{n:'科技类专项人才（3人）',w:'应用系统与数据服务研发、科技架构、信息安全，支撑投研、客服、风控、运营数字化。',deg:'本科及以上',int:'未要求',hc:'3人'}],
+gap:['薪酬、官方WLB'],src:[['建信基金2027校招公告（官方接口）','https://job2.ccb.com/tran/WCCMainPlatV5?CCB_IBSVersion=V5&isAjaxRequest=true&SERVLET_NAME=WCCMainPlatV5&TXCODE=NHR106&annoId=20260903183024720138'],['公告页','https://job2.ccb.com/cn/job/announcement.html?annoId=20260903183024720138&planType=XY']]});
+add({id:'southfund',cat:'fund',n:'南方基金',s:{st:3,wl:3,gr:4,pa:4,fi:4,en:2},
+why:'行研、固收、量化、指数、AI应用并存；已读岗位均硕士，部分岗位要求较强英文读写。',
+hc:['人数未核实','ND'],pay:['未披露','ND'],
+req:{deg:'已读岗位硕士及以上',eng:'量化等岗位要求较强英文读写',int:'未核实',maj:'经管或理工'},time:'2027届进行中',
+pos:[{n:'行业研究 / 固收 / 量化 / 指数',w:'研究建模、策略回测。',deg:'硕士及以上',int:'未核实',hc:'未核实'},{n:'销售 / 产品 / AI应用',w:'渠道拓展、系统落地。',deg:'硕士及以上',int:'未核实',hc:'未核实'}],
+gap:['人数'],src:[['南方基金校招','https://wecruit.hotjob.cn/SU6138665dbef57c3b63841399/pb/school.html']]});
+add({id:'harvest',cat:'fund',n:'嘉实基金',s:{st:3,wl:2,gr:4,pa:4,fi:3,en:1},
+why:'股票岗位要求一二级市场实习，门槛高；多数岗位硕士，部分博士。',
+hc:['人数未核实','ND'],pay:['未披露','ND'],
+req:{deg:'多数硕士及以上，部分博士',eng:'股票岗要求英文可工作',int:'股票岗要求一二级市场实习',maj:'经管或理工'},time:'2027届进行中',
+pos:[{n:'股票/策略/量化/信用研究',w:'研究预测、组合构建。',deg:'硕士/博士',int:'股票岗要求一二级市场实习',hc:'未核实'},{n:'交易 / 销售 / 产品',w:'交易执行与客户服务。',deg:'硕士及以上',int:'逐岗不同',hc:'未核实'}],
+gap:['人数'],src:[['嘉实基金校招','https://app.mokahr.com/campus-recruitment/jsfund/43906']]});
+add({id:'bosera',cat:'fund',n:'博时基金',s:{st:3,wl:3,gr:4,pa:4,fi:4,en:2},
+why:'研究、FOF、信用、量化、交易、开发运维齐全，多数硕士，理工复合背景优先。',
+hc:['“若干”','ND'],pay:['未披露','ND'],req:{deg:'多数硕士及以上',eng:'未核实',int:'部分销售岗相关实习优先',maj:'理工复合背景优先'},time:'2027届进行中',
+pos:[{n:'行研/宏观/FOF/信用/量化/交易',w:'研究与交易执行。',deg:'硕士及以上',int:'未核实',hc:'若干'},{n:'开发运维',w:'系统建设。',deg:'硕士及以上',int:'未核实',hc:'若干'}],
+gap:['人数'],src:[['博时基金校招','https://bosera.hotjob.cn/SU65f940241c240e0a2275bda8/pb/school.html']]});
+add({id:'htf',cat:'fund',n:'汇添富基金',s:{st:3,wl:3,gr:4,pa:4,fi:3,en:2},
+why:'本次读到AI算法与IT岗；投研岗未核实。',
+hc:['未核实','ND'],pay:['未披露','ND'],req:{deg:'硕士及以上',eng:'未核实',int:'相关实习或项目优先',maj:'计算机、数学、金工、统计优先'},time:'2027届进行中',
+pos:[{n:'助理AI算法',w:'训练微调、知识库、Agent。',deg:'硕士及以上',int:'实习/项目优先',hc:'未核实'},{n:'助理IT',w:'投研风控系统开发。',deg:'硕士及以上',int:'实习/项目优先',hc:'未核实'}],
+gap:['投研岗'],src:[['汇添富校招','https://htffund.zhiye.com/Campus']]});
+add({id:'tianhong',cat:'fund',n:'天弘基金',s:{st:3,wl:3,gr:4,pa:4,fi:3,en:2},
+why:'配置、量化、债券交易、渠道销售、战略、金工、互金等方向较全。',
+hc:['未核实','ND'],pay:['未披露','ND'],req:{deg:'硕士及以上',eng:'未核实',int:'战略、机构销售等相关实习优先',maj:'财经管理或数理计算机'},time:'2027届进行中',
+pos:[{n:'配置 / 量化 / 债券交易 / 金工',w:'组合研究、因子建模、交易。',deg:'硕士及以上',int:'视岗',hc:'未核实'}],
+gap:['人数'],src:[['天弘基金校招','https://app.mokahr.com/campus-recruitment/thfund/46219']]});
+add({id:'phfund',cat:'fund',n:'鹏华基金',s:{st:3,wl:2,gr:4,pa:4,fi:3,en:1},
+why:'已读岗位为2027届量化研究，要求头部平台对应研究实习，门槛高。',
+hc:['“若干”','ND'],pay:['未披露','ND'],req:{deg:'相关专业在读研究生',eng:'未核实',int:'要求头部平台对应研究实习',maj:'相关专业'},time:'2027届',
+pos:[{n:'量化研究：指数ETF、因子AI',w:'指数产品、预测、因子及机器学习研究。',deg:'在读研究生',int:'要求头部平台研究实习',hc:'若干'}],
+gap:['其他岗位'],src:[['鹏华基金','https://job.phfund.com.cn/#/postdetail?id=933']]});
+add({id:'yongan',cat:'futures',n:'永安期货',s:{st:3,wl:2,gr:4,pa:3,fi:3,en:3},
+why:'逐岗位人数已核，分支财富/产业经理占大头，总部金工硕士。含夜盘说明。',
+hc:['逐岗相加62人（含永安资本等子公司；非公告总额）：市场开发2＋2、国际业务2、分支财富经理26、产业经理20、子公司合计10','E1'],pay:['年报薪酬本次未核实','ND'],
+req:{deg:'财富/产业经理本科及以上；总部市场开发、金工硕士',eng:'国际交易岗需阅读外文报告',int:'未提',maj:'财富/产业经理专业不限；金工：数理金工'},time:'2027项目已确认',
+pos:[{n:'分支财富经理（26人）/ 产业经理（20人）',w:'客户拓展、配置及风险管理。',deg:'本科及以上',int:'未提',hc:'26/20'},
+{n:'金工',w:'期权定价与回测。',deg:'硕士及以上',int:'未提',hc:'未单列'},
+{n:'国际交易（2人）',w:'官方写“适应夜盘”。',deg:'本科及以上',int:'未提',hc:'2人'}],
+gap:['年报薪酬'],src:[['永安期货校招','https://wecruit.hotjob.cn/SU6aacef33b6fae46f675b54ac/pb/school.html']]});
+
+add({id:'pingan',cat:'insurance',n:'中国平安',s:{st:4,wl:3,gr:4,pa:4,fi:3,en:2},
+why:'综合金融集团，资管、科技、银行多线并存；校园平台把“资产管理业务”列入方向。',
+hc:['2027届人数、截止日未核实','ND'],
+pay:['2025年报：应付职工薪酬本年计提/转换合计882.30亿元÷在职员工258,806人≈34.09万元/人（不含保险代理人）','E2'],
+req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'未核实'},time:'未核实',pos:[],gap:['2027岗位、人数、要求'],
+src:[['平安校园招聘','https://campus.pingan.com/'],['平安年报入口','https://ir.pingan.com/gongsibaogao/']]});
+add({id:'cpic',cat:'insurance',n:'中国太保',s:{st:4,wl:3,gr:3,pa:3,fi:3,en:3},
+why:'年报员工数与薪酬口径清晰；未找到集团2027校招可核公告。',
+hc:['未核实','ND'],
+pay:['2025年报：工资及福利费235.17亿元÷员工96,838人≈24.28万元/人（员工含劳动合同、派遣、返聘；未含代理人）','E2'],
+req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'未核实'},time:'未核实',pos:[],gap:['2027公告'],
+src:[['太保员工发展','https://www.cpic.com.cn/aboutUs/shzr2/hxyt2/ygfz/'],['太保港交所年报','https://www.hkexnews.hk/listedco/listconews/sehk/2026/0422/2026042201206_c.pdf']]});
+add({id:'picc',cat:'insurance',n:'中国人保',s:{st:4,wl:3,gr:3,pa:3,fi:3,en:3},
+why:'官方招聘平台已开校园入口，转载称覆盖IT、金融保险、法律、财会、精算、统计；官方人数未核实。',
+hc:['未核实','ND'],
+pay:['2025年报：应付职工薪酬本年增加554.49亿元÷正式员工179,898人≈30.82万元/人（另有派遣15,159人、营销员355,686人，不在分母内）','E2'],
+req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'IT、金融保险、法律、财会、精算、统计（转载）'},time:'2027简章（转载）',pos:[],gap:['官方人数与要求'],
+src:[['人保校园招聘','https://picc.zhiye.com/custom/campus'],['人保定期报告','https://www.picc.com.cn/jttzzgx/dqbg/index.html']]});
+add({id:'ncl',cat:'insurance',n:'新华保险',s:{st:4,wl:3,gr:3,pa:3,fi:3,en:3},
+why:'年报薪酬与员工口径明确；2027公告仅见转载，不采数。',
+hc:['未核实','ND'],
+pay:['2025年报：应付职工薪酬本年增加91.35亿元÷签订劳动合同员工27,726人≈32.95万元/人（含合同制外勤销售5,401人）','E2'],
+req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'未核实'},time:'未核实',pos:[],gap:['2027公告正文'],
+src:[['新华保险网申入口','https://nci.zhiye.com/'],['新华保险年报','https://static-cdn.newchinalife.com/ncl/pdf/20260327/41f376f2-b898-4ba3-ad04-0214097bafcd.pdf']]});
+add({id:'chinare',cat:'insurance',n:'中国再保险',s:{st:4,wl:3,gr:3,pa:3,fi:5,en:2},
+why:'官方页面可见2026届岗位含风险监测、金融风险管理、资产管理、保险科技，方向与风险走廊接近；2027届未核实。',
+hc:['2026届报名截至2025-12-10；人数未列；2027届未核实','ND'],pay:['未核实','ND'],
+req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'见岗位名'},time:'2027届未核实',
+pos:[{n:'风险监测岗 / 金融风险管理岗',w:'2026届官方岗位名称；职责正文未取得。',deg:'未核实',int:'未核实',hc:'未列'},
+{n:'保险科技研究岗 / 统计分析岗 / 资产管理岗',w:'2026届官方岗位名称。',deg:'未核实',int:'未核实',hc:'未列'}],
+gap:['2027届'],src:[['中再官方人力资源页','https://www.chinare.com.cn/zhzjt/rlzy2018/index.html']]});
+add({id:'chinalife',cat:'insurance',n:'中国人寿',s:{st:4,wl:3,gr:3,pa:3,fi:3,en:3},
+why:'仅确认官方招聘入口；年报员工与薪酬、2027岗位均未核实。',
+hc:['未核实','ND'],pay:['未核实','ND'],req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'未核实'},time:'转载称2027简章9月发布，分批截止',pos:[],gap:['全部'],
+src:[['中国人寿招聘','https://www.chinalife.com.cn/chinalife/zhaopin']]});
+add({id:'hnzb',cat:'centralcap',n:'华能资本服务有限公司',s:{st:5,wl:4,gr:3,pa:3,fi:5,en:1},
+why:'2027校招直接设“风险管理岗”“金融科技岗”各1人，央企金融平台，名额极少。',
+hc:['2027届：金融科技岗1人、风险管理岗1人（共2人，北京）','E1'],pay:['未披露','ND'],
+req:{deg:'硕士研究生及以上',eng:'未核实',int:'未核实',maj:'金融科技岗：金融科技、软件工程、大数据技术等计算机类；风险管理岗：金融学类、法学类、新能源发电类'},
+time:'报名2026-09-15至2026-10-31',
+pos:[{n:'风险管理岗（1人）',w:'覆盖证券、保险、信托、基金、期货、科技金融等业务的风险管理。',deg:'硕士及以上',int:'未核实',hc:'1人'},
+{n:'金融科技岗（1人）',w:'金融科技建设与支持。',deg:'硕士及以上',int:'未核实',hc:'1人'}],
+gap:['要求细则以动态页面为准'],src:[['华能资本2027校招','https://zhaopin.chng.com.cn/ManagementTraineeRecruit?aId=2000140']]});
+add({id:'cmhk',cat:'centralcap',n:'招商局金控',s:{st:4,wl:3,gr:4,pa:4,fi:3,en:2},
+why:'2027校园招聘专题已列入综合金融板块；人数与要求未核实。',
+hc:['未核实','ND'],pay:['未披露','ND'],req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'未核实'},time:'2027专题',pos:[],gap:['全部'],
+src:[['招商局2027校招专题','https://cmhk.zhiye.com/custom/xiaoyuan']]});
+
+add({id:'ccbfintech',cat:'fintech',n:'建信金融科技',s:{st:4,wl:3,gr:3,pa:3,fi:4,en:3},
+why:'官方公告写明30人、条件具体（本科即可、知名企业实习优先），是银行金科中少有的完整样本。',
+hc:['2027届科技类专项人才30人（上海、北京、厦门、广州、武汉、成都、深圳）','E1'],pay:['未披露','ND'],
+req:{deg:'本科及以上',eng:'CET-4或同等英语成绩',int:'知名企业实习经历优先；IT科研、项目开发、竞赛经历优先',maj:'计算机、软件工程、数理统计等理工专业为主'},
+time:'公告2026-09-04',
+pos:[{n:'科技类专项人才',w:'系统研发与金融科技支撑；职责细节以官方岗位页为准。',deg:'本科及以上',int:'知名企业实习优先',hc:'30人'}],
+gap:['职责细节'],src:[['建信金科2027公告','https://job2.ccb.com/cn/job/announcement.html?annoId=20260903100124717047&isImpAnno=1&planType=XY']]});
+add({id:'dxm',cat:'fintech',n:'度小满',s:{st:2,wl:2,gr:4,pa:4,fi:4,en:3},
+why:'与百度系经历衔接；岗位含风险决策与商业分析，对应金融风控；互联网周期风险高。',
+hc:['人数未披露','ND'],pay:['未披露','ND'],
+req:{deg:'未统一披露',eng:'未核实',int:'未核实',maj:'未核实'},time:'招聘对象：2026年9月至2027年8月毕业',
+pos:[{n:'风险决策 / 商业分析',w:'信贷与风险策略、商业分析。',deg:'未核实',int:'未核实',hc:'未披露'},
+{n:'算法 / 开发 / 安全 / 产品经理 / 运营',w:'技术与产品序列。',deg:'未核实',int:'未核实',hc:'未披露'}],
+gap:['逐岗职责'],src:[['度小满2027校招','https://campus.duxiaoman.com/051736']]});
+add({id:'webank',cat:'fintech',n:'微众银行',s:{st:3,wl:2,gr:4,pa:4,fi:4,en:3},
+why:'AI金融培训生项目为期两年轮岗；面向2027届，最多投两个岗位。',
+hc:['人数未披露','ND'],pay:['未披露','ND'],req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'未核实'},
+time:'面向2027届毕业生',
+pos:[{n:'AI金融培训生项目',w:'入职后进行为期两年的轮岗培养。',deg:'未核实',int:'未核实',hc:'未披露'}],
+gap:['逐岗要求'],src:[['微众银行2027校招','https://campus.webank.com/campus-recruitment/webankhr/20060?locale=zh-CN']]});
+add({id:'tencent',cat:'fintech',n:'腾讯（FiT）',s:{st:2,wl:2,gr:4,pa:5,fi:3,en:2},
+why:'FiT专项公告未核实；仅有集团年报数字，不能拆分FiT。',
+hc:['未核实','ND'],pay:['集团2025：员工115,849人、员工成本约1,307亿元（集团口径，不含FiT拆分，不换算）','E1'],
+req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'未核实'},time:'未核实',pos:[],gap:['FiT专项公告'],
+src:[['腾讯校招','https://join.qq.com/'],['腾讯2025年报资料','https://static.www.tencent.com/uploads/2026/03/18/f78591955e05a6db4e31e128bdaefefa.pdf']]});
+add({id:'ant',cat:'fintech',n:'蚂蚁集团',s:{st:2,wl:2,gr:4,pa:5,fi:3,en:2},
+why:'有校招入口；2027专项公告、人数与要求均未核实，不上市无员工薪酬披露。',
+hc:['未核实','ND'],pay:['未上市，未披露','ND'],req:{deg:'未核实',eng:'未核实',int:'未核实',maj:'未核实'},time:'未核实',pos:[],gap:['全部'],
+src:[['蚂蚁校招','https://talent.antgroup.com/campus/home']]});
+add({id:'ceecfc',cat:'sefin',n:'中国能源建设集团财务公司',s:{st:4,wl:4,gr:2,pa:3,fi:3,en:2},
+why:'公告写明“金融专业、硕士及以上、招1人”；岗位极少，能力要求为办公软件与英语听说读写。',
+hc:['2027届：金融专业岗1人','E1'],pay:['未披露','ND'],
+req:{deg:'硕士研究生及以上',eng:'英语听说读写',int:'未提实习要求',maj:'金融专业'},time:'公告2026-09-07',
+pos:[{n:'金融专业岗（1人）',w:'集团财务公司业务岗位，职责以公告附件为准。',deg:'硕士及以上',int:'未提',hc:'1人'}],
+gap:['职责细节'],src:[['能建财务公司2027公告','http://www.fc.ceec.net.cn/art/2026/9/7/art_16366_2524928.html']]});
+
+const PENDING=[
+['jointbank','浦发银行','2027校招公告未核实；ESG口径员工59,544人','https://static.cninfo.com.cn/finalpage/2026-03-31/1225062320.PDF'],
+['jointbank','民生银行','2027校招未核实；年末集团在职员工61,658人（年报转载）','https://money.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12046591&stockid=600016'],
+['jointbank','平安银行','2027校招未核实；集团在职员工41,698人（含派遣）','https://vip.stock.finance.sina.com.cn/corp/view/vCB_AllBulletinDetail.php?id=12009212&stockid=000001'],
+['jointbank','广发银行','官方列表显示2027届公告（2026-09-09），其余未核实','https://www.cgbchina.com.cn/career/job_notice2.jsp'],
+['jointbank','光大银行','官方入口，2027公告未核实','https://www.cebbank.com/site/gryw/index.html'],
+['wealth','工银理财','未见独立公告','https://job.icbc.com.cn/pc/index.html'],
+['wealth','信银理财','转载称研究/交易/金融算法及AI研发，截止曾标2026-10-10；官方原文未核实','https://job.citicbank.com/'],
+['wealth','农银/交银/光大理财','官方独立公告未核实',''],
+['infra','中国银联','招聘页仅见测试岗位，未核实','https://join.unionpay.com/SU6551ec6e4c45f74c9a423549/pb/index.html'],
+['infra','上海证券交易所','2026进站博士后拟招5人（博士）；校招未核实','https://www.sse.com.cn/aboutus/recruitment/sse/wanted/c/c_20260129_10807313.shtml'],
+['infra','北京证券交易所','2026人员招聘，校招硕士及以上；人数未核实','https://www.bse.cn/recruit/200029115.html'],
+['infra','中国金融期货交易所','社招业务研究岗，要求博士；人数未核实','http://www.cffex.com.cn/cn/zpxx/20260324/47420.html'],
+['infra','上海期货交易所','2026招聘含新产品研发、IT规划；校园本科及以上；人数未核实','https://www.shfe.com.cn/about/introduce/job/202511/t20251113_829503.html'],
+['infra','人民银行征信中心','未找到可核验的最新公告','https://www.pbc.gov.cn/renshisi/144501/144513/5836227/index.html'],
+['fund','易方达/华夏/广发基金/富国/招商基金/工银瑞信','2027专项公告正文、人数与条件均未核实','https://wecruit.hotjob.cn/SU67ac68866202cc7916aea66e/pb/index.html'],
+['futures','中信期货/国泰君安期货/银河期货/广发期货','2027公告、人数与条件均未核实','https://www.citicsf.com'],
+['insurance','泰康保险/泰康资产','集团校招公告未核到；泰康资产招聘中心可访问，方向来自转载','https://www.taikangasset.cn/joinus.html'],
+['insurance','国寿资产/平安资管/太保资产/人保资产/新华资产','未核到2027独立公告；新华资产校招栏目存在但正文未读取','https://www.ncamc.com.cn/channel/xiaoyuanzhaopin'],
+['centralcap','中央汇金/中投/中国信达/光大集团/华润金融','未核到2027校招公告','https://www.everbright.com/cn/careers'],
+['centralcap','中国国新/中国诚通/中信集团','官方可见的仍是2026届公告，2027未核实','https://www.crhc.cn/rcfz/rczp/2025/9/0fcf7debd1b541c29911fe44a3aa587e.htm'],
+['fintech','京东科技/网商银行','校招入口存在，2027专项公告与JD未核实','https://campus.jd.com/'],
+['fintech','工银科技/中银金科/招银网络科技/兴业数金/农银金科/交银金科','官方入口存在，2027专项公告与人数未核实（兴业数金页面为旧届）','https://www.tech.icbc.com.cn/recruitment'],
+['sefin','中油财务/国家电网英大财务','中油官方页返回HTTP 412；国网未找到2027财务公司公告','https://zhaopin.sgcc.com.cn/sgcchr/static/home.html']
 ];
-const state={view:'overview',mode:'stable',group:'全部',query:'',minDegree:'全部',maxDifficulty:5,onlyHC:false,selected:null,compare:[],sort:'fit'};
-function score(r){return state.mode==='stable'?r.stable*.18+r.cycleRisk*.18+r.wlb*.13+r.fit*.17+r.transfer*.12+r.brand*.1+r.growth*.06+r.pay*.06:r.pay*.17+r.growth*.17+r.fit*.18+r.transfer*.14+r.brand*.12+r.stable*.08+r.cycleRisk*.06+r.wlb*.08}
-function degreeOK(r){if(state.minDegree==='全部')return true;return r.degree.includes(state.minDegree)}
-function filtered(){return roles.filter(r=>(state.group==='全部'||r.group===state.group)&&(r.family+r.title+r.employers+r.work+r.skill).toLowerCase().includes(state.query.toLowerCase())&&degreeOK(r)&&(r.difficulty<=state.maxDifficulty)&&(!state.onlyHC||r.hcLevel!=='L5')).sort((a,b)=>{if(state.sort==='fit')return score(b)-score(a);if(state.sort==='difficulty')return a.difficulty-b.difficulty;if(state.sort==='stable')return b.stable-a.stable;if(state.sort==='pay')return b.pay-a.pay;if(state.sort==='hc')return ({L1:1,L2:2,L3:3,L4:4,L5:5}[a.hcLevel]||9)-({L1:1,L2:2,L3:3,L4:4,L5:5}[b.hcLevel]||9);return a.family.localeCompare(b.family,'zh-CN')})}
-function escAttr(v){return esc(v).replace(/`/g,'&#96;')}
-function tag(text,kind=''){return `<span class="tag ${kind}">${text}</span>`}
-function renderApp(){if(state.view==='overview')overview();if(state.view==='roles')rolesView();if(state.view==='compare')compareView();if(state.view==='paths')pathsView();if(state.view==='timeline')timelineView();if(state.view==='sources')sourcesView();updateTop()}
-function updateTop(){const f=filtered(),avg=f.length?f.reduce((a,r)=>a+score(r),0)/f.length:0;$('#roleCount').textContent=f.length;$('#recommendCount').textContent=f.filter(r=>['推荐','推荐·薪资让渡','推荐·需身份匹配'].includes(r.tier)).length;$('#hcCount').textContent=f.filter(r=>r.hcProof.startsWith('E1')).length;$('#compareCount').textContent=`${state.compare.length} / 4`;$('#heroScore').innerHTML=`${avg.toFixed(1)}<small>/5</small>`;$('#heroBar').style.width=`${Math.min(100,avg/5*100)}%`;$('#heroNote').textContent=state.mode==='stable'?'稳健优先：核心控制职能、基础设施和抗周期岗位权重更高。':'成长/薪资优先：硬技能、资管、金融市场和科技岗位权重更高。';const names={overview:'总览',roles:'岗位地图',compare:'对比篮子',paths:'路径走廊',timeline:'秋招时间线',sources:'证据与口径'};$('#crumb').textContent=names[state.view]}
-function overview(){const f=filtered(),top=f.slice(0,5);$('#view-overview').innerHTML=`<div class="head"><div><h3>先选职业走廊，再选岗位</h3><p>这不是“最好的岗位”榜单，而是把你的偏好、学历/能力门槛、HC 可见度与职业转移放在同一个决策面上。</p></div><button class="btn teal" data-jump="roles">打开岗位地图</button></div><div class="grid2"><div class="panel dark"><div class="panel-head"><div><div class="eyebrow">Current objective / 当前目标</div><h4 style="font-size:21px;margin-top:6px">${state.mode==='stable'?'稳定、防守与可迁移':'成长、薪资与硬技能'}</h4></div>${tag(`${f.length} 个结果`,'dark')}</div><p>排序分数是相对比较，不是录用概率。先看岗位详情中的“为什么适配”和“需要补什么”。</p><div class="grid3" style="margin-top:18px"><div><div class="small">稳定性</div><div class="metric">${f.length?avg(f,'stable').toFixed(1):'—'}</div></div><div><div class="small">进入难度</div><div class="metric">${f.length?avg(f,'difficulty').toFixed(1):'—'}</div></div><div><div class="small">HC可见</div><div class="metric">${f.filter(x=>x.hcLevel!=='L5').length}</div></div></div></div><div class="panel"><div class="panel-head"><div><div class="section" style="margin:0 0 6px">Decision rules</div><h4>使用前先记住三条</h4></div></div><ul style="padding-left:17px;margin:0;color:#536a6f;font-size:12px;display:grid;gap:8px"><li>精确 HC 只有职位表/公告写出时才可用；否则显示未公开。</li><li>“稳健”不等于“容易进”；基础设施和总行专业岗往往 HC 少、难度高。</li><li>总分不等于层级：分行营销可能更容易，但未必能承接你的金融/数据资产。</li></ul></div></div><div class="section">Top matches / 当前排序前五</div><div class="panel" style="padding:0"><div class="table"><table><thead><tr><th>岗位族</th><th>目标体系</th><th>核心适配</th><th>难度</th><th>HC</th><th>匹配分</th><th></th></tr></thead><tbody>${top.map(row).join('')}</tbody></table></div></div><div class="section">Four corridors / 四条职业走廊</div><div class="career-map">${paths.map(p=>`<div class="lane"><h4>${p.title}</h4><p>${p.desc}</p><span class="tag blue">${p.nodes.length} 个关键节点</span></div>`).join('')}</div>`}
-function avg(arr,key){return arr.reduce((a,r)=>a+r[key],0)/arr.length}
-function row(r){return `<tr><td><b>${r.family}</b><br><span class="small">${r.title}</span></td><td>${r.group}</td><td>${tag(r.tier,r.tier.startsWith('推荐')?'':'amber')}<br><span class="small">${r.fit.toFixed(1)} / 5 适配</span></td><td>${r.difficulty}/5</td><td>${tag(r.hcLevel,r.hcLevel==='L5'?'amber':'blue')}<br><span class="small">${r.hc}</span></td><td><b>${score(r).toFixed(2)}</b></td><td><button class="btn small" data-detail="${r.id}">查看</button></td></tr>`}
-function rolesView(){const f=filtered();$('#view-roles').innerHTML=`<div class="head"><div><h3>岗位地图</h3><p>先筛选再排序；点击“查看”打开岗位详情。工作台内置 24 个岗位族，刻意把金融、泛体制和科技交叉岗位放在同一张地图中。</p></div><div>${state.compare.length?`<button class="btn teal" data-jump="compare">查看对比（${state.compare.length}）</button>`:''}</div></div><div class="panel"><div class="filters"><div class="field"><label>目标体系</label><select id="fGroup"><option>全部</option><option>金融机构</option><option>泛体制</option><option>科技与金融</option></select></div><div class="field"><label>关键词</label><input id="fQuery" value="${escAttr(state.query)}" placeholder="风险、清算、国企、AI…"></div><div class="field"><label>最低学历关键词</label><select id="fDegree"><option>全部</option><option>硕士</option><option>博士</option></select></div><div class="field"><label>排序</label><select id="fSort"><option value="fit">当前目标匹配</option><option value="stable">稳定性</option><option value="difficulty">求职难度低→高</option><option value="pay">薪资上限</option><option value="hc">HC规模等级</option><option value="family">岗位族</option></select></div></div><div class="toolbar" style="margin-top:13px"><div class="pillrow"><label class="check"><input id="onlyHC" type="checkbox" ${state.onlyHC?'checked':''}>排除HC完全未公开岗位</label><span class="tag blue">${f.length} 条结果</span></div><div class="pillrow"><button class="btn ${state.mode==='stable'?'teal':''}" data-mode="stable">稳健优先</button><button class="btn ${state.mode==='growth'?'teal':''}" data-mode="growth">成长/薪资优先</button></div></div></div><div class="section">Role matrix / 岗位矩阵</div><div class="panel" style="padding:0"><div class="table"><table><thead><tr><th>岗位族</th><th>体系</th><th>层级/适配</th><th>难度</th><th>HC口径</th><th>排序分</th><th>详情</th></tr></thead><tbody>${f.length?f.map(row).join(''):'<tr><td colspan="7" style="padding:30px;text-align:center;color:var(--muted)">没有符合条件的岗位。放宽筛选或点击重置。</td></tr>'}</tbody></table></div></div>`;bindFilters();}
-function bindFilters(){const g=$('#fGroup'),q=$('#fQuery'),d=$('#fDegree'),s=$('#fSort'),h=$('#onlyHC');g.value=state.group;d.value=state.minDegree;s.value=state.sort;g.onchange=()=>{state.group=g.value;renderApp()};q.oninput=()=>{state.query=q.value;renderApp()};d.onchange=()=>{state.minDegree=d.value;renderApp()};s.onchange=()=>{state.sort=s.value;renderApp()};h.onchange=()=>{state.onlyHC=h.checked;renderApp()};$$('[data-mode]').forEach(b=>b.onclick=()=>{state.mode=b.dataset.mode;renderApp()});$$('[data-detail]').forEach(b=>b.onclick=()=>{state.selected=b.dataset.detail;detailView()})}
-function detailView(){const r=roles.find(x=>x.id===state.selected);if(!r)return;const checked=state.compare.includes(r.id);$('#view-roles').innerHTML=`<div class="head"><div><button class="btn" id="backRoles">← 返回岗位地图</button><h3 style="margin-top:15px">${r.family}</h3><p>${r.title} · ${r.group}</p></div><button class="btn ${checked?'teal':''}" id="toggleCompare">${checked?'已在对比篮子':'加入对比篮子'}</button></div><div class="grid2"><div class="panel dark"><div class="eyebrow">Role profile / 岗位画像</div><h2 class="detail-title" style="color:white;margin-top:10px">${r.title}</h2><p>${r.work}</p><div class="pillrow" style="margin-top:15px">${tag(r.tier,'dark')}${tag(`适配 ${r.fit.toFixed(1)}/5`,'dark')}${tag(`难度 ${r.difficulty}/5`,'dark')}</div><div class="section" style="color:var(--mint)">Why it may fit / 适配逻辑</div><p>${r.facts}</p></div><div class="panel"><div class="panel-head"><h4>核心指标</h4>${tag(`目标：${state.mode==='stable'?'稳健':'成长'}`,'blue')}</div><div class="score"><span>稳定性</span><div class="bar"><i style="width:${r.stable/5*100}%"></i></div><strong>${r.stable.toFixed(1)}</strong></div><div class="score"><span>抗周期</span><div class="bar"><i style="width:${r.cycleRisk/5*100}%"></i></div><strong>${r.cycleRisk.toFixed(1)}</strong></div><div class="score"><span>WLB</span><div class="bar blue"><i style="width:${r.wlb/5*100}%"></i></div><strong>${r.wlb.toFixed(1)}</strong></div><div class="score"><span>成长性</span><div class="bar amber"><i style="width:${r.growth/5*100}%"></i></div><strong>${r.growth.toFixed(1)}</strong></div><div class="score"><span>薪资上限</span><div class="bar red"><i style="width:${r.pay/5*100}%"></i></div><strong>${r.pay.toFixed(1)}</strong></div></div></div><div class="section">Details / 详细信息</div><div class="grid2"><div class="panel"><dl class="kv"><dt>典型雇主</dt><dd>${r.employers}</dd><dt>工作内容</dt><dd>${r.work}</dd><dt>学历门槛</dt><dd>${r.degree}</dd><dt>能力要求</dt><dd>${r.skill}</dd><dt>招聘周期</dt><dd>${r.cycle}</dd></dl></div><div class="panel"><div class="panel-head"><h4>HC 与求职难度</h4>${tag(r.hcLevel,r.hcLevel==='L5'?'amber':'blue')}</div><p><b>HC：</b>${r.hc}</p><p><b>证据状态：</b>${r.hcProof}</p><p><b>求职难度：</b>${r.difficulty}/5。这个数字是相对比较，不是报录比。</p><div class="callout red"><b>核验动作：</b>打开下方来源，确认当期公告、毕业时间、合同主体、岗位数量和是否有编制/正式聘用。</div></div></div><div class="section">Sources / 来源</div><div class="panel">${r.sources.map(u=>`<p style="margin:7px 0"><a href="${u}" target="_blank" rel="noreferrer" style="color:var(--teal);word-break:break-all">${u}</a></p>`).join('')}</div>`;$('#backRoles').onclick=()=>{state.selected=null;renderApp()};$('#toggleCompare').onclick=()=>{toggleCompare(r.id);detailView()}}
-function toggleCompare(id){const i=state.compare.indexOf(id);if(i>=0)state.compare.splice(i,1);else if(state.compare.length<4)state.compare.push(id);else alert('最多对比 4 个岗位族');updateTop();if(state.view==='compare')compareView()}
-function compareView(){
- const rr=state.compare.map(id=>roles.find(r=>r.id===id)).filter(Boolean);
- const rows=[['当前排序分',r=>score(r).toFixed(2)],['稳定性',r=>r.stable.toFixed(1)],['抗周期',r=>r.cycleRisk.toFixed(1)],['WLB',r=>r.wlb.toFixed(1)],['成长性',r=>r.growth.toFixed(1)],['薪资上限',r=>r.pay.toFixed(1)],['求职难度',r=>r.difficulty+'/5'],['HC口径',r=>r.hc],['学历门槛',r=>r.degree],['主要补强',r=>r.skill]];
- const matrix=rr.length?`<div class="panel" style="padding:0"><div class="table"><table><thead><tr><th>维度</th>${rr.map(r=>`<th>${r.family}<br><span class="small">${r.title}</span></th>`).join('')}</tr></thead><tbody>${rows.map(([n,fn])=>`<tr><td><b>${n}</b></td>${rr.map(r=>`<td>${fn(r)}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div><div class="section">Decision prompt / 决策问题</div><div class="grid3"><div class="panel"><h4>如果稳健第一</h4><p>优先稳定性、抗周期和 HC 证据；接受少一些薪资上限，但不要牺牲技能可迁移性。</p></div><div class="panel"><h4>如果成长第一</h4><p>优先金融市场、资管、量化风险和金融科技；明确接受更强周期和更高工作强度。</p></div><div class="panel"><h4>如果还不确定</h4><p>先做一个 4—6 个月锚点实习，用项目交付判断你更喜欢风险、固收、数据还是政策。</p></div></div>`:'<div class="panel"><div class="empty" style="text-align:center;padding:55px;color:var(--muted)">还没有岗位。去岗位地图加入 2—4 个岗位族，再回来比较。</div></div>';
- $('#view-compare').innerHTML=`<div class="head"><div><h3>对比篮子</h3><p>把“看起来都不错”的岗位放在一起比较，避免只被公司 logo 或单一薪资印象带走。</p></div><button class="btn" id="clearCompare">清空对比</button></div>${matrix}`;
- $('#clearCompare').onclick=()=>{state.compare=[];renderApp()}
+
+const PATHS=[
+{id:'risk',t:'风险走廊',one:'银行总行风险 → 基础设施 → 政策行/保险再保 → 央企金融平台',
+who:'想要稳定、愿意用SQL/Python和监管口径做风险计量的人；硕士课程为金融工程/金融科技时优势最大。',
+steps:[
+{h:'起点：总行风险/风险合规管培',co:['boc','cib','ccb','htsc'],
+how:'中行总行管培设“风险合规”方向；兴业总行管培注明服务风险管理；建行总部培养期含风险管理条线轮岗；华泰总部有“风险量化：定价、压力测试”。',
+skill:'PD/LGD/EAD、压力测试、监管报送口径、SQL/Python。',gate:'总行多为硕士及以上，英语CET-6≥425或同等。'},
+{h:'横向：金融基础设施的风险/数据岗',co:['shclear','cfets','chinaclear','cdic','gfex'],
+how:'上海清算所业务类含风险管理（2026届8人）；存保公司经济金融及统计岗做风险监测；广期所“金融类（数理方向）”含风险管理；中国结算有应用开发与IT运维。',
+skill:'金融市场基础设施规则、数据口径、建模与数据分析。',gate:'名额个位数到十余人；多数硕士及以上；先核对编制/合同主体。'},
+{h:'进阶：政策行与保险再保',co:['cdb','adbc','chinare','hnzb'],
+how:'国开行总行含经济金融、财会审计、信息科技等；中再2026届官方岗位含风险监测、金融风险管理；华能资本2027设风险管理岗1人。',
+skill:'信用与行业分析、资产负债、投资风险。',gate:'国开/中再/华能资本名额极少，建议作为冲刺而非唯一。'}],
+intern:'已核实的实习入口：深交所暑期实习（金融工程，在读硕博，2026届已结束，下一年度需盯公告）；光大证券“聘前实习”；申万宏源总部约2周现场实习考察；工行“星令营”暑期实习（2025年约5,000人）。日常实习请在各官方系统以“风险/模型/数据”检索。',
+now:'未来8周：用训练工作台完成一次PD/LGD/EAD压力测试与一次SQL分群，并写出“局限性”一页；同时拿到一段含风险指标的实习。'},
+{id:'fixed',t:'固收走廊',one:'银行资金/金融市场 → 券商FICC → 理财子/保险资管',
+who:'愿意学习利率、久期、凸性与DV01，能接受交易时点和监管事件带来的节奏波动的人。',
+steps:[
+{h:'起点：银行金融市场/资金营运',co:['boc','cib'],
+how:'中行总行管培设“金融市场”方向；兴业资金营运中心管培含投资交易、做市、策略交易、交易销售、产品设计与数据分析。',
+skill:'债券与利率基础、Excel/Python、市场风险指标。',gate:'硕士优先，兴业资金营运中心岗位表限硕士及以上。'},
+{h:'横向：券商FICC/量化',co:['swhy','chinastock','htsc','guosen'],
+how:'申万宏源有FICC量化与金工定价对冲；银河FICC研究员2人（信用研究）；国信有量化/固收交易员。',
+skill:'定价与对冲、信用研究、回测。',gate:'人数少、硕士为主，相关实习优先。'},
+{h:'沉淀：理财子与保险资管',co:['ccbwm','cmbwm','cibwm'],
+how:'建信理财总部经办岗10人（深圳）；招银/兴银理财有研究交易类岗位；保险资管暂未核到2027独立公告。',
+skill:'组合与负债端匹配、信用风险。',gate:'独立公告多缺失，需盯官网与公众号。'}],
+intern:'已核实：申万宏源提前批含现场实习考察；兴业证券、国信、银河等标注“相关实习优先”。银行金融市场类日常实习需到官方系统检索。',
+now:'未来8周：用金工计算台学习久期/凸性/DV01（在FinPilot中也有零息债算例），并整理一份“利率上行100bp对组合影响”的笔记。'},
+{id:'data',t:'数据与AI走廊',one:'银行金科/数字金融训练营 → 基础设施技术岗 → 风险科技',
+who:'有百度/滴滴等数据与AI产品经历，想回金融但不想丢掉技术标签的人。',
+steps:[
+{h:'起点：银行数字金融入口',co:['cmb','cib','ccbfintech'],
+how:'招行数字金融训练营设AI工程师、AI数据科学家、AI产品经理赛道（本季竞赛已结束）；兴业总行有FinTech管培与AI科技专项；建信金科30人，本科即可，知名企业实习优先。',
+skill:'Python/SQL、模型应用、金融业务理解。',gate:'训练营面向2027届及以后；兴业限硕士及以上。'},
+{h:'横向：基础设施技术/数据岗',co:['cmbf','chinaclear','cfets','nucc'],
+how:'成方金科2026届15岗34人；中国结算应用开发5人、IT运维3人；外汇交易中心系统/网络/数据安全3人；网联有数据仓库与风险分析岗。',
+skill:'系统设计、数据治理、网络安全。',gate:'多数硕士；确认编制/合同主体。'},
+{h:'互联网金融科技：薪资期权',co:['dxm','webank','ant','tencent'],
+how:'度小满岗位含风险决策、商业分析；微众AI金融培训生为两年轮岗。',skill:'风控策略、机器学习。',gate:'周期与强度风险高于银行金科；人数与要求多未披露。'}],
+intern:'已核实：招行训练营是实习/提前批通道；建信金科“知名企业实习优先”可由百度实习满足。',
+now:'未来8周：把百度实习材料重写成“风险/数据/监管”叙事，并用工作台做一条可复现SQL+EL分析。'},
+{id:'policy',t:'政策与组织走廊',one:'国考金融监管 → 存保/政策行 → 事业单位/央企平台',
+who:'把稳定放在首位，能接受收入上限较低并认真准备行测申论的人。',
+steps:[
+{h:'国考：人行/金监/证监',co:['pbc','nfra','csrc'],
+how:'2026年计划：人行2,780、证监会347、金监约2,400–2,459；2027全国计划3.57万人，四部门分项未核实。',
+skill:'行测申论、金融经济专业、政策写作。',gate:'公务员序列，离职后有从业限制，市场化技能流失。'},
+{h:'准体制：存保与政策行',co:['cdic','cdb','adbc'],
+how:'存保公司2026届8人，笔试线上（行测＋专业各占50%），面试合格线75分；农发行按总行/省分行/二级分行/县支行分层。',
+skill:'专业笔试与面试表达。',gate:'名额极少，硕士起步。'}],
+intern:'国考不要求实习；存保公司未要求；建议用金融监管主题的研究项目作为材料。',
+now:'未来8周：明确党员/应届/择业期等资格；整理国考职位表筛选条件（专业、学历、基层经历、工作地）。'},
+{id:'buy',t:'投研与资管走廊（谨慎）',one:'公募研究/券商研究 → 保险资管/理财子',
+who:'愿意把成长和薪酬上限放在前面，并接受实习门槛与周期风险的人。',
+steps:[
+{h:'公募与券商研究',co:['ccbfund','harvest','phfund','southfund','citics'],
+how:'建信基金研究岗5人（本科即可）；嘉实股票岗要求一二级市场实习；鹏华量化研究要求头部平台研究实习；中信证券研究岗要求相关实习。',
+skill:'财务分析、估值、建模。',gate:'实习门槛高，研究岗名额小。'}],
+intern:'已核实：嘉实、鹏华、中信证券等明确要求或优先研究/投行实习。',
+now:'若选择此线，需先补一段买方或卖方研究实习；本工作台不能替代。'}
+];
+const GATES=[
+['监管公务员','《公务员法》对离职后到相关企业任职有限制（条文以现行文本为准）；进入后市场化技能与薪酬路径显著收窄。'],
+['分行与总行','中行公告把“总行管培”“境内分行管培”分列；投递时即决定序列，事后互转难度很大。'],
+['外派与全球化','中行全球化方向管培完成实践后需外派境外机构工作1–2年。'],
+['事业单位与企业属性','外汇交易中心属人行直属事业单位；成方金科、网联等是企业，合同主体不同。'],
+['学历分层','农发行总行/省分行硕士起步，县支行本科；先看你要的层级。']
+];
+
+/* [日期, 事项, 机构id, 备注, 证据级别] 日期均来自上述公告；转载页标 E3；“未核实”的不进日历。 */
+const DEADLINES=[
+['2026-10-08','建行总部、建信基金、建信理财、建信金科报名截止（24:00）','ccb','建信基金笔试计划10月底；面试11月中旬起','E1'],
+['2026-10-09','中国银行2027全球校招报名截止（24:00）','boc','统一笔试初定10月中下旬；每人最多5个志愿','E1'],
+['2026-10-09','中信银行校招截止（暂定）','citicb','公告写“暂定”','E1'],
+['2026-10-10','招行武汉分行数字金融定向培养生简历截止（23:59）','cmb','仅武汉分行批次','E2'],
+['2026-10-13','2027年度国考公告发布/报名即将开始','pbc','全国计划3.57万人；四部门分项未核实','E2'],
+['2026-10-14','广州期货交易所秋招截止','gfex','数理金融等','E2'],
+['2026-10-15','北京银行校招过期时间','bob','转载页','E3'],
+['2026-10-18','交通银行2027校招截止','bocom','转载页，官网需复核','E3'],
+['2026-10-25','兴业银行总行校招截止','cib','硕士及以上；含FinTech/AI/资金营运岗','E1'],
+['2026-10-25','华夏银行、浙商银行总行网申截止','hxb','浙商银行同日（2026-10-25）','E1'],
+['2026-10-31','华能资本本部校招报名截止','hnzb','风险管理岗1人、金融科技岗1人','E1'],
+['2026-10-31','宁波银行金融科技定向生过期','nbcb','转载页','E3'],
+['2026-11-22','上海银行校招截止','shbank','转载页','E3']
+];
+
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ST={view:'overview',cat:'all',mode:'stable',q:'',sort:'idx',onlyHC:false,sel:null,cmp:[],my:{},roleGroup:'全部',roleQ:'',roleOpen:null};
+const W={stable:{st:.22,wl:.14,gr:.12,pa:.12,fi:.24,en:.16},growth:{st:.08,wl:.08,gr:.24,pa:.24,fi:.22,en:.14}};
+const SK=[['st','稳定性'],['wl','工作节奏'],['gr','成长性'],['pa','薪酬上限'],['fi','目标适配'],['en','进入容易度']];
+const idx=c=>{const w=W[ST.mode];let t=0,s=0;for(const k in w){t+=w[k]*c.s[k];s+=w[k]}return t/s};
+const vw=b=>({E1:1,E2:1,E3:.5,ND:0}[b]??0);
+const unk=t=>!t||/^未(核实|披露)/.test(t)||t==='未核实';
+const comp=c=>vw(c.hc[1])+vw(c.pay[1])+(unk(c.req.deg)?0:1)+(c.pos.length&&c.pos.some(p=>!/未取得|未核实/.test(p.w))?1:0)+(unk(c.time)?0:1);
+const reqB=c=>/转载/.test(c.time)||c.src.some(s=>/career\.nankai|job\.hust|career\.cup/.test(s[1]))?'E3':'E1';
+const payVal=c=>{const m=(c.pay[0]||'').match(/≈([\d.]+)万元\/人/);return m?m[1]:null};
+const catOf=id=>CATS.find(x=>x.id===id)||{n:id};
+const coBy=id=>CO.find(c=>c.id===id);
+const badge=b=>`<span class="ev ${b}" title="${EV[b]}">${b}</span>`;
+const tag=(t,k='')=>`<span class="tag ${k}">${t}</span>`;
+const short=(t,n=46)=>{t=String(t||'');return t.length>n?t.slice(0,n)+'…':t};
+function rankMap(){const m={};CATS.forEach(k=>{CO.filter(c=>c.cat===k.id).sort((a,b)=>idx(b)-idx(a)).forEach((c,i)=>m[c.id]=i+1)});return m}
+function list(){
+ const q=ST.q.trim().toLowerCase();
+ let a=CO.filter(c=>(ST.cat==='all'||c.cat===ST.cat)&&(!q||(c.n+c.why+c.pos.map(p=>p.n+p.w).join('')).toLowerCase().includes(q))&&(!ST.onlyHC||c.hc[1]==='E1'||c.hc[1]==='E2'));
+ const f={idx:c=>idx(c),comp:c=>comp(c)*10+idx(c)/10,en:c=>c.s.en*10+idx(c)/10,st:c=>c.s.st*10+idx(c)/10,pa:c=>c.s.pa*10+idx(c)/10};
+ return a.sort((x,y)=>f[ST.sort](y)-f[ST.sort](x));
 }
-function pathsView(){const active=paths[0];$('#view-paths').innerHTML=`<div class="head"><div><h3>职业路径走廊</h3><p>职业规划的关键不是找到唯一答案，而是看清哪些岗位之间可以迁移，哪些选择会形成单向门。</p></div></div><div class="career-map">${paths.map((p,i)=>`<div class="lane"><div class="eyebrow">0${i+1}</div><h4>${p.title}</h4><p>${p.desc}</p><div style="display:grid;gap:5px;margin:12px 0">${p.nodes.map((n,j)=>`<div style="border:1px solid var(--line);padding:7px;border-radius:6px;font-size:11px;background:#fff">${j+1}　${n}</div>`).join('')}</div><span class="tag blue">${p.best}</span></div>`).join('')}</div><div class="section">One-way doors / 单向门</div><div class="grid3"><div class="panel"><h4>监管公务员</h4><p>稳定性最高，但离开后存在回避/冷却和市场化技能冻结风险。进门前确认自己是否接受长期政策路径。</p></div><div class="panel"><h4>分行营销序列</h4><p>HC 多、进入相对容易，但不能默认转到总行风险/金融市场；岗位序列要在投递时就选对。</p></div><div class="panel"><h4>选调生</h4><p>需要核实党员、院校、应届身份和最低服务年限；不是普通金融岗位的平替。</p></div></div><div class="section">你的优先建议</div><div class="panel dark"><h4 style="font-size:20px">先把风险走廊作为主线，保留固收和数据/AI两条期权</h4><p>在硕士前争取一段总部级风险、金融基础设施或风险科技实习；同时用工作台补 PD/LGD/EAD、SQL、Monte Carlo、久期/DV01 和项目叙事。这样可以同时服务金融机构和泛体制目标。</p></div>`}
-function timelineView(){$('#view-timeline').innerHTML=`<div class="head"><div><h3>秋招与准备倒排</h3><p>按照可能在硕士第一年或第二年秋招的两种情形，提前建立证据和实习窗口。日期是规划锚点，不是当年公告。</p></div></div><div class="grid2"><div class="panel"><div class="panel-head"><h4>方案 A：硕士第一年秋招</h4>${tag('2027秋招','blue')}</div><div style="display:grid;gap:1px;background:var(--line)">${[['现在—2027.06','完成4—8个月金融核心实习','风险计量/模型风险/基础设施/ALM/固收风险'],['2027.03—06','必要时补一段短而硬的项目','Python/SQL、金融数据、模型验证'],['2027.07—08','材料冻结','英文简历、项目证据包、90秒口述'],['2027.09—10','全面秋招','总行、基础设施、风险、金融科技和金融市场']].map(x=>`<div style="background:var(--white);padding:13px"><b style="font-size:11px;color:var(--teal)">${x[0]}</b><br><strong>${x[1]}</strong><br><span class="small">${x[2]}</span></div>`).join('')}</div></div><div class="panel"><div class="panel-head"><h4>方案 B：硕士第二年秋招</h4>${tag('2028秋招','amber')}</div><div style="display:grid;gap:1px;background:var(--line)">${[['现在—2027.06','完成长期锚点实习','风险/金融科技/金融基础设施'],['2027.08—2028.06','结合课程补实习/项目','MQF偏风险/金工；FinTech偏系统/数据'],['2028.06—08','争取高质量暑期实习','项目、主管、正式 headcount'],['2028.08—10','集中秋招','用两段金融核心经历参加秋招']].map(x=>`<div style="background:var(--white);padding:13px"><b style="font-size:11px;color:var(--amber)">${x[0]}</b><br><strong>${x[1]}</strong><br><span class="small">${x[2]}</span></div>`).join('')}</div></div></div><div class="section">Skill gates / 能力闸门</div><div class="grid3"><div class="panel"><h4>现在就要补</h4><p>Python/SQL、金融风险口径、PD/LGD/EAD、数据字典、投资/固收基础和一份可复现项目。</p></div><div class="panel"><h4>硕士前要补</h4><p>一个金融工程/风险模型作品、一次独立复算、一个错误案例和一段能说清个人贡献的实习。</p></div><div class="panel"><h4>秋招前要验收</h4><p>能在 90 秒讲清楚项目，回答方法/结果/局限追问，不把合成数据或本地测试包装成生产经验。</p></div></div>`}
-function sourcesView(){$('#view-sources').innerHTML=`<div class="head"><div><h3>证据与口径</h3><p>工作台把“事实、相对等级、职业判断”分开。打开原始页面时，优先看标题、发布日期、招聘机构、岗位附件和截止时间。</p></div></div><div class="callout red"><b>重要：</b>本工作台不直接抓取招聘网站，也不声称拥有完整市场 HC。招聘页会下线，薪资/WLB/裁员判断不构成保证。</div><div class="section">Source ledger / 来源账本</div><div class="panel" style="padding:0"><div class="table"><table><thead><tr><th>来源</th><th>用途</th><th>证据级别</th><th>链接</th></tr></thead><tbody>${sources.map(s=>`<tr><td><b>${s[0]}</b></td><td>${s[1]}</td><td>${tag(s[3],s[3]==='E1'?'blue':'amber')}</td><td><a href="${s[2]}" target="_blank" rel="noreferrer" style="color:var(--teal);word-break:break-all">打开来源</a></td></tr>`).join('')}</tbody></table></div></div><div class="section">Evidence levels / 证据等级</div><div class="grid3"><div class="panel"><h4>E1 官方一手</h4><p>监管公告、职位表、机构招聘公告、拟录用公示。可写作岗位事实。</p></div><div class="panel"><h4>E2 官方转载</h4><p>政府网站、行业协会或官方平台转载。适合补充行业和招聘节奏。</p></div><div class="panel"><h4>E3/E4 辅助判断</h4><p>招聘市场报告、社区和经验判断。可做难度/趋势线索，不能冒充精确 HC。</p></div></div>`}
-function setView(v){state.view=v;$$('.view').forEach(x=>x.classList.remove('active'));$(`#view-${v}`).classList.add('active');$$('.nav button').forEach(x=>x.classList.toggle('active',x.dataset.view===v));renderApp()}
-document.addEventListener('click',e=>{const n=e.target.closest('[data-view]');if(n)setView(n.dataset.view);const j=e.target.closest('[data-jump]');if(j)setView(j.dataset.jump)});$('#reset').onclick=()=>{Object.assign(state,{mode:'stable',group:'全部',query:'',minDegree:'全部',maxDifficulty:5,onlyHC:false,selected:null,compare:[],sort:'fit'});renderApp()};$('#export').onclick=()=>{const blob=new Blob([JSON.stringify({mode:state.mode,filters:{group:state.group,query:state.query,degree:state.minDegree,sort:state.sort},compare:state.compare},null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='职业路径规划筛选.json';a.click();URL.revokeObjectURL(a.href)};
-function renderApp(){if(state.view==='overview')overview();if(state.view==='roles')rolesView();if(state.view==='compare')compareView();if(state.view==='paths')pathsView();if(state.view==='timeline')timelineView();if(state.view==='sources')sourcesView();updateTop()}
-window.__careerAtlas={roles,paths,sources,state,render:renderApp};
-renderApp();
+const KEY='career-atlas-v2';
+function load(){try{const d=JSON.parse(localStorage.getItem(KEY)||'{}');if(d.mode)ST.mode=d.mode;if(Array.isArray(d.cmp))ST.cmp=d.cmp.filter(i=>coBy(i));if(d.my)ST.my=d.my}catch(e){}}
+function save(){try{localStorage.setItem(KEY,JSON.stringify({mode:ST.mode,cmp:ST.cmp,my:ST.my}))}catch(e){}}
+function download(name,text,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([text],{type}));a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),500)}
+function toast(m){const n=$('#toast');n.textContent=m;n.classList.add('show');clearTimeout(toast.t);toast.t=setTimeout(()=>n.classList.remove('show'),2200)}
+function csv(rows){return '\ufeff'+rows.map(r=>r.map(v=>'"'+String(v??'').replace(/"/g,'""')+'"').join(',')).join('\n')}
+function exportCSV(){
+ const rm=rankMap(),rows=[['类别','类内排名','机构','综合指数','证据完整度/5','2027/最近HC','HC证据','薪酬口径','学历','英语','实习','时间节点','未核实项']];
+ list().forEach(c=>rows.push([catOf(c.cat).n,rm[c.id],c.n,idx(c).toFixed(2),comp(c).toFixed(1),c.hc[0],c.hc[1],c.pay[0],c.req.deg,c.req.eng,c.req.int,c.time,c.gap.join('；')]));
+ download('金融机构岗位对比表.csv',csv(rows),'text/csv;charset=utf-8');toast('已导出当前列表 CSV')}
+function myOf(id){return ST.my[id]||(ST.my[id]={s:'',n:''})}
+
+function viewCompanies(){
+ const rm=rankMap(),rows=list(),cats=[{id:'all',n:'全部'},...CATS];
+ const chips=cats.map(k=>{const n=k.id==='all'?CO.length:CO.filter(c=>c.cat===k.id).length;return `<button class="chipb ${ST.cat===k.id?'on':''}" data-cat="${k.id}">${k.n}<i>${n}</i></button>`}).join('');
+ const note=ST.cat==='all'?'':`<div class="callout teal" style="margin-top:12px"><b>${catOf(ST.cat).n}：</b>${catOf(ST.cat).d}</div>`;
+ const body=rows.map(c=>{const pv=payVal(c),inC=ST.cmp.includes(c.id);
+  return `<tr><td class="num"><b>${rm[c.id]}</b><br><span class="small">${catOf(c.cat).n}</span></td>
+<td><b>${esc(c.n)}</b><br><span class="small">${esc(short(c.why,44))}</span></td>
+<td><b>${idx(c).toFixed(2)}</b><div class="bar mini"><i style="width:${idx(c)/5*100}%"></i></div></td>
+<td>${comp(c).toFixed(1)}/5<div class="bar mini amber"><i style="width:${comp(c)/5*100}%"></i></div></td>
+<td class="wrap">${badge(c.hc[1])} ${esc(short(c.hc[0],62))}</td>
+<td>${pv?`≈${pv}万 ${badge(c.pay[1])}`:'<span class="small">未披露/未核实</span>'}</td>
+<td class="wrap">${esc(short(c.req.deg,34))}<br><span class="small">实习：${esc(short(c.req.int,28))}</span><br><span class="small">${esc(short(c.time,40))}</span></td>
+<td><button class="btn small" data-co="${c.id}">查看</button> <button class="btn small ${inC?'teal':''}" data-cmp="${c.id}">${inC?'已对比':'对比'}</button></td></tr>`}).join('');
+ const pend=PENDING.filter(p=>ST.cat==='all'||p[0]===ST.cat).map(p=>`<tr><td>${esc(catOf(p[0]).n)}</td><td><b>${esc(p[1])}</b></td><td class="wrap">${esc(p[2])}</td><td>${p[3]?`<a href="${esc(p[3])}" target="_blank" rel="noreferrer">官方入口</a>`:'—'}</td></tr>`).join('');
+ $('#view-companies').innerHTML=`<div class="head"><div><h3>公司排名与具体岗位</h3><p>先选类别，再看类内排名。排名分来自对“稳定、节奏、成长、薪酬、适配、进入难度”的判断；右侧证据完整度告诉你有多少字段被官方来源核实。</p></div>
+<div class="pillrow"><button class="btn ${ST.mode==='stable'?'teal':''}" data-mode="stable">稳健优先</button><button class="btn ${ST.mode==='growth'?'teal':''}" data-mode="growth">成长/薪酬优先</button></div></div>
+<div class="chips">${chips}</div>${note}
+<div class="panel" style="margin-top:14px"><div class="filters"><div class="field"><label>关键词（机构/岗位/职责）</label><input id="fq" value="${esc(ST.q)}" placeholder="风险、金融科技、清算、研究…"></div>
+<div class="field"><label>排序</label><select id="fs"><option value="idx">综合指数</option><option value="comp">证据完整度</option><option value="en">进入容易度</option><option value="st">稳定性</option><option value="pa">薪酬上限</option></select></div>
+<div class="field"><label>筛选</label><label class="check"><input id="fhc" type="checkbox" ${ST.onlyHC?'checked':''}> 仅看官方已披露HC</label></div>
+<div class="field"><label>导出</label><button class="btn" id="fcsv">导出当前列表 CSV</button></div></div></div>
+<div class="section">共 ${rows.length} 家 · 指数为判断分，证据列为事实核验</div>
+<div class="panel" style="padding:0"><div class="table"><table class="wide mid"><thead><tr><th>类内排名</th><th>机构与一句话理由</th><th>综合指数</th><th>证据完整度</th><th>HC（含口径）</th><th>年报人均薪酬</th><th>学历 / 实习 / 时间</th><th></th></tr></thead><tbody>${body||'<tr><td colspan="8" class="empty">没有结果，放宽筛选。</td></tr>'}</tbody></table></div></div>
+<div class="section">待核实名录（官方入口已列出，具体数据本次未核实）</div>
+<div class="panel" style="padding:0"><div class="table"><table><thead><tr><th>类别</th><th>机构</th><th>已知信息 / 缺口</th><th>入口</th></tr></thead><tbody>${pend||'<tr><td colspan="4" class="empty">该类别暂无待核实项。</td></tr>'}</tbody></table></div></div>`;
+ $$('[data-cat]').forEach(b=>b.onclick=()=>{ST.cat=b.dataset.cat;render()});
+ const q=$('#fq');q.oninput=()=>{ST.q=q.value;const p=q.selectionStart;render();const n=$('#fq');n.focus();n.setSelectionRange(p,p)};
+ const s=$('#fs');s.value=ST.sort;s.onchange=()=>{ST.sort=s.value;render()};
+ $('#fhc').onchange=e=>{ST.onlyHC=e.target.checked;render()};$('#fcsv').onclick=exportCSV;
+ $$('[data-mode]').forEach(b=>b.onclick=()=>{ST.mode=b.dataset.mode;save();render()});
+ $$('[data-co]').forEach(b=>b.onclick=()=>{ST.sel=b.dataset.co;setView('detail')});
+ $$('[data-cmp]').forEach(b=>b.onclick=()=>toggleCmp(b.dataset.cmp));
+}
+function toggleCmp(id){const i=ST.cmp.indexOf(id);if(i>=0)ST.cmp.splice(i,1);else if(ST.cmp.length<4)ST.cmp.push(id);else{toast('最多同时对比 4 家');return}save();render()}
+
+function viewDetail(){
+ const c=coBy(ST.sel);if(!c){ST.view='companies';return render()}
+ const rm=rankMap(),n=CO.filter(x=>x.cat===c.cat).length,my=myOf(c.id),inC=ST.cmp.includes(c.id);
+ const bars=SK.map(([k,nm])=>`<div class="score"><span>${nm}</span><div class="bar ${k==='pa'?'red':k==='wl'?'blue':k==='gr'?'amber':''}"><i style="width:${c.s[k]/5*100}%"></i></div><strong>${c.s[k]}</strong></div>`).join('');
+ const ev=(t,v,b)=>`<div class="panel"><div class="panel-head"><h4>${t}</h4>${badge(b)}</div><p>${esc(v)}</p></div>`;
+ const rq=c.req;
+ const pos=c.pos.length?c.pos.map(p=>`<div class="panel pos"><h4>${esc(p.n)}</h4><p>${esc(p.w)}</p><dl class="kv"><dt>学历</dt><dd>${esc(p.deg)}</dd><dt>实习要求</dt><dd>${esc(p.int)}</dd><dt>HC</dt><dd>${esc(p.hc)}</dd></dl></div>`).join(''):'<div class="callout red">本次未取得该机构的岗位正文，不展示推测性职责。请从下方官方入口核实。</div>';
+ const stOpt=['','关注','准备中','已投递','已放弃'].map(s=>`<option value="${s}" ${my.s===s?'selected':''}>${s||'未标记'}</option>`).join('');
+ $('#view-detail').innerHTML=`<div class="head"><div><button class="btn" id="back">← 返回列表</button><h3 style="margin-top:14px">${esc(c.n)}</h3><p>${catOf(c.cat).n} · 类内第 ${rm[c.id]} / ${n}（${ST.mode==='stable'?'稳健优先':'成长/薪酬优先'}）</p></div><button class="btn ${inC?'teal':''}" id="dcmp">${inC?'已加入对比':'加入对比'}</button></div>
+<div class="grid2"><div class="panel dark"><div class="eyebrow">排名理由（判断）</div><h4 style="font-size:20px;margin-top:8px">综合指数 ${idx(c).toFixed(2)} / 5</h4><p>${esc(c.why)}</p><div class="pillrow">${tag('证据完整度 '+comp(c).toFixed(1)+'/5','dark')}${tag('指数基于判断分，不是统计','dark')}</div></div>
+<div class="panel"><div class="panel-head"><h4>六个维度（1–5，判断分）</h4>${tag('进入容易度：5=相对容易','blue')}</div>${bars}</div></div>
+<div class="section">事实核验 / 证据卡</div>
+<div class="grid2">${ev('招聘规模 HC',c.hc[0],c.hc[1])}${ev('年报薪酬',c.pay[0],c.pay[1])}
+<div class="panel"><div class="panel-head"><h4>申请条件</h4>${badge(unk(rq.deg)?'ND':reqB(c))}</div><dl class="kv"><dt>学历</dt><dd>${esc(rq.deg)}</dd><dt>英语</dt><dd>${esc(rq.eng)}</dd><dt>对口实习</dt><dd>${esc(rq.int)}</dd><dt>专业</dt><dd>${esc(rq.maj)}</dd></dl></div>
+<div class="panel"><div class="panel-head"><h4>时间节点</h4>${badge(unk(c.time)?'ND':reqB(c))}</div><p>${esc(c.time)}</p><div class="callout">WLB 与官方工时数据：本次研究未找到任何机构的权威公开口径，故只给“工作节奏”判断分，不当作事实。</div></div></div>
+<div class="section">具体岗位与工作内容</div><div class="grid2">${pos}</div>
+<div class="section">未核实项</div><div class="panel"><ul class="goal">${(c.gap.length?c.gap:['无额外缺口']).map(g=>`<li>${esc(g)}</li>`).join('')}</ul></div>
+<div class="section">官方来源</div><div class="panel">${c.src.map(s=>`<p class="src"><a href="${esc(s[1])}" target="_blank" rel="noreferrer">${esc(s[0])}</a></p>`).join('')||'—'}</div>
+<div class="section">我的跟进（保存在本机浏览器）</div><div class="panel"><div class="filters"><div class="field"><label>状态</label><select id="mys">${stOpt}</select></div><div class="field" style="grid-column:span 3"><label>备注（面试官、笔试时间、内推人…）</label><input id="myn" value="${esc(my.n)}"></div></div></div>
+<div class="section">投递前5步核验</div><div class="grid3"><div class="panel"><h4>1 公告</h4><p>重新打开官方链接，确认届别、截止日与岗位未下线。</p></div><div class="panel"><h4>2 主体</h4><p>确认合同主体、编制/企业属性，区分自招与外包。</p></div><div class="panel"><h4>3 条件</h4><p>学历、毕业时间、英语成绩、专业类别逐条对照。</p></div><div class="panel"><h4>4 实习</h4><p>问清是否有转正通道、实习期长度与项目产出。</p></div><div class="panel"><h4>5 序列</h4><p>总行/分行、前台/中后台，投递时就选对。</p></div></div>`;
+ $('#back').onclick=()=>setView('companies');$('#dcmp').onclick=()=>toggleCmp(c.id);
+ $('#mys').onchange=e=>{myOf(c.id).s=e.target.value;save();toast('已保存状态')};$('#myn').oninput=e=>{myOf(c.id).n=e.target.value;save()};
+}
+function viewCompare(){
+ const rr=ST.cmp.map(coBy).filter(Boolean);
+ const rows=[['综合指数',c=>idx(c).toFixed(2)],['证据完整度',c=>comp(c).toFixed(1)+'/5'],['稳定性',c=>c.s.st],['工作节奏（判断）',c=>c.s.wl],['成长性',c=>c.s.gr],['薪酬上限',c=>c.s.pa],['进入容易度',c=>c.s.en],['HC',c=>c.hc[0]],['年报薪酬',c=>c.pay[0]],['学历',c=>c.req.deg],['英语',c=>c.req.eng],['对口实习',c=>c.req.int],['时间节点',c=>c.time],['岗位数',c=>c.pos.length+' 个已读岗位'],['未核实',c=>c.gap.join('；')||'—']];
+ const t=rr.length?`<div class="panel" style="padding:0"><div class="table"><table class="wide"><thead><tr><th>维度</th>${rr.map(c=>`<th>${esc(c.n)}<br><span class="small">${catOf(c.cat).n}</span></th>`).join('')}</tr></thead><tbody>${rows.map(([n,f])=>`<tr><td><b>${n}</b></td>${rr.map(c=>`<td class="wrap">${esc(f(c))}</td>`).join('')}</tr>`).join('')}</tbody></table></div></div>`:'<div class="panel"><div class="empty">在“公司与岗位”里点“对比”，最多放入4家。</div></div>';
+ $('#view-compare').innerHTML=`<div class="head"><div><h3>对比</h3><p>薪酬行的口径不同时（现金流口径 vs 费用口径 vs 应付职工薪酬）不能直接比大小。</p></div><button class="btn" id="cclr">清空</button></div>${t}`;
+ $('#cclr').onclick=()=>{ST.cmp=[];save();render()};
+}
+
+function viewOverview(){
+ const rm=rankMap(),E1=CO.filter(c=>c.hc[1]==='E1').length,PAY=CO.filter(c=>payVal(c)).length;
+ const top=CATS.map(k=>{const a=CO.filter(c=>c.cat===k.id).sort((x,y)=>idx(y)-idx(x));return a[0]?`<tr><td>${k.n}</td><td><b>${esc(a[0].n)}</b><br><span class="small">${esc(short(a[0].why,48))}</span></td><td>${idx(a[0]).toFixed(2)}</td><td>${comp(a[0]).toFixed(1)}/5</td><td><button class="btn small" data-co="${a[0].id}">查看</button></td></tr>`:''}).join('');
+ $('#view-overview').innerHTML=`<div class="head"><div><h3>先看类别，再看公司，最后看岗位</h3><p>这份数据把“事实”和“判断”分开：HC、年报薪酬、学历英语实习要求只收录能指到官方页面的内容；稳定、节奏、成长、适配与排名是判断分，会明确标注。</p></div><button class="btn teal" data-jump="companies">打开公司与岗位</button></div>
+<div class="grid2"><div class="panel dark"><div class="eyebrow">Coverage / 覆盖与可信度</div><h4 style="font-size:21px;margin-top:8px">${CO.length} 家有详细记录 · ${PENDING.length} 组待核实名录</h4>
+<p>其中 ${E1} 家有官方一手披露的 HC；${PAY} 家有可复算的年报人均薪酬。其余为“未披露/未核实”，不会被估算填满。</p>
+<div class="grid3" style="margin-top:16px"><div><div class="small">类别</div><div class="metric">${CATS.length}</div></div><div><div class="small">岗位族谱</div><div class="metric">${roles.length}</div></div><div><div class="small">具体岗位条目</div><div class="metric">${CO.reduce((a,c)=>a+c.pos.length,0)}</div></div></div></div>
+<div class="panel"><div class="panel-head"><h4>三条使用规则</h4></div><ul class="goal"><li>HC 只在公告写明时才显示数字；逐岗相加的会标“计算值”。</li><li>年报“人均薪酬”只是公司层面均摊（口径不同不能跨类比），不是校招起薪。</li><li>WLB 没有权威公开统计，只给“工作节奏”判断分，并说明是判断。</li></ul></div></div>
+<div class="section">每个类别的当前第一名（${ST.mode==='stable'?'稳健优先':'成长/薪酬优先'}）</div>
+<div class="panel" style="padding:0"><div class="table"><table><thead><tr><th>类别</th><th>机构与理由</th><th>指数</th><th>证据</th><th></th></tr></thead><tbody>${top}</tbody></table></div></div>
+<div class="section">三种薪酬口径，不要混比</div>
+<div class="grid3"><div class="panel"><h4>现金流口径</h4><p>国有大行：支付给职工的现金÷年末员工数，是全年现金流出的近似，含福利社保，不等于工资。</p></div><div class="panel"><h4>费用口径</h4><p>招行、兴业、中信银行：员工费用或职工薪酬费用÷员工数，通常高于现金流口径。</p></div><div class="panel"><h4>应付职工薪酬口径</h4><p>券商、保险：本年增加额÷年末员工数；员工口径可能含经纪人、派遣或排除代理人，需看说明。</p></div></div>`;
+ $$('[data-co]').forEach(b=>b.onclick=()=>{ST.sel=b.dataset.co;setView('detail')});
+}
+function viewRoles(){
+ const g=ST.roleGroup,q=ST.roleQ.trim().toLowerCase();
+ const rr=roles.filter(r=>(g==='全部'||r.group===g)&&(!q||(r.family+r.title+r.employers+r.work+r.skill).toLowerCase().includes(q)));
+ const rows=rr.map(r=>{const o=ST.roleOpen===r.id;return `<tr><td><b>${esc(r.family)}</b><br><span class="small">${esc(r.title)}</span></td><td>${esc(r.group)}</td><td>${tag(r.tier,r.tier.startsWith('推荐')?'':'amber')}</td><td>${r.difficulty}/5</td><td>${tag(r.hcLevel,r.hcLevel==='L5'?'amber':'blue')}</td><td><button class="btn small" data-role="${r.id}">${o?'收起':'展开'}</button></td></tr>${o?`<tr><td colspan="6" class="detailrow"><dl class="kv"><dt>典型雇主</dt><dd>${esc(r.employers)}</dd><dt>工作内容</dt><dd>${esc(r.work)}</dd><dt>学历</dt><dd>${esc(r.degree)}</dd><dt>能力</dt><dd>${esc(r.skill)}</dd><dt>HC口径</dt><dd>${esc(r.hc)}（${esc(r.hcProof)}）</dd><dt>周期</dt><dd>${esc(r.cycle)}</dd><dt>判断分</dt><dd>稳定${r.stable} · 抗周期${r.cycleRisk} · 节奏${r.wlb} · 成长${r.growth} · 薪酬${r.pay}</dd></dl></td></tr>`:''}`}).join('');
+ $('#view-roles').innerHTML=`<div class="head"><div><h3>岗位族谱（${roles.length} 类）</h3><p>从职业类型看全景；具体到机构与岗位请回到“公司与岗位”。此处 HC 等级 L1–L5 是相对规模，不是精确人数。</p></div></div>
+<div class="panel"><div class="filters"><div class="field"><label>体系</label><select id="rg"><option>全部</option><option>金融机构</option><option>泛体制</option><option>科技与金融</option></select></div><div class="field"><label>关键词</label><input id="rq" value="${esc(ST.roleQ)}"></div></div></div>
+<div class="section">${rr.length} 类</div><div class="panel" style="padding:0"><div class="table"><table><thead><tr><th>岗位族</th><th>体系</th><th>层级</th><th>难度</th><th>HC等级</th><th></th></tr></thead><tbody>${rows}</tbody></table></div></div>`;
+ const sg=$('#rg');sg.value=g;sg.onchange=()=>{ST.roleGroup=sg.value;render()};
+ const sq=$('#rq');sq.oninput=()=>{ST.roleQ=sq.value;const p=sq.selectionStart;render();const n=$('#rq');n.focus();n.setSelectionRange(p,p)};
+ $$('[data-role]').forEach(b=>b.onclick=()=>{ST.roleOpen=ST.roleOpen===b.dataset.role?null:b.dataset.role;render()});
+}
+
+function chipsFor(ids){return ids.map(id=>{const c=coBy(id);return c?`<button class="chipb" data-co="${id}">${esc(c.n)}</button>`:''}).join('')}
+function viewPaths(){
+ $('#view-paths').innerHTML=`<div class="head"><div><h3>职业走廊</h3><p>每条走廊列出：从哪里进、能横向去哪、需要什么能力、哪里有门槛，并链接到真实的公司与岗位记录。点击机构名查看详情。</p></div></div>
+${PATHS.map(p=>`<div class="panel" style="margin-bottom:16px"><div class="panel-head"><div><h4 style="font-size:20px">${p.t}</h4><p style="margin:4px 0 0">${p.one}</p></div></div>
+<div class="callout teal"><b>适合谁：</b>${p.who}</div>
+<div class="steps">${p.steps.map((s,i)=>`<div class="stepc"><div class="stephead"><b>${i+1}　${s.h}</b></div><p>${s.how}</p><div class="chips">${chipsFor(s.co)}</div><dl class="kv"><dt>要补的能力</dt><dd>${s.skill}</dd><dt>门槛与限制</dt><dd>${s.gate}</dd></dl></div>`).join('')}</div>
+<dl class="kv" style="margin-top:12px"><dt>对口实习</dt><dd>${p.intern}</dd><dt>未来8周</dt><dd>${p.now}</dd></dl></div>`).join('')}
+<div class="section">单向门与序列差异</div><div class="panel"><dl class="kv">${GATES.map(g=>`<dt>${g[0]}</dt><dd>${g[1]}</dd>`).join('')}</dl></div>`;
+ $$('[data-co]').forEach(b=>b.onclick=()=>{ST.sel=b.dataset.co;setView('detail')});
+}
+function viewTimeline(){
+ const now=new Date();now.setHours(0,0,0,0);
+ const rows=DEADLINES.map(d=>{const dt=new Date(d[0]+'T00:00:00'),diff=Math.round((dt-now)/864e5),st=diff<0?tag('已过','red'):diff<=7?tag('剩'+diff+'天','amber'):tag('剩'+diff+'天','blue');
+  return `<tr><td>${d[0]}</td><td>${st}</td><td class="wrap"><b>${esc(d[1])}</b><br><span class="small">${esc(d[3])}</span></td><td>${badge(d[4])}</td><td>${coBy(d[2])?`<button class="btn small" data-co="${d[2]}">查看</button>`:''}</td></tr>`}).join('');
+ $('#view-timeline').innerHTML=`<div class="head"><div><h3>时间线</h3><p>上半部是已核实的招聘节点（按今天自动标注已过/剩余天数）；下半部是硕士第一年/第二年秋招的倒排。已过的截止日说明：同一机构的下一届公告大多在次年同期出现，可作参照而不是承诺。</p></div></div>
+<div class="panel" style="padding:0"><div class="table"><table><thead><tr><th>日期</th><th>状态</th><th>事项</th><th>证据</th><th></th></tr></thead><tbody>${rows}</tbody></table></div></div>
+<div class="section">倒排计划</div><div class="grid2">
+<div class="panel"><div class="panel-head"><h4>方案 A：硕士第一年秋招</h4>${tag('2027秋招','blue')}</div><p>现在—2027.06：一段4–8个月金融核心实习（风险/数据/基础设施/ALM）。<br>2027.03–06：必要时补短而硬的数据或模型项目。<br>2027.07–08：材料冻结。<br>2027.09–10：全面秋招；国考报名同步。</p></div>
+<div class="panel"><div class="panel-head"><h4>方案 B：硕士第二年秋招</h4>${tag('2028秋招','amber')}</div><p>现在—2027.06：长期锚点实习。<br>2027.08–2028.06：结合课程补实习与项目。<br>2028.06–08：高质量暑期实习（含正式headcount）。<br>2028.08–10：集中秋招。</p></div></div>
+<div class="section">能力闸门</div><div class="grid3"><div class="panel"><h4>现在</h4><p>Python/SQL、PD/LGD/EAD、数据字典、一个可复现项目。</p></div><div class="panel"><h4>硕士前</h4><p>一个风险或金工作品、一次独立复算、一段说得清个人贡献的实习。</p></div><div class="panel"><h4>秋招前</h4><p>90秒讲清项目；回答方法、结果、局限追问。</p></div></div>`;
+ $$('[data-co]').forEach(b=>b.onclick=()=>{ST.sel=b.dataset.co;setView('detail')});
+}
+function viewSources(){
+ const seen=new Set(),rows=[];
+ CO.forEach(c=>c.src.forEach(s=>{if(seen.has(s[1]))return;seen.add(s[1]);rows.push([c.n,s[0],s[1]])}));
+ $('#view-sources').innerHTML=`<div class="head"><div><h3>证据与口径</h3><p>共 ${rows.length} 条去重来源。证据等级写在每条数据旁边：E1 官方一手，E2 权威转载或媒体，E3 高校/第三方转载，ND 未公开或未核实。</p></div></div>
+<div class="callout red"><b>重要：</b>招聘页会下线，薪资/WLB/裁员判断不构成保证。官方页面打不开或需 JS 渲染时，本工作台不会替你补数字。</div>
+<div class="section">来源账本</div><div class="panel" style="padding:0"><div class="table"><table><thead><tr><th>机构</th><th>来源</th><th>链接</th></tr></thead><tbody>${rows.map(r=>`<tr><td>${esc(r[0])}</td><td class="wrap">${esc(r[1])}</td><td><a href="${esc(r[2])}" target="_blank" rel="noreferrer">打开</a></td></tr>`).join('')}</tbody></table></div></div>
+<div class="section">全部未核实项</div><div class="panel"><ul class="goal">${CO.filter(c=>c.gap.length).map(c=>`<li><b>${esc(c.n)}：</b>${esc(c.gap.join('；'))}</li>`).join('')}</ul></div>`;
+}
+
+const VIEWS={overview:viewOverview,companies:viewCompanies,detail:viewDetail,compare:viewCompare,paths:viewPaths,timeline:viewTimeline,roles:viewRoles,sources:viewSources};
+const TITLE={overview:'总览',companies:'公司与岗位',detail:'机构详情',compare:'对比',paths:'职业走廊',timeline:'时间线',roles:'岗位族谱',sources:'证据与口径'};
+function updateTop(){
+ $('#sCo').textContent=CO.length;$('#sHc').textContent=CO.filter(c=>c.hc[1]==='E1').length;$('#sPay').textContent=CO.filter(c=>payVal(c)).length;$('#sCmp').textContent=ST.cmp.length+' / 4';
+ $('#crumb').textContent=TITLE[ST.view]||'';
+ $$('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===(ST.view==='detail'?'companies':ST.view)));
+ $$('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+ST.view));
+}
+function render(){VIEWS[ST.view]();updateTop()}
+function setView(v){ST.view=v;render();window.scrollTo({top:0})}
+document.addEventListener('click',e=>{const n=e.target.closest('[data-view]');if(n)setView(n.dataset.view);const j=e.target.closest('[data-jump]');if(j)setView(j.dataset.jump)});
+$('#reset').onclick=()=>{Object.assign(ST,{cat:'all',q:'',sort:'idx',onlyHC:false,roleGroup:'全部',roleQ:'',roleOpen:null});render();toast('已重置筛选')};
+$('#export').onclick=()=>{download('我的职业规划状态.json',JSON.stringify({mode:ST.mode,compare:ST.cmp.map(i=>coBy(i)?.n),my:Object.fromEntries(Object.entries(ST.my).filter(([k,v])=>v.s||v.n).map(([k,v])=>[coBy(k)?.n||k,v]))},null,2),'application/json');toast('已导出状态 JSON')};
+load();
+window.__atlas={CO,CATS,PENDING,PATHS,DEADLINES,roles,ST,idx,comp,payVal,rankMap,list,render,setView};
+render();
+
 })();
 </script>
 </body>

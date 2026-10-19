@@ -1,0 +1,29 @@
+.ev{display:inline-block;font:700 9px ui-monospace,monospace;padding:2px 5px;border-radius:4px;letter-spacing:.04em;vertical-align:1px}
+.ev.E1{background:#e1f2ea;color:#1f6a52}.ev.E2{background:#e5ecf6;color:#506990}.ev.E3{background:#f6ead8;color:#986328}.ev.ND{background:#eceeed;color:#73807f}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin:8px 0}
+.chipb{border:1px solid var(--line);background:var(--white);color:#47636a;border-radius:99px;padding:6px 11px;font-size:11px;font-weight:650}
+.chipb i{font-style:normal;font-size:9px;color:var(--muted);margin-left:5px}
+.chipb:hover,.chipb.on{border-color:var(--teal);background:#e8f7f3;color:#1c686b}
+.bar.mini{height:5px;margin:5px 0 0;min-width:70px}
+.table td.wrap,.table th.wrap{white-space:normal;min-width:130px;max-width:260px;line-height:1.45}
+.table table.wide{min-width:1180px}
+.detailrow{background:#f6faf8;white-space:normal!important}
+.goal{display:grid;gap:7px;margin:0;padding:0;list-style:none}
+.goal li{font-size:12px;color:#4e656b;padding-left:14px;position:relative}
+.goal li:before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:14px}
+.stepc{background:var(--white);padding:15px}
+.stepc p{font-size:11px;color:#536a6f;margin:8px 0}
+.stephead{font-size:12px;color:var(--ink)}
+.src{margin:7px 0;font-size:12px}.src a,.table a{color:var(--teal);word-break:break-all}
+.empty{padding:34px;text-align:center;color:var(--muted);font-size:12px}
+.pos h4{font-size:14px}
+.toast{position:fixed;right:22px;bottom:20px;background:var(--ink);color:#e8ffff;padding:10px 14px;border-radius:9px;font-size:12px;opacity:0;transform:translateY(8px);pointer-events:none;transition:.2s;z-index:9}
+.toast.show{opacity:1;transform:none}
+.signals{margin-top:24px}
+@media(max-width:1050px){.steps{grid-template-columns:1fr}}
+@media(max-width:760px){.signals{margin-top:16px}.table table.wide{min-width:980px}}
+.field .check input,.check input{width:auto;flex:none}
+.field .check{font-size:11px;margin-top:6px}
+.table table.mid{min-width:980px}
+.table td .btn{margin:2px 0}

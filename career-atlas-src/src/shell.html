@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>金融与泛体制职业路径规划工作台（公司与岗位版）</title>
+<style>
+{{CSS}}
+</style>
+</head>
+<body>
+<div class="shell">
+<aside class="rail"><div class="brand"><div class="mark"><i></i><span>career atlas / 2026-10</span></div><h1>职业路径<br>规划工作台</h1><p>公司排名、具体岗位、证据口径，一处看完。</p></div>
+<nav class="nav"><button data-view="overview" class="active"><span class="n">01</span>总览</button><button data-view="companies"><span class="n">02</span>公司与岗位</button><button data-view="compare"><span class="n">03</span>对比</button><button data-view="paths"><span class="n">04</span>职业走廊</button><button data-view="timeline"><span class="n">05</span>时间线</button><button data-view="roles"><span class="n">06</span>岗位族谱</button><button data-view="sources"><span class="n">07</span>证据与口径</button></nav>
+<div class="rail-note"><b><span style="color:var(--mint)">●</span> 证据状态</b>每个数字都标 E1/E2/E3/ND；未公开就写未公开，不估算。</div></aside>
+<main class="stage"><header class="top"><div class="crumb"><b id="crumb">总览</b>　/　金融与泛体制岗位</div><div class="top-actions"><button class="btn" id="reset">重置筛选</button><button class="btn dark" id="export">导出我的状态</button></div></header>
+<section class="signals"><div class="signal"><label>详细记录机构</label><strong class="teal" id="sCo">0</strong></div><div class="signal"><label>官方披露 HC 的机构</label><strong class="blue" id="sHc">0</strong></div><div class="signal"><label>可复算年报薪酬的机构</label><strong class="amber" id="sPay">0</strong></div><div class="signal"><label>已加入对比</label><strong id="sCmp">0 / 4</strong></div></section>
+<div id="views"><section class="view active" id="view-overview"></section><section class="view" id="view-companies"></section><section class="view" id="view-detail"></section><section class="view" id="view-compare"></section><section class="view" id="view-paths"></section><section class="view" id="view-timeline"></section><section class="view" id="view-roles"></section><section class="view" id="view-sources"></section></div>
+<div class="foot">岗位事实和招聘状态会变化；难度、节奏、薪酬上限等为判断。所有计算在本地完成，不调用外部 API。</div></main></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(()=>{
+'use strict';
+{{DATA}}
+{{APP}}
+})();
+</script>
+</body>
+</html>
