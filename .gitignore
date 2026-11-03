@@ -3,3 +3,7 @@
 *.tmp
 .env
 *.zip
+__pycache__/
+*.pyc
+interview-prep/导出/data.json
+interview-prep/导出/lab.json

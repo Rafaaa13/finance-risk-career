@@ -1,0 +1,4 @@
+[
+{"id":"QBRK1-D-ZL-NEWSH","label":"佐力转债全部转股新增股份数(自算:发行规模13.709297亿元÷初始转股价13.13元)","value":1.0441,"unit":"亿股","asof":"2026-10-29","source":"自算,输入取自QBUY1-FP-ZL-SCALE与QBUY1-FP-ZL-CONVPX(佐力药业募集说明书摘要)","url":"https://np-cnotice-stock.eastmoney.com/api/content/ann?art_code=AN202610261830946380&client_source=web&page_index=6","quote":"输入读数:发行总额137,092.97万元;初始转股价格13.13元/股","grade":"E2","fetched":"2026-11-01","note":"算法:13.709297/13.13=1.0441亿股；假设全部按初始转股价转股，转股价下修会使新增股数增加，不含利息转股。"},
+{"id":"QBRK1-D-ZL-DILUTE","label":"佐力转债全部转股的股本摊薄比例(自算:新增股份÷现有总股本)","value":14.89,"unit":"%","asof":"2026-10-28","source":"自算,输入取自QBRK1-D-ZL-NEWSH与东方财富行情(总市值90.13亿元÷收盘价12.85元推得总股本约7.014亿股)","url":"https://push2.eastmoney.com/api/qt/ulist.np/get?fltt=2&secids=0.300181&fields=f12,f14,f2,f3,f9,f23,f20,f115","quote":"输入读数:总市值90.13亿;收盘价12.85元;新增股份1.0441亿股","grade":"E3","fetched":"2026-11-01","note":"算法:1.0441/(90.13/12.85)=14.89%；现有总股本由总市值与收盘价反推，不是公告值，总市值是否为总股本口径未核对；摊薄比例仅作量级参考。"}
+]

@@ -1,0 +1,12 @@
+/* 央企金融子公司 bank2-08：同集团的财务公司与金融租赁盈利模式对比。账本：中油资本2025年年报子公司表及自算杜邦指标。 */
+IV.push({id:'bank2-08',g:'bank',role:'cen.fin.group',type:'infer',tags:['杜邦分析','金融租赁','财务公司','盈利模式','bank2'],
+ q:'同属中油资本，昆仑金融租赁和中油财务的ROE差距很大，你怎么拆解？哪个模式的盈利更可持续？金融租赁公司和融资租赁公司又有什么区别？',
+ src:[{t:'中油资本2025年年度报告（主要控股参股公司表及经营范围说明）',url:'https://pdf.dfcfw.com/pdf/H2_AN202604261821591068_1.pdf',date:'2026-04-27'}],
+ a30:'差距来自资金成本和风险成本，不是杠杆：中油财务ROE约{{L:QBANK2-FIN-D-FINCO-ROE}}（ROA {{L:QBANK2-FIN-D-FINCO-ROA}}，权益乘数{{L:QBANK2-FIN-D-FINCO-LEV}}），昆仑金租ROE约{{L:QBANK2-FIN-D-LEASE-ROE}}（ROA {{L:QBANK2-FIN-D-LEASE-ROA}}，权益乘数{{L:QBANK2-FIN-D-LEASE-LEV}}）。财务公司靠成员单位低成本存款，租赁靠市场化融资。',
+ a180:'我的判断是：两家杠杆接近，ROE差距几乎全部来自ROA，也就是资金成本和风险成本。杜邦拆解（2025年末期末口径，自算）：中油财务净利润{{L:QBANK2-FIN-CNPC-FINCO-NI}}，总资产{{L:QBANK2-FIN-CNPC-FINCO-ASSET}}，ROA {{L:QBANK2-FIN-D-FINCO-ROA}}，权益乘数{{L:QBANK2-FIN-D-FINCO-LEV}}，ROE {{L:QBANK2-FIN-D-FINCO-ROE}}；昆仑金租净利润{{L:QBANK2-FIN-CNPC-LEASE-NI}}，总资产{{L:QBANK2-FIN-CNPC-LEASE-ASSET}}，ROA {{L:QBANK2-FIN-D-LEASE-ROA}}，权益乘数{{L:QBANK2-FIN-D-LEASE-LEV}}，ROE {{L:QBANK2-FIN-D-LEASE-ROE}}。净利润占营业总收入，中油财务{{L:QBANK2-FIN-D-FINCO-NIREV}}，昆仑金租{{L:QBANK2-FIN-D-LEASE-NIREV}}。推理：第一，负债端。财务公司的存款来自成员单位，行业活期与协定存款占{{L:QBANK2-FIN-D-COREDEP}}，成本低而稳定；昆仑金租的经营范围列示了{{L:QBANK2-FIN-CNPC-LEASE-SCOPE}}，融资来源更市场化，成本更高。第二，资产端。财务公司贷款主要面向集团内成员单位，行业不良率{{L:QBANK2-FIN-IND-NPL}}；租赁客户包含央企、地方国企和产业链中小客户，风险成本更高。第三，业务性质。财务公司收入受LPR和存款利率影响，租赁收入还有手续费和残值。可持续性：财务公司盈利稳定但息差已降到行业{{L:QBANK2-FIN-IND-NIM}}，空间小；租赁盈利弹性大但依赖风险控制。反方：只用一年期末口径，租赁公司存在租赁资产增长期的费用前置，不能下结论。关于金融租赁公司与融资租赁公司，我只掌握确定的一点：金融租赁公司属于持金融牌照的非银行金融机构，经营范围可含同业拆借、向金融机构融入资金、发行非资本类债券；融资租赁公司的监管主体和比例要求本次没有读到原文，面试前要读现行办法。落地：我会用杜邦拆解回答，并明确指出结论受单年样本限制。',
+ tree:[
+  {ask:'杜邦分析怎么用在这两家公司？',ans:'ROE=ROA×权益乘数。中油财务{{L:QBANK2-FIN-D-FINCO-ROA}}×{{L:QBANK2-FIN-D-FINCO-LEV}}≈{{L:QBANK2-FIN-D-FINCO-ROE}}；昆仑金租{{L:QBANK2-FIN-D-LEASE-ROA}}×{{L:QBANK2-FIN-D-LEASE-LEV}}≈{{L:QBANK2-FIN-D-LEASE-ROE}}。杠杆接近，差异在ROA。',next:[{ask:'如果提高杠杆，租赁ROE能追上吗？',ans:'理论上能，但监管对杠杆和资本充足有硬约束，且杠杆放大不良损失。提升ROE更可靠的是提高息差和控制不良，而不是加杠杆。'}]},
+  {ask:'为什么财务公司ROA比租赁高？',ans:'负债成本低是主因：成员单位活期与协定存款占{{L:QBANK2-FIN-D-COREDEP}}。此外财务公司的运营人员少，行业从业人员只有{{L:QBANK2-FIN-IND-STAFF}}，费用占收入比低。',next:[{ask:'但行业息差只有{{L:QBANK2-FIN-IND-NIM}}，还能维持吗？',ans:'息差下行压力存在。财务公司主要靠规模和低费用维持利润；若息差再收窄，需要提高非息收入和投资收益，细节见bank2-10。'}]},
+  {ask:'你更愿意去财务公司还是租赁公司？',ans:'取决于想积累什么能力。财务公司偏资金结算、授信和监管指标，租赁公司偏项目尽调、租赁物估值和风险处置。我的实习是对公信贷尽调，两者都能迁移，但财务公司的资金和监管能力更体系化。'}
+ ],
+ notes:'infer：指标为期末口径自算，不同于平均口径；中油财务净利润为子公司报表口径。金融租赁公司与融资租赁公司的监管差异本次没有读到原文，不要在面试中背比例；金规〔2025〕25号只读到标题。昆仑金租经营范围原文含向非银行股东借入3个月（含）以上借款、同业拆借、向金融机构融入资金、发行非资本类债券、接受租赁保证金。'});

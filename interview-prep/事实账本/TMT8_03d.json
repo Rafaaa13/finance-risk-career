@@ -1,0 +1,5 @@
+[
+{"id":"TMT8-HS-PEFAIR","label":"恒生电子合理PE区间（本文判断）","value":"25-40","unit":"倍","asof":"2026-11-02","source":"本文估值判断","url":"https://www.hundsun.com/","quote":"判断：合理PE 25-40倍","grade":"E3","fetched":"2026-11-02","note":"作者判断"},
+{"id":"TMT8-HS-AIREV","label":"恒生电子独立AI收入","value":0,"unit":"亿元","asof":"2026-06-30","source":"证券之星（恒生电子2026中报分析）","url":"https://4g.stockstar.com/detail/RB2026090400020033","quote":"公司口径明确为无独立AI收入","grade":"E3","fetched":"2026-11-02","note":"AI贡献体现在签约数与数据服务增速"},
+{"id":"TMT8-HS-SUBRATIO","label":"恒生电子2026H1订阅收入增速","value":14.57,"unit":"%","asof":"2026-06-30","source":"证券之星（恒生电子2026中报分析）","url":"https://4g.stockstar.com/detail/RB2026090400020033","quote":"产品订阅+SaaS订阅+数据订阅收入同比+14.57%","grade":"E3","fetched":"2026-11-02","note":"与03b重复口径，供洞见引用"}
+]

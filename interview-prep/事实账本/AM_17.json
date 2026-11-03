@@ -1,0 +1,6 @@
+[
+{"id":"AM-PEN-BASIC-BALANCE-NATIONAL","label":"全国基本养老保险基金累计结余(人社部统计公报口径)","value":null,"unit":"万亿元","asof":"2025-12-31","source":"人力资源和社会保障部(未读到)","url":"https://www.mohrss.gov.cn/xxgk2020/fdzdgknr/ghtj/tj/ndtj/","quote":"","grade":"E1","fetched":"2026-10-28","status":"unverified","note":"人社部年度统计列表页只返回一段JS反爬脚本，无正文。社保基金会受托运营部分(AM-PEN-BASIC-ASSET-2025)只是其中一部分，不能替代。"},
+{"id":"AM-PEN-ENTERPRISE-ANNUITY","label":"企业年金基金规模/累计结存","value":null,"unit":"万亿元","asof":"2026-06-30","source":"未读到","url":"https://www.mohrss.gov.cn/","quote":"","grade":"E1","fetched":"2026-10-28","status":"unverified","note":"所读页面未出现企业年金规模，也未检索到可读来源。"},
+{"id":"AM-PEN-PERSONAL-ACCOUNTS","label":"个人养老金开户人数","value":null,"unit":"亿人","asof":"2026-09-30","source":"未读到","url":"https://www.chinawealth.com.cn/","quote":"","grade":"E1","fetched":"2026-10-28","status":"unverified","note":"理财网首页有个人养老金理财产品入口但无开户数；人社部页面被反爬挡住；搜索额度用尽。"},
+{"id":"AM-META-AMAC-TOTAL-AUM","label":"中基协口径资产管理业务总规模(含公募、私募、券商资管、期货资管、保险资管等)","value":null,"unit":"万亿元","asof":"2026-03-31","source":"未读到","url":"https://www.amac.org.cn/hdjl/gjjl/202606/P020260622389052428411.pdf","quote":"","grade":"E1","fetched":"2026-10-28","status":"unverified","note":"一次搜索结果摘要曾显示该英文PDF写有'2026年一季度末总规模82.65万亿元'，但PDF正文无法由web_fetch解码，我没有读到原文，按规则不入账。中基协首页该数字由POST接口动态加载，同样未读到。"}
+]

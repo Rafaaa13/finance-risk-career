@@ -1,0 +1,10 @@
+IV.push({id:'brk2-42',g:'broker',role:'brk.derivs',type:'infer',tags:['Gamma','Theta','盈亏平衡','空Gamma','波动率差'],
+ q:'计算题，接上题。你卖出了那份3个月平值沪深300看涨期权并按Delta对冲。请算：Gamma是多少？指数涨跌1%时你要买卖多少？每天的盈亏平衡涨跌幅是多少？如果实现波动率只有近60日沪深300的水平，你每天期望赚多少？',
+ a30:'Gamma为{{L:QBRK2-DV-BS-GAMMA}}，指数每涨跌1%，Delta变化{{L:QBRK2-DV-BS-DDELTA-1PCT}}，要追加买入或卖出{{L:QBRK2-DV-BS-GAMMA-CASH-1PCT}}，是买高卖低；日盈亏平衡涨跌幅约{{L:QBRK2-DV-BS-BE-SIMPLE}}（完整重估{{L:QBRK2-DV-BS-BE-EXACT}}）；实现波动率取近60日沪深300水平时，每日期望收益约{{L:QBRK2-DV-BS-EXPGAIN-DAY}}。',
+ a180:'公式：Gamma=e^(−qT)·φ(d1)/(S·σ·√T)。按上题题设，Gamma为{{L:QBRK2-DV-BS-GAMMA}}，Γ×S约{{L:QBRK2-DV-BS-GS-3M}}，意思是指数每涨1%，Delta增加{{L:QBRK2-DV-BS-DDELTA-1PCT}}，对应1亿元名义本金要追加买入约{{L:QBRK2-DV-BS-GAMMA-CASH-1PCT}}；下跌1%则卖出同样金额。卖出期权的一方是空Gamma，只能涨了买、跌了卖，等于买高卖低，这是对冲亏损的来源。单日结果：对冲后指数上涨2%净盈亏{{L:QBRK2-DV-BS-UP2-NET}}，下跌2%净盈亏{{L:QBRK2-DV-BS-DN2-NET}}，两边都亏。补偿来自时间价值：每个交易日的Theta约{{L:QBRK2-DV-BS-THETA}}。两者相抵的日盈亏平衡涨跌幅，简化公式σ/√252为{{L:QBRK2-DV-BS-BE-SIMPLE}}，完整重估约±{{L:QBRK2-DV-BS-BE-EXACT}}（含利率和股息项）。若实现波动率只有近60日沪深300的{{L:QBRK2-DV-D-HV60-300}}，低于18%的隐含波动率，则每日期望收益约{{L:QBRK2-DV-BS-EXPGAIN-DAY}}，63个交易日累计{{L:QBRK2-DV-BS-EXPGAIN-63D}}，与按Vega估算的{{L:QBRK2-DV-BS-VEGA3}}相互校验。反过来，实现波动率升到22%，同期理论盈亏{{L:QBRK2-DV-BS-LOSS22-63D}}。Gamma随到期临近放大：1个月平值期权的Γ×S约{{L:QBRK2-DV-BS-GS-1M}}，约为3个月的1.7倍。反方：连续对冲和波动率不变是理想化假设，跳空日的离散对冲误差会放大。落地：先说空Gamma买高卖低，再给盈亏平衡公式，最后比较实现与隐含波动率判断赚亏。',
+ tree:[
+  {ask:'为什么说卖期权是“收Theta、亏Gamma”？',ans:'Black-Scholes方程把两者绑在一起：Theta≈rV−(r−q)SΔ−½σ²S²Γ，Gamma越大，Theta损耗越快。卖方每天收到时间价值，代价是指数波动超过盈亏平衡幅度时，对冲亏损超过当天的Theta收入。',next:[{ask:'怎么降低空Gamma的对冲成本？',ans:'三种办法：设阈值调仓（Delta偏离到一定幅度再调，而不是每天调）、用其他期权对冲一部分Gamma、与客户的反向需求净额抵消。代价分别是离散误差、期权买入成本和客户结构受限。'}]},
+  {ask:'盈亏平衡涨跌幅为什么有两个数？',ans:'简化公式σ/√252忽略利率和股息项，得到{{L:QBRK2-DV-BS-BE-SIMPLE}}；完整重估把持有Delta对冲的资金成本、股息和1个交易日的Theta全部算进去，得到约±{{L:QBRK2-DV-BS-BE-EXACT}}。面试时先讲简化公式，再补一句完整重估会略小。'},
+  {ask:'实现波动率超过隐含波动率时会怎样？',ans:'空Gamma方亏损。同样的合约，实现波动率22%时63个交易日理论盈亏{{L:QBRK2-DV-BS-LOSS22-63D}}。所以交易员要盯Gamma暴露，以及隐含与实现波动率的差，并在波动率上升时提前买回保护。',next:[{ask:'2026年6月以来最极端的一天有多极端？',ans:'沪深300单日最大涨跌幅{{L:QBRK2-DV-D-WORST-300}}，约为上面盈亏平衡幅度的三倍。这种日子对冲亏损会远大于一天的Theta收入，所以风控要设Gamma限额和压力测试。'}]}
+ ],
+ notes:'无公开面经，按岗位JD与业务推断（infer，计算题）。参数同上题；实现波动率取近60日沪深300，22%为题设；理想化假设：连续对冲、无交易成本、波动率不变。面试前更新：最新点位与实现波动率。'});

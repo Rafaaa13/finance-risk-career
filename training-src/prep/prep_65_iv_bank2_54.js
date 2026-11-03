@@ -1,0 +1,11 @@
+IV.push({id:'bank2-54',g:'bank',role:'cen.inv',type:'infer',tags:['bank2','DPI','TVPI','IRR','计算题','基金生命周期'],
+ q:'计算题：一只创投基金，国资LP累计实缴10亿元（第1、2、3年分别出资4亿、3亿、3亿），第5、7、9年分别分配2亿、8亿、9亿，第9年末剩余净值3亿。请算DPI、TVPI、IRR，并说明如果分配整体推迟两年，对国资LP的考核意味着什么。',
+ src:[{t:'国办发〔2024〕31号《促进创业投资高质量发展的若干政策措施》（中国政府网）',url:'https://www.gov.cn/zhengce/zhengceku/202406/content_6958231.htm',date:'2024-06'}],
+ a30:'按题设自算：DPI为{{L:QBANK2-INV-CALC-DPI}}，TVPI为{{L:QBANK2-INV-CALC-TVPI}}，含第9年末剩余净值的IRR约{{L:QBANK2-INV-CALC-IRR}}，不含剩余净值约{{L:QBANK2-INV-CALC-IRR-NONAV}}。分配整体推迟两年后IRR降到{{L:QBANK2-INV-CALC-IRR-DELAY}}，倍数不变，所以考核不能只看IRR。',
+ a180:'我的结论是：这只基金的DPI为{{L:QBANK2-INV-CALC-DPI}}，TVPI为{{L:QBANK2-INV-CALC-TVPI}}，含剩余净值的IRR约{{L:QBANK2-INV-CALC-IRR}}；如果分配整体推迟两年，倍数不变，IRR降到{{L:QBANK2-INV-CALC-IRR-DELAY}}。计算过程如下，以下数字均按题设自算。累计实缴是4加3加3，共10亿元；累计分配是2加8加9，共19亿元。DPI等于累计分配除以累计实缴，得{{L:QBANK2-INV-CALC-DPI}}；RVPI等于剩余净值除以累计实缴，得{{L:QBANK2-INV-CALC-RVPI}}；TVPI等于DPI加RVPI，得{{L:QBANK2-INV-CALC-TVPI}}。IRR用年末现金流求解：第1、2、3年为负4、负3、负3，第5年正2，第7年正8，第9年正9加剩余净值3，即正12，解得约{{L:QBANK2-INV-CALC-IRR}}；若不计剩余净值，只算已实现现金，IRR约{{L:QBANK2-INV-CALC-IRR-NONAV}}。第7年末DPI为{{L:QBANK2-INV-CALC-DPI-Y7}}，刚好回本，此前所有账面浮盈都依赖估值。推理：IRR对现金流时点非常敏感，分配推迟两年，投入不变，倍数没变，IRR却从{{L:QBANK2-INV-CALC-IRR}}降到{{L:QBANK2-INV-CALC-IRR-DELAY}}。对国资LP的含义是：如果按年度或短周期考核IRR，会把正常的退出延后误判为业绩变差；国办发31号提出“{{L:QBANK2-INV-GB31-SOE-LIFE}}”，国家创业投资引导基金存续期设置为“{{L:IND-PE-NATGUIDE-TERM-20Y}}”，都是在解决这个周期错配。反方与风险：剩余净值是估值，可能被高估；实缴若含管理费，DPI是净口径，要与GP报告的毛口径区分；年末假设和实际日期现金流会有出入。落地：面试时我会同时报三个数，DPI、TVPI、IRR，并声明口径，是否含剩余净值，实缴是否含费用，再补一句：考核应以基金整个生命周期的DPI和TVPI为主、IRR为辅。',
+ tree:[
+  {ask:'IRR含不含剩余净值？你更相信哪个？',ans:'含剩余净值是{{L:QBANK2-INV-CALC-IRR}}，不含是{{L:QBANK2-INV-CALC-IRR-NONAV}}。我更看不含剩余净值的数，因为它只反映已实现现金；剩余净值只作参考，按估值可靠程度打折。',next:[{ask:'剩余净值怎么估才靠谱？',ans:'我会用最近一轮融资价格、可比公司估值和第三方评估三种口径交叉，项目处于早期时对估值打折，并要求GP披露估值方法变化。'}]},
+  {ask:'分配推迟两年，哪些指标变，哪些不变？',ans:'DPI、TVPI这类倍数不变，IRR从{{L:QBANK2-INV-CALC-IRR}}降到{{L:QBANK2-INV-CALC-IRR-DELAY}}。资金占用时间变长，年化回报下降，这就是资金的时间价值。',next:[{ask:'那国资LP的考核应该盯哪个？',ans:'我的建议是整个生命周期内以DPI和TVPI为主、IRR为辅，并设置与基准的比较，这和31号文“探索按整个基金生命周期考核”的方向一致。'}]},
+  {ask:'管理费体现在哪个数里？',ans:'题设的实缴10亿元如果包含管理费，则DPI和TVPI是净口径，已扣费用；如果实缴只含投资款，就是毛口径。对照政府投资基金文件的要求：“{{L:QPE1-RMB-GB1-FEE}}”，核对费用基数时要看计费基础。'}
+ ],
+ notes:'infer（计算题）：现金流为题设假设，非真实基金，已在账本QBANK2-INV-CALC-*中记录算法。按年末现金流二分法求IRR，第9年末含剩余净值。面试前自己再用Excel的IRR函数复算一遍。注意区分DPI（已分配）与TVPI（含未实现）。'});

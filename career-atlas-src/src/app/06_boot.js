@@ -1,5 +1,5 @@
-const VIEWS={overview:viewOverview,companies:viewCompanies,detail:viewDetail,compare:viewCompare,paths:viewPaths,timeline:viewTimeline,roles:viewRoles,sources:viewSources};
-const TITLE={overview:'总览',companies:'公司与岗位',detail:'机构详情',compare:'对比',paths:'职业走廊',timeline:'时间线',roles:'岗位族谱',sources:'证据与口径'};
+const VIEWS={overview:viewOverview,companies:viewCompanies,detail:viewDetail,compare:viewCompare,paths:viewPaths,timeline:viewTimeline,roles:viewRoles,sources:viewSources,rolelib:viewRoleLib};
+const TITLE={overview:'总览',companies:'公司与岗位',detail:'机构详情',compare:'对比',paths:'职业走廊',timeline:'时间线',roles:'岗位族谱',sources:'证据与口径',rolelib:'细分岗位库'};
 function updateTop(){
  $('#sCo').textContent=CO.length;$('#sHc').textContent=CO.filter(c=>c.hc[1]==='E1').length;$('#sPay').textContent=CO.filter(c=>payVal(c)).length;$('#sCmp').textContent=ST.cmp.length+' / 4';
  $('#crumb').textContent=TITLE[ST.view]||'';

@@ -1,0 +1,41 @@
+[
+{
+"id": "TMT8-ANT-VALRANGE",
+"label": "蚂蚁集团按2025净利与15-25倍PE的估值区间",
+"value": "2295-3825",
+"unit": "亿元",
+"asof": "2026-11-02",
+"source": "按2025净利153亿元与本文PE区间计算",
+"url": "https://www.bbtnews.com.cn/2026/0513/593232.shtml",
+"quote": "153×15=2295；153×25=3825",
+"grade": "E3",
+"fetched": "2026-11-02",
+"note": "作者测算，非官方估值"
+},
+{
+"id": "TMT8-ANT-AI-REV",
+"label": "蚂蚁集团独立AI收入",
+"value": "未披露",
+"unit": "",
+"asof": "2025-12-31",
+"source": "蚂蚁集团2025年可持续发展报告（新华网）",
+"url": "https://www.news.cn/tech/20260617/6fbe9cd82b2248458cdb7035363ca1c6/c.html",
+"quote": "报告未披露AI业务收入",
+"grade": "E2",
+"fetched": "2026-11-02",
+"note": "AI作为入口与成本项"
+},
+{
+"id": "TMT8-ANT-NP26BASE",
+"label": "蚂蚁集团2026年净利基准假设",
+"value": 180,
+"unit": "亿元",
+"asof": "2026-11-02",
+"source": "本文情景假设",
+"url": "https://www.antgroup.com/",
+"quote": "假设：2026净利180亿元",
+"grade": "E3",
+"fetched": "2026-11-02",
+"note": "作者判断"
+}
+]

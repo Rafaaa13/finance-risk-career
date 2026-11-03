@@ -1,0 +1,4 @@
+[
+{"id":"QBANK1-ICBC-LIQRATIO-RMB","label":"工商银行人民币流动性比例(2026-06-30)","value":67.3,"unit":"%","asof":"2026-06-30","source":"中国工商银行《2026半年度报告》(上交所公告，东方财富公告库原文)","url":"https://np-cnotice-stock.eastmoney.com/api/content/ann?art_code=AN202608281828626875&client_source=web&page_index=19","quote":"流动性比例（%） 人民币 >=25.0 67.3 63.2 58.4","grade":"E1","fetched":"2026-11-01","note":"监管标准不低于25%；外币121.7%"},
+{"id":"QBANK1-ICBC-LDR-H1","label":"工商银行贷存款比例(本外币合计,2026-06-30)","value":80,"unit":"%","asof":"2026-06-30","source":"中国工商银行《2026半年度报告》(上交所公告，东方财富公告库原文)","url":"https://np-cnotice-stock.eastmoney.com/api/content/ann?art_code=AN202608281828626875&client_source=web&page_index=19","quote":"贷存款比例 80.0%","grade":"E1","fetched":"2026-11-01","note":"2025年末80.6%"}
+]

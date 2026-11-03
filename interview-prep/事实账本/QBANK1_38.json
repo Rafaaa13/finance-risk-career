@@ -1,0 +1,4 @@
+[
+{"id":"QBANK1-FM-USCN-10Y-YE","label":"中美10年期国债收益率差(2025年末，美债减中债)","value":233.27,"unit":"bp","asof":"2025-12-31","source":"自算：QBUY1-FR-EM-UST10Y-YE 4.18%减QBUY1-FR-EM-CN10Y-YE 1.8473%(东方财富日度序列)","url":"https://datacenter-web.eastmoney.com/","quote":"4.18；1.8473","grade":"E3","fetched":"2026-11-01","note":"算法：(4.18-1.8473)×100；年末两个读数均为东方财富日度序列，口径与官方曲线相差不到1bp"},
+{"id":"QBANK1-FM-USCN-10Y-CHG","label":"中美10年期利差较2025年末的扩大幅度","value":103.02,"unit":"bp","asof":"2026-10-27","source":"自算：QBANK1-FM-USCN-10Y-SPR 336.29减QBANK1-FM-USCN-10Y-YE 233.27","url":"https://home.treasury.gov/resource-center/data-chart-center/interest-rates/TextView?type=daily_treasury_yield_curve&field_tdr_date_value_month=202610","quote":"336.29；233.27","grade":"E3","fetched":"2026-11-01","note":"跨来源口径(年末东财、当前官方)，混合了E1与E3，故标E3；方向可靠，精度约1bp"}
+]

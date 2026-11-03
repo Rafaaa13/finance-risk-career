@@ -1,0 +1,12 @@
+[
+{"id":"TMT8-AE-USERS","label":"Alpha派累计服务投研人员","value":8,"unit":"万人","asof":"2026-03-26","source":"上海证券报（讯兔科技公司披露）","url":"https://www.cnstock.com/commonDetail/657150","quote":"累计服务超过8万名投研人员","grade":"E2","fetched":"2026-11-02","note":"厂商口径，未见第三方审计"},
+{"id":"TMT8-AE-ORGS","label":"Alpha派覆盖机构数","value":6000,"unit":"家","asof":"2026-03-26","source":"上海证券报（公司披露）","url":"https://www.cnstock.com/commonDetail/657150","quote":"覆盖逾6000家机构","grade":"E2","fetched":"2026-11-02","note":"厂商口径/未核实"},
+{"id":"TMT8-AE-PENETRATION","label":"Alpha派头部机构渗透率","value":90,"unit":"%","asof":"2026-03-26","source":"上海证券报（公司披露）","url":"https://www.cnstock.com/commonDetail/657150","quote":"在头部机构中的渗透率达到90%","grade":"E2","fetched":"2026-11-02","note":"厂商口径，头部机构定义未披露"},
+{"id":"TMT8-AE-BROKERS","label":"Alpha派合作券商研究所及数据服务商","value":40,"unit":"家","asof":"2026-03-26","source":"上海证券报（公司披露）","url":"https://www.cnstock.com/commonDetail/657150","quote":"已与40多家券商研究所及数据服务商建立合作关系","grade":"E2","fetched":"2026-11-02","note":"过去一年"},
+{"id":"TMT8-AE-ROUNDA","label":"讯兔科技A轮融资额","value":2,"unit":"亿元","asof":"2026-03-26","source":"上海证券报","url":"https://www.cnstock.com/commonDetail/657150","quote":"正式完成近2亿元A轮融资","grade":"E2","fetched":"2026-11-02","note":"启明创投、红杉中国、高瓴创投领投"},
+{"id":"TMT8-AE-ROUNDPRE","label":"讯兔科技Pre-A轮融资额","value":1,"unit":"亿元","asof":"2025-10-31","source":"上海证券报","url":"https://www.cnstock.com/commonDetail/657150","quote":"去年10月完成超亿元Pre-A轮融资","grade":"E2","fetched":"2026-11-02","note":"两轮间隔5个月"},
+{"id":"TMT8-AE-GAP","label":"讯兔科技两轮融资间隔","value":5,"unit":"个月","asof":"2026-03-26","source":"上海证券报","url":"https://www.cnstock.com/commonDetail/657150","quote":"五个月内获得的又一轮资金注入","grade":"E2","fetched":"2026-11-02","note":"资本热度指标"},
+{"id":"TMT8-AE-FOUNDER","label":"Alpha派创始人背景","value":"李罗丹，90后，曾任头部公募数字化研究中心创始人兼研究部副总监","unit":"","asof":"2026-03-26","source":"投资界/量子位","url":"https://news.pedaily.cn/202603/562107.shtml","quote":"曾在头部公募基金会担任数字化研究中心创始人","grade":"E3","fetched":"2026-11-02","note":"媒体口径"},
+{"id":"TMT8-AE-PRODUCT","label":"Alpha派产品定位","value":"面向机构投研人员的AI研究员，覆盖研报、纪要、数据、问答与Agent工作流","unit":"","asof":"2026-03-26","source":"量子位","url":"https://www.qbitai.com/2026/03/392684.html","quote":"产品已从效率工具进化为AI研究员","grade":"E3","fetched":"2026-11-02","note":"媒体口径，功能细节未逐一核实"},
+{"id":"TMT8-AE-EXPAND","label":"Alpha派客群扩展方向","value":"一级市场、银行保险等泛金融领域","unit":"","asof":"2026-03-26","source":"上海证券报（公司披露）","url":"https://www.cnstock.com/commonDetail/657150","quote":"用户群体正逐步向一级市场、银行保险等泛金融领域延伸","grade":"E2","fetched":"2026-11-02","note":"厂商口径"}
+]

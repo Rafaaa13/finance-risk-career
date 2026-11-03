@@ -1,0 +1,4 @@
+[
+{"id":"QBANK1-FM-CAPCOST-100","label":"风险权重100%资产的资本成本(示意：核心一级资本13.21%×工行ROE 8.63%)","value":114.0,"unit":"bp","asof":"2026-06-30","source":"自算：QBANK1-ICBC-CET1-H1 13.21%×QBANK1-ICBC-ROE-H1 8.63%","url":"https://np-cnotice-stock.eastmoney.com/api/content/ann?art_code=AN202608281828626875&client_source=web&page_index=3","quote":"CET1 13.21%；ROE 8.63%","grade":"E2","fetched":"2026-11-01","note":"示意算法：每100元风险加权资产需约13.21元核心一级资本，以ROE作资本成本；0.1321×0.0863=1.140%；ROE为年化1-6月；实际资本成本和风险权重因银行与资产而异"},
+{"id":"QBANK1-FM-CAPCOST-75","label":"风险权重75%资产的资本成本(示意，同上口径)","value":85.5,"unit":"bp","asof":"2026-06-30","source":"自算：QBANK1-FM-CAPCOST-100 114.0bp×0.75","url":"https://np-cnotice-stock.eastmoney.com/api/content/ann?art_code=AN202608281828626875&client_source=web&page_index=3","quote":"114.0×0.75","grade":"E2","fetched":"2026-11-01","note":"用于示意信用债风险权重低于100%时的资本成本；国债风险权重为0%，资本占用为0"}
+]

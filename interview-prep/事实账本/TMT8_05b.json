@@ -1,0 +1,9 @@
+[
+{"id":"TMT8-ANT-MXC-SEG","label":"蚂小财用户结构","value":"45%来自三线及以下城市","unit":"","asof":"2026-08-31","source":"三个皮匠报告（金融科技行业报告）","url":"https://www.sgpjbg.com/labelsyh/aizhinengtougupuhuihua/1/6714798.html","quote":"45%的蚂小财用户来自三线及以下城市","grade":"E3","fetched":"2026-11-02","note":"第三方报告口径"},
+{"id":"TMT8-ANT-MXC-BEHAV","label":"蚂小财深度用户行为变化","value":"资产配置合理性高5%，频繁交易比例下降60%","unit":"","asof":"2026-08-31","source":"三个皮匠报告（金融科技行业报告）","url":"https://www.sgpjbg.com/labelsyh/aizhinengtougupuhuihua/1/6714798.html","quote":"配置合理性高5%，频繁交易比例下降60%","grade":"E3","fetched":"2026-11-02","note":"第三方报告，样本口径未披露"},
+{"id":"TMT8-ANT-FUND25","label":"蚂蚁基金2025年营收","value":202.34,"unit":"亿元","asof":"2025-12-31","source":"媒体汇总（蚂蚁系子公司口径）","url":"https://businesstimescn.com/articles/628808.html","quote":"蚂蚁基金营收202.34亿、净利10.85亿（+141%）","grade":"E3","fetched":"2026-11-02","note":"未经蚂蚁官方确认"},
+{"id":"TMT8-ANT-BEAR","label":"蚂蚁集团熊市情景假设","value":"2026净利120亿元、给10倍PE，对应1200亿元估值","unit":"","asof":"2026-11-02","source":"本文情景假设","url":"https://www.antgroup.com/","quote":"假设：120亿×10倍=1200亿元","grade":"E3","fetched":"2026-11-02","note":"作者判断"},
+{"id":"TMT8-ANT-BASE","label":"蚂蚁集团基准情景假设","value":"2026净利180亿元、给20倍PE，对应3600亿元估值","unit":"","asof":"2026-11-02","source":"本文情景假设","url":"https://www.antgroup.com/","quote":"假设：180亿×20倍=3600亿元","grade":"E3","fetched":"2026-11-02","note":"作者判断"},
+{"id":"TMT8-ANT-BULL","label":"蚂蚁集团牛市情景假设","value":"2026净利250亿元、给30倍PE，对应7500亿元估值","unit":"","asof":"2026-11-02","source":"本文情景假设","url":"https://www.antgroup.com/","quote":"假设：250亿×30倍=7500亿元","grade":"E3","fetched":"2026-11-02","note":"作者判断"},
+{"id":"TMT8-ANT-PEFAIR","label":"蚂蚁集团合理PE区间（本文判断）","value":"15-25","unit":"倍","asof":"2026-11-02","source":"本文估值判断","url":"https://www.antgroup.com/","quote":"判断：合理PE 15-25倍","grade":"E3","fetched":"2026-11-02","note":"介于券商与金融科技之间"}
+]

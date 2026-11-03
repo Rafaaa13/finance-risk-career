@@ -1,0 +1,9 @@
+[
+{"id":"TMT8-AE-THSPS","label":"同花顺PS（市值/2025营收）","value":23.83,"unit":"倍","asof":"2026-10-30","source":"按腾讯行情与2025年报计算","url":"https://qt.gtimg.cn/q=sz300033","quote":"1436.79/60.29=23.83","grade":"E2","fetched":"2026-11-02","note":"市值用2026-10-30收盘"},
+{"id":"TMT8-AE-EMPS","label":"东方财富PS（市值/2025营收）","value":17.33,"unit":"倍","asof":"2026-10-30","source":"按腾讯行情与2025年报计算","url":"https://qt.gtimg.cn/q=sz300059","quote":"2784.71/160.68=17.33","grade":"E2","fetched":"2026-11-02","note":"市值用2026-10-30收盘"},
+{"id":"TMT8-AE-HSPS","label":"恒生电子PS（市值/2025营收）","value":6.19,"unit":"倍","asof":"2026-10-30","source":"按腾讯行情与2025年报计算","url":"https://qt.gtimg.cn/q=sh600570","quote":"357.90/57.83=6.19","grade":"E2","fetched":"2026-11-02","note":"市值用2026-10-30收盘"},
+{"id":"TMT8-AE-BEAR","label":"Alpha派熊市情景假设","value":"付费机构1000家、ARPU 5万元/年，对应ARR 0.5亿元","unit":"","asof":"2026-11-02","source":"本文情景假设","url":"https://www.cnstock.com/commonDetail/657150","quote":"假设：1000家×5万元=0.5亿元","grade":"E3","fetched":"2026-11-02","note":"作者判断，非公司指引"},
+{"id":"TMT8-AE-BASE","label":"Alpha派基准情景假设","value":"付费机构2000家、ARPU 8万元/年，对应ARR 1.6亿元","unit":"","asof":"2026-11-02","source":"本文情景假设","url":"https://www.cnstock.com/commonDetail/657150","quote":"假设：2000家×8万元=1.6亿元","grade":"E3","fetched":"2026-11-02","note":"作者判断"},
+{"id":"TMT8-AE-BULL","label":"Alpha派牛市情景假设","value":"付费机构3000家、ARPU 10万元/年，对应ARR 3.0亿元","unit":"","asof":"2026-11-02","source":"本文情景假设","url":"https://www.cnstock.com/commonDetail/657150","quote":"假设：3000家×10万元=3.0亿元","grade":"E3","fetched":"2026-11-02","note":"作者判断"},
+{"id":"TMT8-AE-PSFAIR","label":"Alpha派可比PS区间（本文判断）","value":"8-15","unit":"倍","asof":"2026-11-02","source":"本文估值判断","url":"https://www.cnstock.com/commonDetail/657150","quote":"判断：可比PS 8-15倍","grade":"E3","fetched":"2026-11-02","note":"介于恒生与东财之间"}
+]

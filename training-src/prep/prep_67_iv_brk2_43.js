@@ -1,0 +1,10 @@
+IV.push({id:'brk2-43',g:'broker',role:'brk.derivs',type:'infer',tags:['Greeks','Vega','Theta','损益归因','雪球Greeks'],
+ q:'把Delta、Gamma、Vega、Theta、Rho各讲一遍，它们之间有什么关系？雪球的Greeks和普通期权有什么不同？',
+ a30:'以3个月平值沪深300看涨（1亿元名义本金、波动率18%为题设）为例：Delta为{{L:QBRK2-DV-BS-DELTA}}，Vega为{{L:QBRK2-DV-BS-VEGA}}，Theta为{{L:QBRK2-DV-BS-THETA}}，Rho为{{L:QBRK2-DV-BS-RHO}}。卖出期权是收Theta、亏Gamma、亏Vega；雪球给券商的是多Vega，Gamma在敲入线附近变号。',
+ a180:'结论：Greeks是价值对各个变量的偏导，交易员用它们把盈亏拆成可管理的几块。以3个月平值沪深300看涨期权（题设：1亿元名义本金、波动率18%、利率1.40%、股息率3%）为例：Delta为{{L:QBRK2-DV-BS-DELTA}}，是对标的的一阶敏感度，决定对冲份额；Gamma为{{L:QBRK2-DV-BS-GAMMA}}，Γ×S约{{L:QBRK2-DV-BS-GS-3M}}，是Delta的变化速度，决定调仓量；Vega为{{L:QBRK2-DV-BS-VEGA}}，是对波动率的敏感度，平值最大，且与期限的平方根成比例，期限越长Vega越大；Theta为{{L:QBRK2-DV-BS-THETA}}，是时间损耗，买方付、卖方收；Rho为{{L:QBRK2-DV-BS-RHO}}，对短期限期权影响最小。关系：Black-Scholes方程把Theta、Delta、Gamma连在一起，Theta≈rV−(r−q)SΔ−½σ²S²Γ，所以空Gamma者收Theta，两者是同一枚硬币。临近到期，平值Gamma放大，1个月的Γ×S约{{L:QBRK2-DV-BS-GS-1M}}，是3个月的1.7倍，所以临近到期的平值期权最难管。雪球：客户卖出波动率，券商持有多Vega；按波动率30%的口径测算，每升1个波动率点券商约增值{{L:QBRK2-DV-MC-VEGA}}。Gamma方向随位置变化：期初价附近，指数越跌Delta越大，券商是多Gamma；剩余1个月、指数在敲入线上方77%处Delta是{{L:QBRK2-DV-MC-D1-77}}，跌到72%（已敲入）降到{{L:QBRK2-DV-MC-D1-72}}，敲入线下方是空Gamma，要卖出对冲。反方：模型假设波动率不变、连续对冲，且忽略偏度。落地：面试时给一张表，横轴是Greeks，纵轴是标的上涨、时间流逝、波动率上升各自的盈亏符号。',
+ tree:[
+  {ask:'Vega和Gamma是什么关系？',ans:'买期权的人通常同时多Gamma、多Vega、空Theta，卖期权的人相反。但两者在期限上分布不同：Gamma在临近到期时最大，Vega在远期最大，所以短期限期权的风险主要是Gamma，长期限期权的风险主要是Vega。',next:[{ask:'如果要分别管理Gamma和Vega，用什么工具？',ans:'用不同期限的期权搭配，把两项暴露分别压进限额。例如卖出近月、买入远月，会得到空Gamma、多Vega的组合；反过来则是多Gamma、空Vega。'}]},
+  {ask:'为什么雪球对券商是多Vega？',ans:'客户卖出了看跌期权，持有的雪球价值随波动率上升而下降，券商相反。按波动率30%的口径测算，每升1个波动率点，券商价值增加{{L:QBRK2-DV-MC-VEGA}}。',next:[{ask:'波动率下降会怎样？',ans:'券商的雪球头寸按市值亏损，多Gamma的调仓收益也变少；同时新发雪球的理论公平票息下降（波动率15%对应{{L:QBRK2-DV-MC-FAIR15}}，30%对应{{L:QBRK2-DV-MC-FAIR30}}），产品吸引力下降，新发规模会收缩。这是我的判断。'}]},
+  {ask:'Greeks怎么用在损益归因上？',ans:'每日损益=Delta×标的变动+½Gamma×变动²+Vega×波动率变动+Theta×时间+Rho×利率变动+残差。残差大，说明模型或对冲有问题，比如偏度变化、基差、数据错误，要单独追踪，不能并入其中一项。'}
+ ],
+ notes:'无公开面经，按岗位JD与业务推断（infer）。参数同前两题；雪球Greeks来自蒙特卡洛理想化模型（波动率30%、利率1.40%、股息率1.5%），不是任何券商的实盘数据。面试前更新：自己复现一张Greeks符号表。'});

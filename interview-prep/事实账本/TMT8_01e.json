@@ -1,0 +1,5 @@
+[
+{"id":"TMT8-THS-SOFT25","label":"同花顺2025年软件销售及维护收入","value":3.99,"unit":"亿元","asof":"2025-12-31","source":"东方财富F10主营构成","url":"https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_FN_MAINOP&columns=ALL&filter=(SECUCODE%3D%22300033.SZ%22)","quote":"软件销售及维护 399238854.78","grade":"E1","fetched":"2026-11-02","note":"B端iFinD等，占6.6%"},
+{"id":"TMT8-THS-PEFAIR","label":"同花顺合理PE区间（本文判断）","value":"30-45","unit":"倍","asof":"2026-11-02","source":"本文估值判断","url":"https://www.iwencai.com/","quote":"判断：合理PE 30-45倍","grade":"E3","fetched":"2026-11-02","note":"作者判断，非市场一致预期"},
+{"id":"TMT8-THS-ADV25","label":"同花顺2025年广告+增值电信收入合计","value":54.13,"unit":"亿元","asof":"2025-12-31","source":"按东方财富F10主营构成加总","url":"https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_FN_MAINOP&columns=ALL&filter=(SECUCODE%3D%22300033.SZ%22)","quote":"3462167776.46+1950543719.44","grade":"E2","fetched":"2026-11-02","note":"占2025营收89.8%"}
+]

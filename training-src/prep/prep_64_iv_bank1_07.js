@@ -1,0 +1,12 @@
+/* bank1-07 息差压力下大行怎么赚钱。工行2026H1与去年同期对比；建行增速为行报披露；招行非息占比为1−净利息收入占比。 */
+IV.push({id:'bank1-07',g:'bank',role:'bank.hq.mt',type:'infer',tags:['净息差','负债成本','非息收入','盈利模式'],
+ q:'银行净息差持续收窄，大行靠什么赚钱？说出你认为的三条出路，并用数据支撑。',
+ src:[{t:'招商银行2027校园招聘公告（转载，总行管培含投行与金融市场、公司金融、零售金融方向）',url:'https://www.shanganclaw.com/announcements/170336/',date:'2026-08'}],
+ a30:'我的判断是三条出路：压负债成本、提非息收入、控成本与信用成本。工行贷款收益率从{{L:QBANK1-ICBC-LOANYLD-PY}}降到{{L:QBANK1-ICBC-LOANYLD-H1}}，存款付息率从{{L:QBANK1-ICBC-DEPCOST-PY}}降到{{L:QBANK1-ICBC-DEPCOST-H1}}，净息差只从{{L:IND-ICBC-NIM-PY}}微降到{{L:IND-ICBC-NIM}}。',
+ a180:'我的结论是：息差收窄是行业周期，不是某一家行的问题；大行的应对不是单点突破，而是负债成本、非息收入、成本与风险三条线一起做。第一条，负债成本。工行贷款平均收益率从去年同期{{L:QBANK1-ICBC-LOANYLD-PY}}降到{{L:QBANK1-ICBC-LOANYLD-H1}}，变动{{L:QBANK1-MT-ICBC-LOANYLD-CHG}}；存款平均付息率从{{L:QBANK1-ICBC-DEPCOST-PY}}降到{{L:QBANK1-ICBC-DEPCOST-H1}}，变动{{L:QBANK1-MT-ICBC-DEPCOST-CHG}}，负债端降幅略大于资产端，净息差因此只从{{L:IND-ICBC-NIM-PY}}微降到{{L:IND-ICBC-NIM}}。付息率结构上，公司活期{{L:QBANK1-ICBC-CORPDEM-COST}}、公司定期{{L:QBANK1-ICBC-CORPTD-COST}}、个人活期{{L:QBANK1-ICBC-PERDEM-COST}}、个人定期{{L:QBANK1-ICBC-PERTD-COST}}，所以抓结算型活期存款是最有效的降成本手段。第二条，非息收入。建行利息净收入同比{{L:QBANK1-MT-CCB-NIIG}}，非利息收入同比{{L:QBANK1-MT-CCB-NONIIG}}，非息增速更快；工行手续费及佣金净收入占营收{{L:QBANK1-ICBC-FEEPCT-H1}}，招行非利息净收入占比{{L:QBANK1-MT-CMB-NONII-SHARE}}，差距说明大行的财富管理和交易业务还有空间。第三条，成本与风险。工行成本收入比{{L:QBANK1-ICBC-CIR-H1}}，已处于低位，压缩空间有限；上半年计提信用减值损失{{L:QBANK1-ICBC-CREDITLOSS-H1}}，拨备覆盖率{{L:QBANK1-ICBC-PCR-H1}}，风险成本才是利润的关键变量。反方：非息收入受资本市场和费率影响，波动大；活期存款竞争激烈，付息率降到一定程度就没有空间；1年期LPR{{L:MAC-LPR1Y}}、5年期以上{{L:MAC-LPR5Y}}近两期未变，资产端收益率仍在下行。落地：面试里我会讲清三条线的先后顺序，并说明岗位偏好：想在负债管理与定价方向积累。',
+ tree:[
+  {ask:'负债端降幅为什么能大于资产端？靠什么？',ans:'靠存款重新定价：到期的定期存款以更低利率续作，同时压降高成本的长期限定期和协议存款。工行个人定期付息率{{L:QBANK1-ICBC-PERTD-COST}}仍高于公司定期{{L:QBANK1-ICBC-CORPTD-COST}}，说明零售定期是下一步重点。',next:[{ask:'“存款定期化”是什么意思，为什么要盯？',ans:'指客户把活期存款转成定期存款，付息率会从接近{{L:QBANK1-ICBC-PERDEM-COST}}（个人活期）跳到{{L:QBANK1-ICBC-PERTD-COST}}（个人定期）。银行要通过结算、代发和现金管理把活期留住，否则负债成本会反弹。'}]},
+  {ask:'提升非息收入，大行相对招行的短板是什么？',ans:'短板在财富管理的客户经营与代销能力。数据上，工行手续费及佣金净收入占营收{{L:QBANK1-ICBC-FEEPCT-H1}}，招行非利息净收入占比{{L:QBANK1-MT-CMB-NONII-SHARE}}（口径含投资收益等，不完全可比）。我的判断是大行的优势在对公的结算、托管和投行，而不是零售的产品销售。',next:[{ask:'资本市场不好的时候，中间业务怎么办？',ans:'靠不依赖行情的收入：结算、托管、债券承销、现金管理。它们波动小，能对冲基金代销和理财收入的下滑。'}]},
+  {ask:'成本收入比已经这么低了，还要继续压吗？',ans:'压缩空间有限，边际来自科技替代人工和网点优化。工行{{L:QBANK1-ICBC-CIR-H1}}，邮储{{L:QBANK1-MT-PSBC-CIR}}，差异来自网点结构。更重要的是把资源投向能带来收入的地方，而不是一味压成本。'}
+ ],
+ notes:'推断题，依据管培岗对盈利模式的常规考察。数据为2026半年报（E1）与监管统计（E2）。注意：工行净息差（报表称净利息收益率）是年化累计口径；招行非息占比是1减去净利息收入占比，含投资收益等，不等同于手续费占比；变动值为自算。LPR近两期未变，面试前核对新一期（每月20日）。'});

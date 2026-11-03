@@ -1,0 +1,12 @@
+[
+{"id":"TMT2-MU-MCAP","label":"美光总市值","value":1.0,"unit":"万亿美元","asof":"2026-11-02","source":"stockanalysis.com","url":"https://stockanalysis.com/stocks/mu/statistics/","quote":"Market Cap 1.00T","grade":"E2","fetched":"2026-11-02","note":"约10010亿美元"},
+{"id":"TMT2-MU-PE","label":"美光PE(TTM)","value":11.9,"unit":"倍","asof":"2026-11-02","source":"stockanalysis.com","url":"https://stockanalysis.com/stocks/mu/statistics/","quote":"PE Ratio 11.90","grade":"E2","fetched":"2026-11-02","note":""},
+{"id":"TMT2-MU-FPE","label":"美光Forward PE","value":5.01,"unit":"倍","asof":"2026-11-02","source":"stockanalysis.com","url":"https://stockanalysis.com/stocks/mu/statistics/","quote":"Forward PE 5.01","grade":"E2","fetched":"2026-11-02","note":"市场一致预期"},
+{"id":"TMT2-MU-FPE-GAP","label":"美光Forward PE较TTM折价","value":-57.9,"unit":"%","asof":"2026-11-02","source":"自行测算","url":"https://stockanalysis.com/stocks/mu/statistics/","quote":"5.01/11.90-1","grade":"E2","fetched":"2026-11-02","note":"口径：forward PE/TTM PE-1，隐含利润增长137%"},
+{"id":"TMT2-SNDK-REV","label":"闪迪TTM营业收入","value":289.7,"unit":"亿美元","asof":"2026-09-30","source":"stockanalysis.com","url":"https://stockanalysis.com/stocks/sndk/statistics/","quote":"Revenue 28.97B","grade":"E2","fetched":"2026-11-02","note":"NAND纯玩家"},
+{"id":"TMT2-SNDK-GM","label":"闪迪TTM毛利率","value":79.95,"unit":"%","asof":"2026-09-30","source":"stockanalysis.com","url":"https://stockanalysis.com/stocks/sndk/statistics/","quote":"Gross Margin 79.95%","grade":"E2","fetched":"2026-11-02","note":""},
+{"id":"TMT2-SNDK-PE","label":"闪迪PE(TTM)","value":9.26,"unit":"倍","asof":"2026-11-02","source":"stockanalysis.com","url":"https://stockanalysis.com/stocks/sndk/statistics/","quote":"PE Ratio 9.26","grade":"E2","fetched":"2026-11-02","note":"市值1637.6亿美元"},
+{"id":"TMT2-WDC-REV","label":"西部数据TTM营业收入","value":144.8,"unit":"亿美元","asof":"2026-09-30","source":"stockanalysis.com","url":"https://stockanalysis.com/stocks/wdc/statistics/","quote":"Revenue 14.48B","grade":"E2","fetched":"2026-11-02","note":"分拆闪迪后以HDD为主"},
+{"id":"TMT2-WDC-GM","label":"西部数据TTM毛利率","value":52.6,"unit":"%","asof":"2026-09-30","source":"stockanalysis.com","url":"https://stockanalysis.com/stocks/wdc/statistics/","quote":"Gross Margin 52.60%","grade":"E2","fetched":"2026-11-02","note":""},
+{"id":"TMT2-WDC-PE","label":"西部数据PE(TTM)","value":14.21,"unit":"倍","asof":"2026-11-02","source":"stockanalysis.com","url":"https://stockanalysis.com/stocks/wdc/statistics/","quote":"PE Ratio 14.21","grade":"E2","fetched":"2026-11-02","note":"市值1370.4亿美元"}
+]

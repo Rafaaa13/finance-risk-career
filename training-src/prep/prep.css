@@ -1,0 +1,45 @@
+/* ===== 参考答案与新板块通用样式 ===== */
+.qz-sol{display:none;margin-top:8px;border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:8px;background:#f6fbfa;padding:10px 13px;font-size:12px;line-height:1.75}
+.qz-sol.show{display:block}
+.fd-sol-head{font-size:13px;margin-bottom:4px}
+.fd-sol-ex{color:#3f5960;margin-bottom:8px}
+.fd-sol h5{font-size:14px;margin:6px 0}
+.fd-sol p{margin:5px 0}
+.fd-sol ol,.fd-sol ul{margin:4px 0 6px 18px;padding:0}
+.fd-sol li{margin:2px 0}
+.fd-ref{margin-top:7px;border:1px dashed var(--cyan);border-radius:8px;background:#f6fbfa;padding:6px 10px;font-size:12px}
+.fd-ref summary{cursor:pointer;color:var(--cyan);font-weight:600}
+.fd-ref-body{white-space:pre-wrap;line-height:1.8;margin-top:6px;color:#3f5960}
+.ans-wrap{margin-top:22px}
+.ans-note{border:1px solid #e6d2a8;background:#fbf5ec;border-radius:9px;padding:9px 13px;font-size:12px;line-height:1.7;margin-bottom:12px}
+.ans-det{border:1px solid var(--line);border-radius:9px;background:#fff;margin:8px 0;padding:0}
+.ans-det>summary{cursor:pointer;padding:9px 13px;font-size:13px;font-weight:600;list-style:none}
+.ans-det>summary::-webkit-details-marker{display:none}
+.ans-det>summary:before{content:'＋';color:var(--cyan);margin-right:8px;font-weight:700}
+.ans-det[open]>summary:before{content:'－'}
+.ans-det>.ans-body{padding:2px 14px 12px;font-size:12px;line-height:1.8;color:#3f5960}
+.ans-body p{margin:6px 0}
+.ans-body ol,.ans-body ul{margin:4px 0 6px 18px;padding:0}
+.ans-lab{display:inline-block;font-size:11px;color:var(--cyan);font-weight:700;margin-right:6px;letter-spacing:.3px}
+.ans-sub{margin:8px 0 3px;font-size:11px;color:var(--cyan);font-weight:700}
+.ans-pre{background:#0f2a30;color:#d9efee;border-radius:8px;padding:9px 12px;font:11px/1.7 ui-monospace,SFMono-Regular,Menlo,monospace;overflow:auto;white-space:pre-wrap;margin:6px 0}
+.ans-tbl{border-collapse:collapse;font-size:11px;margin:6px 0}
+.ans-tbl th,.ans-tbl td{border:1px solid var(--line);padding:3px 8px;text-align:left}
+.ans-tree{border-left:2px solid var(--cyan);margin:6px 0 6px 4px;padding-left:10px}
+.ans-script{white-space:pre-wrap;background:#fbfcfc;border:1px solid var(--line);border-radius:8px;padding:10px 13px;line-height:1.9}
+.iv-rolegrid{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 12px}
+.iv-rolechip{border:1px solid var(--line);background:#fff;border-radius:8px;padding:6px 10px;cursor:pointer;text-align:left;font-family:inherit}
+.iv-rolechip b{display:block;font-size:12px;color:#1f3b45}
+.iv-rolechip span{font-size:10.5px;color:var(--muted)}
+.iv-rolechip:hover{border-color:var(--cyan)}
+.iv-rolechip.on{border-color:var(--cyan);background:#eef8f7}
+.lab-card{margin:10px 0}
+.lab-inputs{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0}
+.lab-in{display:flex;flex-direction:column;gap:2px;font-size:11px;color:#3f5960}
+.lab-in input{width:128px;padding:5px 7px;border:1px solid var(--line);border-radius:7px;font:12px inherit}
+.lab-in em{font-style:normal;font-size:10.5px;color:var(--muted)}
+.lab-ask{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:6px}
+.lab-ask label{font-size:12px;display:flex;align-items:center;gap:6px}
+.lab-ask input{width:130px;padding:6px 8px;border:1px solid var(--line);border-radius:7px;font:12px inherit}
+.lab-sol{margin-top:10px;border-left:3px solid var(--cyan);background:#f6fbfa;padding:8px 12px;border-radius:8px;font-size:12px;line-height:1.8}
+.lab-sol ol{margin:4px 0 6px 18px;padding:0}
